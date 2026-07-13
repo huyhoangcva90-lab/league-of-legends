@@ -1,0 +1,14 @@
+# Local reference material and exports
+lol.rar
+lol/*
+!lol/setting-data.js
+
+# Internal audits and workspace metadata
+.agents/
+PARITY_STATUS.md
+GSHEET_APP_MAPPING.md
+
+# Common local noise
+.DS_Store
+Thumbs.db
+*.tmp

@@ -1,0 +1,10 @@
+{
+  "name": "lol-analyst",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "validate": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/validate-data.ps1 -CheckGenerated",
+    "sync-team-data": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/sync-team-data.ps1",
+    "audit": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/audit-parity.ps1"
+  }
+}

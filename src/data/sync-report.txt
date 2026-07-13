@@ -1,0 +1,6 @@
+Patch: 14.23.1
+Champions updated: 173
+Skills updated: 930
+Matchups updated: 10115
+Warnings: 0
+Errors: 0
