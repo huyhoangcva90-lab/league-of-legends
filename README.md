@@ -270,7 +270,10 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\build-data.ps1
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\update-riot-data.ps1
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\build-data.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\sync-team-data.ps1
 ```
+
+`update-riot-data.ps1` tự lấy patch Data Dragon mới nhất, cập nhật ảnh/kỹ năng/hồi chiêu, giữ các form riêng của workbook và tạo hồ sơ baseline có đánh dấu rà soát khi Riot bổ sung tướng mới. Có thể truyền `-Patch 16.14.1` để build tái lập theo một phiên bản cố định.
 
 Không chỉnh trực tiếp `data.js` nếu thay đổi cần được giữ lâu dài. Hãy sửa dữ liệu nguồn trong `src/data`, sau đó chạy `build-data.ps1`.
 

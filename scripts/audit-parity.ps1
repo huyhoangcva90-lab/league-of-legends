@@ -28,6 +28,10 @@ try {
 } catch {
     Add-Contract 'Data' 'Strict source and generated-data validation' $false $_.Exception.Message
 }
+Add-Contract 'Data' 'Live Riot roster updater preserves workbook forms and adds new champions' ((Has-All ([IO.File]::ReadAllText((Join-Path $root 'scripts\update-riot-data.ps1'),[Text.Encoding]::UTF8)) @('Get-NormalizedChampionId','Get-InferredAbilityTags','New-ManualChampion','kledskaarl','megagnar','api/versions\.json')) -and (Has-All $app @('function\s+image','DATA\.patch','function\s+roleFits'))) 'Latest portrait, core skills, cooldowns and future champion baseline pipeline'
+$riotData = [IO.File]::ReadAllText((Join-Path $root 'src\data\riot-data.json'),[Text.Encoding]::UTF8) | ConvertFrom-Json
+$riotIds = @($riotData.champions.id)
+Add-Contract 'Data' 'Patch 16.14 roster includes Locke, Zaahen and workbook forms' ([string]$riotData.patch -eq '16.14.1' -and @('locke','zaahen','kledskaarl','megagnar').Where({$_ -notin $riotIds}).Count -eq 0 -and $riotIds.Count -eq 175) '173 official champions + 2 workbook form records'
 
 $renderers = @('renderTeamFull','renderDraftFull','renderFinderFull','renderMatchupsFull','renderTeamfightFull','renderCompareFull','renderMapFull','renderStrategyFull','renderChampionsFull','renderSkillsFull','renderRoutesFull','renderCcFull','renderSystemFull')
 Add-Contract 'Navigation' 'All 13 application modules have renderers' (Has-All $app ($renderers | ForEach-Object { "function\s+$([regex]::Escape($_))\s*\(" })) ($renderers -join ', ')
