@@ -906,6 +906,46 @@ body[data-route="finder"] .check-effect-picker select{min-height:34px;font-size:
   body[data-route="finder"] .check-multi-filter>div{grid-template-columns:1fr 1fr}
 }
 
+/* Desktop navigation can collapse without reducing the active workspace. */
+.sidebar-collapse{
+  position:absolute;
+  top:22px;
+  right:-15px;
+  z-index:3;
+  display:grid;
+  place-items:center;
+  width:30px;
+  height:30px;
+  border:1px solid #49657a;
+  border-radius:50%;
+  background:#fff;
+  color:#17344a;
+  box-shadow:0 3px 10px rgba(7,18,28,.2);
+  cursor:pointer;
+}
+.sidebar-collapse:hover{border-color:#1a73e8;background:#edf6ff;color:#0b5ca8}
+.sidebar-collapse:focus-visible{outline:3px solid #8ed0ff;outline-offset:2px}
+.sidebar-collapse svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .18s ease}
+.sidebar,.app-column,.topbar{transition:width .18s ease,margin-left .18s ease,left .18s ease}
+.sidebar nav button>span{display:grid;place-items:center;width:24px;height:24px;border-radius:5px;font-size:8px;font-weight:900;line-height:1}
+.sidebar nav button.active>span{transform:none}
+@media(min-width:981px){
+  body.sidebar-collapsed .sidebar{width:68px}
+  body.sidebar-collapsed .app-column{margin-left:68px}
+  body.sidebar-collapsed .topbar{left:68px}
+  body.sidebar-collapsed .brand{justify-content:center;padding-inline:10px}
+  body.sidebar-collapsed .brand>div,
+  body.sidebar-collapsed .sidebar nav h2,
+  body.sidebar-collapsed .sidebar nav button>b,
+  body.sidebar-collapsed .sidebar-status{display:none}
+  body.sidebar-collapsed .sidebar nav{padding:12px 8px}
+  body.sidebar-collapsed .sidebar nav section{margin-bottom:8px}
+  body.sidebar-collapsed .sidebar nav button{justify-content:center;padding:8px}
+  body.sidebar-collapsed .sidebar nav button>span{width:34px;height:30px;border-color:#55758c;font-size:10px}
+  body.sidebar-collapsed .sidebar-collapse svg{transform:rotate(180deg)}
+}
+@media(max-width:980px){.sidebar-collapse{display:none}}
+
 /* Lane-first comparison: same-role solo lanes and complete 2v2 Bot duos. */
 body[data-route="compare"] #app-main{background:linear-gradient(180deg,#07111f 0,#0a1626 420px,var(--bg) 900px)}
 .lane-compare-hero,.lane-axis-panel,.lane-skill-board,.lane-plan-board{margin:0 0 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:var(--shadow);overflow:hidden}
