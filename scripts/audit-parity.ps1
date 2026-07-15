@@ -31,7 +31,7 @@ try {
 
 $renderers = @('renderTeamFull','renderDraftFull','renderFinderFull','renderMatchupsFull','renderTeamfightFull','renderCompareFull','renderMapFull','renderStrategyFull','renderChampionsFull','renderSkillsFull','renderRoutesFull','renderCcFull','renderSystemFull')
 Add-Contract 'Navigation' 'All 13 application modules have renderers' (Has-All $app ($renderers | ForEach-Object { "function\s+$([regex]::Escape($_))\s*\(" })) ($renderers -join ', ')
-Add-Contract 'State' 'Versioned persisted-state migration' ($app -match 'STATE_SCHEMA_VERSION\s*=\s*5' -and $app -match 'function\s+mergeState') 'STATE_SCHEMA_VERSION=5 + mergeState'
+Add-Contract 'State' 'Versioned persisted-state migration' ($app -match 'STATE_SCHEMA_VERSION\s*=\s*6' -and $app -match 'function\s+mergeState') 'STATE_SCHEMA_VERSION=6 + mergeState'
 Add-Contract 'Session' 'Named save, history, share and JSON interchange' (Has-All $app @('function\s+saveNamedSession','function\s+restoreHistoryEntry','function\s+copySessionLink','function\s+downloadSession','data-session-import')) 'Session persistence and portable analysis contract'
 Add-Contract 'Team' 'Simple, Advanced and Expert modes use accessible result tabs' (Has-All $app @('analysisMode','function\s+availableTeamSections','role="tablist"','aria-selected')) 'Mode visibility and tab state'
 Add-Contract 'Team' 'Independent ban panels and reset controls' (Has-All $app @('function\s+teamBanPanel','reset-side-bans','reset-all-bans','toggle-bans')) 'Five bans per side with hide and reset actions'
