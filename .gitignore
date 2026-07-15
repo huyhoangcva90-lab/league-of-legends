@@ -12,3 +12,6 @@ GSHEET_APP_MAPPING.md
 .DS_Store
 Thumbs.db
 *.tmp
+chrome-profile-debug*/
+chrome-js.log
+map-plan-test.png

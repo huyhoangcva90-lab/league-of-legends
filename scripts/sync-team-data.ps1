@@ -21,6 +21,8 @@ $champions = foreach ($official in $riot.champions) {
     }
     $merged.baseStats = $official.baseStats
     $merged.abilities = $official.abilities
+    $merged.skillTags = @($official.abilities | ForEach-Object { @($_.tags) } | Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_) } | Select-Object -Unique)
+    $merged.capabilities = @(@($merged.capabilities) + @($merged.skillTags) | Select-Object -Unique)
     [pscustomobject]$merged
 }
 

@@ -13,6 +13,8 @@ $champions = foreach ($official in $riot.champions) {
     foreach ($property in $manualById[$official.id].PSObject.Properties) { if ($property.Name -ne 'id') { $merged[$property.Name]=$property.Value } }
     $merged.baseStats = $official.baseStats
     $merged.abilities = $official.abilities
+    $merged.skillTags = @($official.abilities | ForEach-Object { @($_.tags) } | Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_) } | Select-Object -Unique)
+    $merged.capabilities = @(@($merged.capabilities) + @($merged.skillTags) | Select-Object -Unique)
     [pscustomobject]$merged
 }
 $runtime = [ordered]@{ version=$manual.version; patch=$riot.patch; locale=$riot.locale; champions=$champions; jungleRoutes=$manual.jungleRoutes; crowdControl=$manual.crowdControl; byId=[ordered]@{}; logic=$manual.logic; dictionary=$manual.dictionary }

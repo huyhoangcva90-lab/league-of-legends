@@ -109,6 +109,8 @@ if ($CheckGenerated) {
             $generated = $runtimeById[$official.id]
             if ([string]$generated.name -ne [string]$official.name) { $errors.Add("data.js: '$($official.id).name' is stale.") }
             if (@($generated.abilities).Count -ne @($official.abilities).Count) { $errors.Add("data.js: '$($official.id).abilities' count is stale.") }
+            $expectedSkillTags = @($official.abilities | ForEach-Object { @($_.tags) } | Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_) } | Select-Object -Unique) -join '|'
+            if ((@($generated.skillTags) -join '|') -cne $expectedSkillTags) { $errors.Add("data.js: '$($official.id).skillTags' is stale.") }
             $generatedRoles = @($generated.roles) -join '|'
             $sourceRoles = @($manualById[$official.id].roles) -join '|'
             if ($generatedRoles -cne $sourceRoles) { $errors.Add("data.js: '$($official.id).roles' is stale.") }

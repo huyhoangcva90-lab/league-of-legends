@@ -270,6 +270,20 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Heal",
+                          "Imba",
+                          "Airborne",
+                          "Clearwave",
+                          "Poke",
+                          "Aoe",
+                          "Slow",
+                          "Tether",
+                          "Dash",
+                          "Bonus Dame",
+                          "Strong Ult",
+                          "Speed"
                       ]
     },
     {
@@ -562,6 +576,23 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Heal",
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Poke",
+                          "True Dame",
+                          "Auto Target",
+                          "Speed",
+                          "Charm",
+                          "Knockdown",
+                          "Slow",
+                          "TeamFight",
+                          "Dash",
+                          "Strong Ult",
+                          "Engage"
                       ]
     },
     {
@@ -849,6 +880,19 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Speed",
+                          "Imba",
+                          "Burst Dame",
+                          "Aoe",
+                          "Clearwave",
+                          "Slow",
+                          "Invisibility",
+                          "Engage",
+                          "Dash",
+                          "Strong Ult",
+                          "TeamFight"
                       ]
     },
     {
@@ -1121,6 +1165,18 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "On-Hit",
+                          "Shield",
+                          "Speed",
+                          "Aoe",
+                          "Clearwave",
+                          "Camouflage",
+                          "Imba",
+                          "Dash",
+                          "Life steal",
+                          "Global"
                       ]
     },
     {
@@ -1403,6 +1459,19 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Heal",
+                          "Disengage",
+                          "Airborne",
+                          "Aoe",
+                          "Stun",
+                          "TeamFight",
+                          "Hook",
+                          "Engage",
+                          "Speed",
+                          "Strong Ult",
+                          "Removal"
                       ]
     },
     {
@@ -1699,6 +1768,23 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Dame",
+                          "Dash",
+                          "Imba",
+                          "Aoe",
+                          "Clearwave",
+                          "Shield",
+                          "Slow",
+                          "Armor penetration",
+                          "Burst Dame",
+                          "Displacement Immunity",
+                          "Heal",
+                          "Stun",
+                          "Suppression",
+                          "Blink",
+                          "Engage"
                       ]
     },
     {
@@ -1973,6 +2059,16 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Aoe",
+                          "Dash",
+                          "Stun",
+                          "TeamFight",
+                          "Engage",
+                          "Clearwave",
+                          "Strong Ult",
+                          "Knockdown"
                       ]
     },
     {
@@ -2248,6 +2344,18 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Resurrection",
+                          "Aoe",
+                          "Clearwave",
+                          "Slow",
+                          "Stun",
+                          "Poke",
+                          "Airborne",
+                          "Wall",
+                          "TeamFight",
+                          "Burst Dame"
                       ]
     },
     {
@@ -2526,6 +2634,20 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Stun",
+                          "TeamFight",
+                          "Disengage",
+                          "Clearwave",
+                          "Shield",
+                          "Speed",
+                          "Buff Shield",
+                          "Aoe",
+                          "Burst Dame",
+                          "Strong Ult",
+                          "Pet",
+                          "Engage"
                       ]
     },
     {
@@ -2950,6 +3072,19 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Imba",
+                          "Aoe",
+                          "Bonus Dame",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Heal",
+                          "Shield",
+                          "Slow",
+                          "Speed",
+                          "Stun",
+                          "Strong Ult"
                       ]
     },
     {
@@ -3251,6 +3386,22 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Dame",
+                          "Slow",
+                          "Life steal",
+                          "On-hit",
+                          "Disengage",
+                          "Aoe",
+                          "Clearwave",
+                          "TeamFight",
+                          "Poke",
+                          "Sight",
+                          "Imba",
+                          "Global",
+                          "Strong Ult",
+                          "Stun"
                       ]
     },
     {
@@ -3542,6 +3693,18 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Clearwave",
+                          "Dash",
+                          "Execute",
+                          "Kinematics",
+                          "TeamFight",
+                          "Airborne",
+                          "Aoe",
+                          "Global",
+                          "Strong Ult",
+                          "Slow"
                       ]
     },
     {
@@ -3820,6 +3983,20 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Heal",
+                          "Clearwave",
+                          "Poke",
+                          "Dash",
+                          "Invisibility",
+                          "Dive",
+                          "Engage",
+                          "Slow",
+                          "Aoe",
+                          "Displacement Immunity",
+                          "Strong Ult",
+                          "TeamFight"
                       ]
     },
     {
@@ -4105,6 +4282,21 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Dame",
+                          "Aoe",
+                          "Clearwave",
+                          "Slow",
+                          "On-hit",
+                          "Sight",
+                          "Dash",
+                          "Shield",
+                          "Disengage",
+                          "Airborne",
+                          "Strong Ult",
+                          "TeamFight",
+                          "Hook"
                       ]
     },
     {
@@ -4388,6 +4580,21 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Scaling",
+                          "Slow",
+                          "Stun",
+                          "TeamFight",
+                          "Disengage",
+                          "Buff Heal",
+                          "Speed",
+                          "Dash",
+                          "Dive",
+                          "Engage",
+                          "Aoe",
+                          "Strong Ult",
+                          "Stasis"
                       ]
     },
     {
@@ -4672,6 +4879,23 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus AS",
+                          "Burst Dame",
+                          "Dash",
+                          "Engage",
+                          "Airborne",
+                          "Clearwave",
+                          "On-Hit",
+                          "Aoe",
+                          "Bonus Dame",
+                          "Bonus Heal",
+                          "Heal",
+                          "Strong Ult",
+                          "Slow",
+                          "True Dame",
+                          "Imba"
                       ]
     },
     {
@@ -4945,6 +5169,19 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Shield",
+                          "Airborne",
+                          "Hook",
+                          "Stun",
+                          "TeamFight",
+                          "Engage",
+                          "Bonus AS",
+                          "Speed",
+                          "On-hit",
+                          "Silence",
+                          "Aoe"
                       ]
     },
     {
@@ -5225,6 +5462,16 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Aoe",
+                          "Stun",
+                          "TeamFight",
+                          "Disengage",
+                          "Clearwave",
+                          "Poke",
+                          "Burst Dame",
+                          "Slow"
                       ]
     },
     {
@@ -5514,6 +5761,20 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Stun",
+                          "Imba",
+                          "Disengage",
+                          "Slow",
+                          "TeamFight",
+                          "Bonus Armor",
+                          "Bonus Magic Resistance",
+                          "Dash",
+                          "Projectile",
+                          "Speed",
+                          "Aoe",
+                          "Strong Ult"
                       ]
     },
     {
@@ -5818,6 +6079,23 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Heal",
+                          "Imba",
+                          "Dash",
+                          "On-hit",
+                          "Stun",
+                          "Speed",
+                          "Engage",
+                          "Airborne",
+                          "Bonus Armor",
+                          "Bonus Magic Resistance",
+                          "Fear / Flee",
+                          "Global",
+                          "Strong Ult",
+                          "Slow",
+                          "TeamFight"
                       ]
     },
     {
@@ -6101,6 +6379,19 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Poke",
+                          "Sight",
+                          "Snare / Root",
+                          "Trap",
+                          "Disengage",
+                          "Dash",
+                          "Slow",
+                          "Global"
                       ]
     },
     {
@@ -6392,6 +6683,20 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Burst Dame",
+                          "Speed",
+                          "True Dame",
+                          "Heal",
+                          "Slow",
+                          "Bonus AS",
+                          "Dash",
+                          "Stun",
+                          "TeamFight",
+                          "Engage",
+                          "Airborne",
+                          "Disrupt"
                       ]
     },
     {
@@ -6664,6 +6969,19 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Speed",
+                          "Clearwave",
+                          "Poisoned",
+                          "Aoe",
+                          "Ground",
+                          "Slow",
+                          "Disengage",
+                          "Dps",
+                          "Heal",
+                          "Strong Ult",
+                          "Stun"
                       ]
     },
     {
@@ -6942,6 +7260,23 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Heal",
+                          "Airborne",
+                          "Aoe",
+                          "Imba",
+                          "Sight",
+                          "Slow",
+                          "TeamFight",
+                          "Engage",
+                          "Disengage",
+                          "Silence",
+                          "Clearwave",
+                          "On-Hit",
+                          "Burst Dame",
+                          "Scaling",
+                          "True Dame"
                       ]
     },
     {
@@ -7223,6 +7558,17 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "True Dame",
+                          "Aoe",
+                          "Clearwave",
+                          "Sight",
+                          "Poke",
+                          "Dash",
+                          "Disengage",
+                          "Armor penetration",
+                          "Magic penetration"
                       ]
     },
     {
@@ -7497,6 +7843,20 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Imba",
+                          "Bleed",
+                          "Aoe",
+                          "Clearwave",
+                          "Heal",
+                          "Auto Target",
+                          "Slow",
+                          "Airborne",
+                          "Armor penetration",
+                          "Sight",
+                          "Burst Dame",
+                          "True Dame"
                       ]
     },
     {
@@ -7777,6 +8137,19 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Aoe",
+                          "On-Hit",
+                          "Burst Dame",
+                          "Sight",
+                          "Shield",
+                          "Dash",
+                          "Engage",
+                          "Strong Ult",
+                          "Silence",
+                          "Slow",
+                          "TeamFight"
                       ]
     },
     {
@@ -8040,6 +8413,20 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Heal",
+                          "Immobilizing",
+                          "Poke",
+                          "Slow",
+                          "Aoe",
+                          "Clearwave",
+                          "Bonus AS",
+                          "Bonus Heal",
+                          "Bonus Heal Regeneration",
+                          "Strong Ult",
+                          "Speed",
+                          "Engage"
                       ]
     },
     {
@@ -8323,6 +8710,20 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Gold",
+                          "Burst Dame",
+                          "Dps",
+                          "Speed",
+                          "Engage",
+                          "Airborne",
+                          "Slow",
+                          "Disengage",
+                          "Execute",
+                          "Global",
+                          "Sight",
+                          "Aoe"
                       ]
     },
     {
@@ -8612,6 +9013,23 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "On-Hit",
+                          "Speed",
+                          "Aoe",
+                          "Clearwave",
+                          "Slow",
+                          "Shield",
+                          "Stun",
+                          "TeamFight",
+                          "Engage",
+                          "Dash",
+                          "Blink",
+                          "Burst Dame",
+                          "Heal",
+                          "Stasis",
+                          "Strong Ult"
                       ]
     },
     {
@@ -8948,6 +9366,23 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Heal",
+                          "On-Hit",
+                          "Pet",
+                          "Auto Target",
+                          "Burst Dame",
+                          "Dash",
+                          "Aoe",
+                          "Clearwave",
+                          "Speed",
+                          "Sight",
+                          "Stun",
+                          "Vanish",
+                          "Blink",
+                          "TeamFight",
+                          "Engage"
                       ]
     },
     {
@@ -9252,6 +9687,21 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Camouflage",
+                          "Heal",
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Charm",
+                          "Slow",
+                          "TeamFight",
+                          "Engage",
+                          "Dash",
+                          "On-Hit",
+                          "Speed",
+                          "Blink"
                       ]
     },
     {
@@ -9532,6 +9982,18 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus AS",
+                          "Clearwave",
+                          "On-hit",
+                          "Poke",
+                          "Burst Dame",
+                          "Sight",
+                          "Blink",
+                          "Disengage",
+                          "Aoe",
+                          "Global"
                       ]
     },
     {
@@ -9828,6 +10290,25 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Oracle Lens",
+                          "Ward",
+                          "Sight",
+                          "Trap",
+                          "Fear / Flee",
+                          "Slow",
+                          "Disengage",
+                          "Aoe",
+                          "Clearwave",
+                          "Heal",
+                          "Tether",
+                          "Silence",
+                          "Burst Dame",
+                          "Strong Ult",
+                          "Blink",
+                          "TeamFight",
+                          "Engage"
                       ]
     },
     {
@@ -10109,6 +10590,24 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Speed",
+                          "True Dame",
+                          "Bonus Dame",
+                          "Clearwave",
+                          "Dash",
+                          "On-hit",
+                          "Push Tower",
+                          "Engage",
+                          "Cripple",
+                          "Debuff",
+                          "Immunity",
+                          "Slow",
+                          "Stun",
+                          "Burst Dame",
+                          "Bonus AS",
+                          "Heal"
                       ]
     },
     {
@@ -10411,6 +10910,22 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Speed",
+                          "Burst Dame",
+                          "Dash",
+                          "On-hit",
+                          "Engage",
+                          "Untargetability",
+                          "Aoe",
+                          "Clearwave",
+                          "Slow",
+                          "Dive",
+                          "Airborne",
+                          "Strong Ult",
+                          "Sight",
+                          "TeamFight"
                       ]
     },
     {
@@ -10712,6 +11227,25 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Aoe",
+                          "Clearwave",
+                          "Uncancellable Windup",
+                          "Shield",
+                          "Slow",
+                          "Speed",
+                          "Taunt",
+                          "TeamFight",
+                          "Engage",
+                          "Disengage",
+                          "Airborne",
+                          "Dash",
+                          "Displacement Immunity",
+                          "Global",
+                          "Strong Ult",
+                          "Untargetability",
+                          "Imba"
                       ]
     },
     {
@@ -11000,6 +11534,26 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Push Tower",
+                          "Speed",
+                          "Auto Target",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Gold",
+                          "Poke",
+                          "Heal",
+                          "Removal",
+                          "Disengage",
+                          "Aoe",
+                          "Armor penetration",
+                          "Sight",
+                          "Slow",
+                          "Trap",
+                          "Global",
+                          "Strong Ult",
+                          "TeamFight"
                       ]
     },
     {
@@ -11295,6 +11849,29 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Heal",
+                          "Auto Target",
+                          "Lunge",
+                          "Removal",
+                          "Silence",
+                          "Speed",
+                          "Uncancellable Windup",
+                          "TeamFight",
+                          "Imba",
+                          "Engage",
+                          "Bonus Armor",
+                          "Bonus Magic Resistance",
+                          "Shield",
+                          "Aoe",
+                          "Armor penetration",
+                          "Bonus AS",
+                          "Clearwave",
+                          "Burst Dame",
+                          "Sight",
+                          "True Dame",
+                          "Strong Ult"
                       ]
     },
     {
@@ -11579,6 +12156,22 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Heal",
+                          "Speed",
+                          "Aoe",
+                          "Clearwave",
+                          "Slow",
+                          "On-hit",
+                          "Stun",
+                          "Bonus AS",
+                          "Dash",
+                          "Engage",
+                          "Disengage",
+                          "Airborne",
+                          "Strong Ult",
+                          "TeamFight"
                       ]
     },
     {
@@ -11884,6 +12477,23 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Heal",
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Sight",
+                          "Slow",
+                          "Disengage",
+                          "Uncancellable Windup",
+                          "Airborne",
+                          "Dash",
+                          "Stun",
+                          "TeamFight",
+                          "Engage",
+                          "Strong Ult",
+                          "Hook"
                       ]
     },
     {
@@ -12161,6 +12771,18 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus AS",
+                          "Bonus Dame",
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Nearsight",
+                          "Slow",
+                          "Bonus Armor",
+                          "Dash",
+                          "Engage"
                       ]
     },
     {
@@ -12442,6 +13064,23 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Heal",
+                          "On-Hit",
+                          "Clearwave",
+                          "On-hit",
+                          "True Dame",
+                          "Bonus Armor",
+                          "Bonus Magic Resistance",
+                          "Untargetability",
+                          "Imba",
+                          "Engage",
+                          "Bonus AS",
+                          "Dash",
+                          "Aoe",
+                          "Slow",
+                          "TeamFight"
                       ]
     },
     {
@@ -12743,6 +13382,27 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Dame",
+                          "Speed",
+                          "Aoe",
+                          "Clearwave",
+                          "Bonus Armor",
+                          "Bonus Magic Resistance",
+                          "Heal",
+                          "Airborne",
+                          "Dash",
+                          "Sight",
+                          "Stun",
+                          "TeamFight",
+                          "Dive",
+                          "Engage",
+                          "Burst Dame",
+                          "Displacement Immunity",
+                          "Fear / Flee",
+                          "Strong Ult",
+                          "Slow"
                       ]
     },
     {
@@ -13051,6 +13711,17 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Speed",
+                          "Clearwave",
+                          "Pet",
+                          "Disengage",
+                          "Aoe",
+                          "Burst Dame",
+                          "Poke",
+                          "Slow",
+                          "Stun"
                       ]
     },
     {
@@ -13488,6 +14159,25 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Dame",
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Slow",
+                          "Poke",
+                          "Magic penetration",
+                          "Shield",
+                          "Speed",
+                          "Disengage",
+                          "Buff Shield",
+                          "Airborne",
+                          "Fear / Flee",
+                          "Knockdown",
+                          "Root",
+                          "Sight",
+                          "TeamFight"
                       ]
     },
     {
@@ -13760,6 +14450,23 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Aoe",
+                          "Heal",
+                          "Pet",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Dash",
+                          "Tower",
+                          "Engage",
+                          "Poke",
+                          "Reset",
+                          "Sight",
+                          "Slow",
+                          "Tether",
+                          "Displacement Immunity",
+                          "Untargetability"
                       ]
     },
     {
@@ -14040,6 +14747,22 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus AS",
+                          "Bonus Dame",
+                          "Imba",
+                          "Clearwave",
+                          "Dash",
+                          "On-hit",
+                          "Engage",
+                          "Crowd Control Effects",
+                          "Aoe",
+                          "Stun",
+                          "Strong Ult",
+                          "Sight",
+                          "Slow",
+                          "TeamFight"
                       ]
     },
     {
@@ -14326,6 +15049,21 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Dash",
+                          "Root",
+                          "Sight",
+                          "TeamFight",
+                          "Disengage",
+                          "Brush",
+                          "On-hit",
+                          "Trap",
+                          "Aoe",
+                          "Shield",
+                          "Slow",
+                          "Buff Shield",
+                          "Pet"
                       ]
     },
     {
@@ -14608,6 +15346,20 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "On-Hit",
+                          "Speed",
+                          "Airborne",
+                          "Aoe",
+                          "TeamFight",
+                          "Disengage",
+                          "Slow",
+                          "Bonus AS",
+                          "Buff Shield",
+                          "Heal",
+                          "Strong Ult",
+                          "Buff Heal"
                       ]
     },
     {
@@ -14899,6 +15651,21 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Airborne",
+                          "Aoe",
+                          "Armor penetration",
+                          "Clearwave",
+                          "Dash",
+                          "TeamFight",
+                          "Engage",
+                          "Shield",
+                          "Slow",
+                          "Bonus AS",
+                          "Sight",
+                          "Displacement Immunity",
+                          "Strong Ult"
                       ]
     },
     {
@@ -15181,6 +15948,24 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus AS",
+                          "Dash",
+                          "TeamFight",
+                          "Engage",
+                          "Armor penetration",
+                          "Auto Target",
+                          "Clearwave",
+                          "Reset",
+                          "Uncancellable Windup",
+                          "Aoe",
+                          "Dodge",
+                          "Stun",
+                          "Bonus Armor",
+                          "Bonus Magic Resistance",
+                          "On-hit",
+                          "Tower"
                       ]
     },
     {
@@ -15515,6 +16300,21 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Dame",
+                          "Aoe",
+                          "Clearwave",
+                          "Dash",
+                          "Poke",
+                          "Bonus AS",
+                          "On-hit",
+                          "Reset",
+                          "Airborne",
+                          "Root",
+                          "Sight",
+                          "Speed",
+                          "Engage"
                       ]
     },
     {
@@ -15803,6 +16603,20 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Dame",
+                          "Speed",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Poke",
+                          "Snare / Root",
+                          "Disengage",
+                          "Aoe",
+                          "Sight",
+                          "Slow",
+                          "Strong Ult",
+                          "TeamFight"
                       ]
     },
     {
@@ -16096,6 +16910,22 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Takedown",
+                          "Aoe",
+                          "Bonus AS",
+                          "Clearwave",
+                          "Poke",
+                          "Sight",
+                          "Slow",
+                          "TeamFight",
+                          "Disengage",
+                          "Knockdown",
+                          "Root",
+                          "Burst Dame",
+                          "Global",
+                          "Strong Ult"
                       ]
     },
     {
@@ -16397,6 +17227,29 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Dame",
+                          "Imba",
+                          "Airborne",
+                          "Aoe",
+                          "Clearwave",
+                          "Reset",
+                          "Hook",
+                          "Dash",
+                          "Displacement Immunity",
+                          "Stun",
+                          "True Dame",
+                          "TeamFight",
+                          "Engage",
+                          "Shield",
+                          "Armor penetration",
+                          "Bonus Armor",
+                          "Bonus Magic Resistance",
+                          "Strong Ult",
+                          "Omnivamp",
+                          "Root",
+                          "Blink"
                       ]
     },
     {
@@ -16686,6 +17539,21 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Dame",
+                          "On-Hit",
+                          "Clearwave",
+                          "Sight",
+                          "Aoe",
+                          "Burst Dame",
+                          "Poke",
+                          "Bonus AS",
+                          "Dash",
+                          "Invisibility",
+                          "Strong Ult",
+                          "Shield",
+                          "Engage"
                       ]
     },
     {
@@ -16981,6 +17849,25 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus AS",
+                          "Uncancellable Windup",
+                          "Dash",
+                          "Engage",
+                          "Clearwave",
+                          "Poke",
+                          "Sight",
+                          "On-Hit",
+                          "Slow",
+                          "Airborne",
+                          "Aoe",
+                          "Burst Dame",
+                          "Displacement Immunity",
+                          "Strong Ult",
+                          "Invulnerability",
+                          "Untargetability",
+                          "TeamFight"
                       ]
     },
     {
@@ -17300,6 +18187,21 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Slow",
+                          "Heal",
+                          "Sight",
+                          "Snare / Root",
+                          "Tether",
+                          "Disengage",
+                          "Buff Shield",
+                          "Shield",
+                          "Speed",
+                          "Poke"
                       ]
     },
     {
@@ -17583,6 +18485,20 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Zombie states",
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Sight",
+                          "Poke",
+                          "Magic penetration",
+                          "Slow",
+                          "TeamFight",
+                          "Global",
+                          "Strong Ult",
+                          "Imba"
                       ]
     },
     {
@@ -17856,6 +18772,21 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Speed",
+                          "Auto Target",
+                          "Disrupt",
+                          "Shield",
+                          "Mana",
+                          "Reset",
+                          "Uncancellable Windup",
+                          "Aoe",
+                          "Clearwave",
+                          "Slow",
+                          "Strong Ult",
+                          "Blink",
+                          "Engage"
                       ]
     },
     {
@@ -18147,6 +19078,20 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Aoe",
+                          "On-Hit",
+                          "Takedown",
+                          "Imba",
+                          "Burst Dame",
+                          "Sight",
+                          "Dash",
+                          "Speed",
+                          "Reset",
+                          "Blink",
+                          "Engage",
+                          "On-hit"
                       ]
     },
     {
@@ -18425,6 +19370,23 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus AS",
+                          "Armor penetration",
+                          "Clearwave",
+                          "Magic penetration",
+                          "Slow",
+                          "Heal",
+                          "Speed",
+                          "Disengage",
+                          "Buff Heal",
+                          "Aoe",
+                          "On-Hit",
+                          "Uncancellable Windup",
+                          "Burst Dame",
+                          "Strong Ult",
+                          "Invulnerability"
                       ]
     },
     {
@@ -18707,6 +19669,20 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Dame",
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Airborne",
+                          "Slow",
+                          "Untargetability",
+                          "Heal",
+                          "Speed",
+                          "Engage",
+                          "Dash",
+                          "Vanish"
                       ]
     },
     {
@@ -18991,6 +19967,21 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Stun",
+                          "Clearwave",
+                          "Poke",
+                          "Aoe",
+                          "On-hit",
+                          "Bonus AS",
+                          "Speed",
+                          "TeamFight",
+                          "Engage",
+                          "Bonus Armor",
+                          "Bonus Magic Resistance",
+                          "Strong Ult",
+                          "Burst Dame"
                       ]
     },
     {
@@ -19330,6 +20321,21 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Burst Dame",
+                          "Auto Target",
+                          "Clearwave",
+                          "Aoe",
+                          "Poke",
+                          "Sight",
+                          "Slow",
+                          "TeamFight",
+                          "Dash",
+                          "Takedown",
+                          "Engage",
+                          "Invisibility",
+                          "Speed"
                       ]
     },
     {
@@ -19612,6 +20618,19 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Dame",
+                          "Takedown",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Dash",
+                          "Disengage",
+                          "Heal",
+                          "Slow",
+                          "Aoe",
+                          "Invulnerability",
+                          "Strong Ult"
                       ]
     },
     {
@@ -19885,6 +20904,19 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Heal",
+                          "Speed",
+                          "Airborne",
+                          "Grievous Wounds",
+                          "Slow",
+                          "Tether",
+                          "Bonus AS",
+                          "Dash",
+                          "Engage",
+                          "Shield",
+                          "TeamFight"
                       ]
     },
     {
@@ -20093,6 +21125,9 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+
                       ]
     },
     {
@@ -20382,6 +21417,21 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Speed",
+                          "Zombie states",
+                          "Armor penetration",
+                          "Bonus AS",
+                          "Magic penetration",
+                          "Clearwave",
+                          "On-hit",
+                          "Disengage",
+                          "Aoe",
+                          "Poke",
+                          "Slow",
+                          "TeamFight",
+                          "Sight"
                       ]
     },
     {
@@ -20672,6 +21722,20 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Clone",
+                          "Invisibility",
+                          "Burst Dame",
+                          "Poke",
+                          "Aoe",
+                          "Clearwave",
+                          "Dash",
+                          "Blink",
+                          "Engage",
+                          "Root",
+                          "Sight",
+                          "Tether"
                       ]
     },
     {
@@ -21013,6 +22077,25 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus AS",
+                          "Burst Dame",
+                          "Dash",
+                          "Sight",
+                          "TeamFight",
+                          "Engage",
+                          "Heal",
+                          "Life steal",
+                          "Shield",
+                          "Buff Shield",
+                          "Aoe",
+                          "Clearwave",
+                          "Slow",
+                          "Airborne",
+                          "Root",
+                          "Hook",
+                          "Disengage"
                       ]
     },
     {
@@ -21298,6 +22381,22 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Dame",
+                          "Auto Target",
+                          "Reset",
+                          "Stun",
+                          "TeamFight",
+                          "Aoe",
+                          "Bonus Armor",
+                          "Bonus Magic Resistance",
+                          "Dash",
+                          "Root",
+                          "Engage",
+                          "Strong Ult",
+                          "Sight",
+                          "Slow"
                       ]
     },
     {
@@ -21591,6 +22690,22 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Clearwave",
+                          "Heal",
+                          "Aoe",
+                          "Speed",
+                          "True Dame",
+                          "Dash",
+                          "Sight",
+                          "Slow",
+                          "TeamFight",
+                          "Poke",
+                          "Engage",
+                          "Drowsy",
+                          "Sleep",
+                          "Strong Ult"
                       ]
     },
     {
@@ -21893,6 +23008,23 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Sight",
+                          "Slow",
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Snare / Root",
+                          "TeamFight",
+                          "Disengage",
+                          "Blink",
+                          "Engage",
+                          "Heal",
+                          "Strong Ult",
+                          "Knockdown",
+                          "Stasis",
+                          "Stun"
                       ]
     },
     {
@@ -22185,6 +23317,20 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Dame",
+                          "Burst Dame",
+                          "Clearwave",
+                          "On-Hit",
+                          "Aoe",
+                          "Sight",
+                          "Speed",
+                          "Dash",
+                          "Reset",
+                          "Engage",
+                          "Disengage",
+                          "TeamFight"
                       ]
     },
     {
@@ -22469,6 +23615,21 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Aoe",
+                          "Slow",
+                          "Disengage",
+                          "Bonus Speed",
+                          "Buff AS",
+                          "Polymorph",
+                          "Speed",
+                          "Buff Speed",
+                          "Buff Shield",
+                          "Sight",
+                          "Airborne",
+                          "Bonus Heal",
+                          "Strong Ult"
                       ]
     },
     {
@@ -22747,6 +23908,19 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Burst Dame",
+                          "Clearwave",
+                          "Root",
+                          "TeamFight",
+                          "Disengage",
+                          "Aoe",
+                          "Bonus Shield",
+                          "Buff Shield",
+                          "Sight",
+                          "Slow",
+                          "Poke"
                       ]
     },
     {
@@ -23035,6 +24209,25 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Shield",
+                          "Auto Target",
+                          "Slow",
+                          "Speed",
+                          "Aoe",
+                          "Bonus Armor",
+                          "Clearwave",
+                          "On-hit",
+                          "Reset",
+                          "Uncancellable Windup",
+                          "Cripple",
+                          "Airborne",
+                          "Dash",
+                          "Displacement Immunity",
+                          "Strong Ult",
+                          "TeamFight",
+                          "Engage"
                       ]
     },
     {
@@ -23316,6 +24509,24 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Immunity",
+                          "Aoe",
+                          "Clearwave",
+                          "Poke",
+                          "Sight",
+                          "Silence",
+                          "Disengage",
+                          "Pet",
+                          "Dps",
+                          "Auto Target",
+                          "Knockdown",
+                          "Suppression",
+                          "Tether",
+                          "Strong Ult",
+                          "TeamFight",
+                          "Engage"
                       ]
     },
     {
@@ -23627,6 +24838,29 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Heal",
+                          "Uncancellable Windup",
+                          "Airborne",
+                          "Aoe",
+                          "Clearwave",
+                          "Slow",
+                          "Stun",
+                          "Hook",
+                          "Auto Target",
+                          "Dash",
+                          "Snare / Root",
+                          "Untargetability",
+                          "TeamFight",
+                          "Dive",
+                          "Engage",
+                          "Poke",
+                          "Sight",
+                          "Trap",
+                          "Strong Ult",
+                          "Root",
+                          "Speed"
                       ]
     },
     {
@@ -23916,6 +25150,23 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "On-Hit",
+                          "Aoe",
+                          "Blink",
+                          "Clearwave",
+                          "Dash",
+                          "On-hit",
+                          "Vanish",
+                          "Engage",
+                          "Heal",
+                          "Reset",
+                          "True Dame",
+                          "Bonus AS",
+                          "Removal",
+                          "Speed",
+                          "Takedown"
                       ]
     },
     {
@@ -24123,6 +25374,9 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+
                       ]
     },
     {
@@ -24403,6 +25657,19 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Execute",
+                          "Aoe",
+                          "Clearwave",
+                          "Invulnerability",
+                          "Projectile",
+                          "Imba",
+                          "Disengage",
+                          "Root",
+                          "Slow",
+                          "Burst Dame",
+                          "Sight"
                       ]
     },
     {
@@ -24693,6 +25960,21 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Airborne",
+                          "Aoe",
+                          "Sight",
+                          "Slow",
+                          "Stun",
+                          "Disengage",
+                          "Buff Heal",
+                          "Heal",
+                          "Buff Shield",
+                          "Buff Speed",
+                          "Strong Ult",
+                          "Removal",
+                          "Tenacity"
                       ]
     },
     {
@@ -24985,6 +26267,20 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Burst Dame",
+                          "Clearwave",
+                          "On-hit",
+                          "Poke",
+                          "Bonus AS",
+                          "Speed",
+                          "Disengage",
+                          "Aoe",
+                          "Sight",
+                          "Slow",
+                          "Strong Ult",
+                          "TeamFight"
                       ]
     },
     {
@@ -25277,6 +26573,28 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Clearwave",
+                          "On-Hit",
+                          "Aoe",
+                          "Burst Dame",
+                          "Heal",
+                          "Shield",
+                          "Airborne",
+                          "Magic penetration",
+                          "Sight",
+                          "Engage",
+                          "Hook",
+                          "Banishing",
+                          "Bonus Armor",
+                          "Bonus AS",
+                          "Bonus Dame",
+                          "Bonus Heal",
+                          "Bonus Magic Resistance",
+                          "Strong Ult",
+                          "Slow",
+                          "TeamFight"
                       ]
     },
     {
@@ -25570,6 +26888,24 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Heal",
+                          "Poke",
+                          "Root",
+                          "TeamFight",
+                          "Disengage",
+                          "Aoe",
+                          "Clearwave",
+                          "Dps",
+                          "Immunity",
+                          "Shield",
+                          "Buff Shield",
+                          "Sight",
+                          "Slow",
+                          "Speed",
+                          "Stun",
+                          "Tether"
                       ]
     },
     {
@@ -25847,6 +27183,25 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bleed",
+                          "Pet",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Sight",
+                          "Slow",
+                          "Dash",
+                          "Untargetability",
+                          "Engage",
+                          "Blink",
+                          "Bonus AS",
+                          "Bonus Heal",
+                          "Shield",
+                          "Speed",
+                          "Takedown",
+                          "Strong Ult",
+                          "TeamFight"
                       ]
     },
     {
@@ -26132,6 +27487,19 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Speed",
+                          "Airborne",
+                          "Aoe",
+                          "Sight",
+                          "Stun",
+                          "TeamFight",
+                          "Disengage",
+                          "Buff Heal",
+                          "Buff Dame",
+                          "Slow",
+                          "Strong Ult"
                       ]
     },
     {
@@ -26415,6 +27783,25 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Life steal",
+                          "Reset",
+                          "Scaling",
+                          "Uncancellable Windup",
+                          "Auto Target",
+                          "Cripple",
+                          "Slow",
+                          "TeamFight",
+                          "Engage",
+                          "Aoe",
+                          "Armor penetration",
+                          "Clearwave",
+                          "Poke",
+                          "Sight",
+                          "Bonus Armor",
+                          "Bonus Magic Resistance",
+                          "Heal"
                       ]
     },
     {
@@ -26699,6 +28086,23 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Auto Target",
+                          "Root",
+                          "Airborne",
+                          "Dash",
+                          "Sight",
+                          "Stun",
+                          "Hook",
+                          "TeamFight",
+                          "Engage",
+                          "Reset",
+                          "Shield",
+                          "Clearwave",
+                          "Slow",
+                          "Aoe",
+                          "Strong Ult"
                       ]
     },
     {
@@ -26989,6 +28393,22 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Poke",
+                          "Clone",
+                          "Invisibility",
+                          "On-hit",
+                          "Speed",
+                          "Root",
+                          "TeamFight",
+                          "Engage",
+                          "Airborne",
+                          "Strong Ult",
+                          "Stun"
                       ]
     },
     {
@@ -27315,6 +28735,19 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Speed",
+                          "Takedown",
+                          "Burst Dame",
+                          "Poke",
+                          "Dash",
+                          "Sight",
+                          "Trap",
+                          "Disengage",
+                          "Bonus AS",
+                          "Heal",
+                          "Buff Heal"
                       ]
     },
     {
@@ -27618,6 +29051,27 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Exp",
+                          "Heal",
+                          "Shield",
+                          "Aoe",
+                          "Armor penetration",
+                          "Bonus Dame",
+                          "Clearwave",
+                          "Life steal",
+                          "On-hit",
+                          "Disengage",
+                          "Bonus Speed",
+                          "Dodge",
+                          "Dash",
+                          "Reset",
+                          "Engage",
+                          "Airborne",
+                          "Slow",
+                          "Strong Ult",
+                          "TeamFight"
                       ]
     },
     {
@@ -27924,6 +29378,29 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Clearwave",
+                          "Heal",
+                          "On-Hit",
+                          "Imba",
+                          "Aoe",
+                          "Bonus Dame",
+                          "Poke",
+                          "Speed",
+                          "Bonus AS",
+                          "Spell shield",
+                          "Auto Target",
+                          "Fear / Flee",
+                          "Slow",
+                          "Tether",
+                          "Dash",
+                          "Displacement Immunity",
+                          "Global",
+                          "Strong Ult",
+                          "Nearsight",
+                          "TeamFight",
+                          "Engage"
                       ]
     },
     {
@@ -28216,6 +29693,23 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus AS",
+                          "Speed",
+                          "Auto Target",
+                          "Clearwave",
+                          "Heal",
+                          "True Dame",
+                          "Airborne",
+                          "Aoe",
+                          "Removal",
+                          "Slow",
+                          "Stun",
+                          "TeamFight",
+                          "Engage",
+                          "Root",
+                          "Shield"
                       ]
     },
     {
@@ -28506,6 +30000,28 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Life steal",
+                          "Armor penetration",
+                          "Clearwave",
+                          "Poke",
+                          "Slow",
+                          "Aoe",
+                          "TeamFight",
+                          "Engage",
+                          "Bonus AS",
+                          "Shield",
+                          "Heal",
+                          "True Dame",
+                          "Bonus Dame",
+                          "Displacement Immunity",
+                          "Strong Ult",
+                          "Immunity",
+                          "On-hit",
+                          "Removal",
+                          "Speed",
+                          "Imba"
                       ]
     },
     {
@@ -28786,6 +30302,20 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Clearwave",
+                          "Aoe",
+                          "Poke",
+                          "Slow",
+                          "Speed",
+                          "Disengage",
+                          "Buff Magic Resistance",
+                          "Buff Shield",
+                          "Airborne",
+                          "Strong Ult",
+                          "Stun",
+                          "TeamFight"
                       ]
     },
     {
@@ -29069,6 +30599,22 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Item",
+                          "Imba",
+                          "Airborne",
+                          "Clearwave",
+                          "Slow",
+                          "Displacement Immunity",
+                          "Lunge",
+                          "Dash",
+                          "Stun",
+                          "TeamFight",
+                          "Engage",
+                          "Aoe",
+                          "Strong Ult",
+                          "Sight"
                       ]
     },
     {
@@ -29365,6 +30911,28 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "On-Hit",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Poke",
+                          "Aoe",
+                          "Auto Target",
+                          "Dash",
+                          "Reset",
+                          "Stun",
+                          "TeamFight",
+                          "Engage",
+                          "Bonus Armor",
+                          "Bonus Magic Resistance",
+                          "Invulnerability",
+                          "Vanish",
+                          "Imba",
+                          "Global",
+                          "Strong Ult",
+                          "Slow",
+                          "Blink"
                       ]
     },
     {
@@ -29672,6 +31240,26 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Shield",
+                          "Aoe",
+                          "Clearwave",
+                          "Slow",
+                          "Airborne",
+                          "Bonus Armor",
+                          "Bonus Magic Resistance",
+                          "Ground",
+                          "Speed",
+                          "Imba",
+                          "Disengage",
+                          "Auto Target",
+                          "Dash",
+                          "Stun",
+                          "TeamFight",
+                          "Hook",
+                          "Engage",
+                          "Strong Ult"
                       ]
     },
     {
@@ -29969,6 +31557,26 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Heal",
+                          "Airborne",
+                          "Burst Dame",
+                          "Hook",
+                          "Slow",
+                          "Engage",
+                          "Camouflage",
+                          "Speed",
+                          "Aoe",
+                          "Dash",
+                          "Stun",
+                          "TeamFight",
+                          "Execute",
+                          "Gold",
+                          "Strong Ult",
+                          "Takedown",
+                          "Blink",
+                          "Imba"
                       ]
     },
     {
@@ -30280,6 +31888,24 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Burst Dame",
+                          "Clearwave",
+                          "Invisibility",
+                          "Root",
+                          "Slow",
+                          "Speed",
+                          "Aoe",
+                          "Bonus AS",
+                          "Dash",
+                          "On-hit",
+                          "Engage",
+                          "Airborne",
+                          "Sight",
+                          "Stun",
+                          "Strong Ult",
+                          "TeamFight"
                       ]
     },
     {
@@ -30578,6 +32204,22 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Burst Dame",
+                          "Clearwave",
+                          "Disarm",
+                          "Nearsight",
+                          "Poke",
+                          "Aoe",
+                          "Bonus AS",
+                          "Sight",
+                          "Speed",
+                          "Airborne",
+                          "Dash",
+                          "Slow",
+                          "TeamFight",
+                          "Engage"
                       ]
     },
     {
@@ -30865,6 +32507,21 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Buff Heal",
+                          "Heal",
+                          "Disengage",
+                          "Airborne",
+                          "Dash",
+                          "Aoe",
+                          "TeamFight",
+                          "Shield",
+                          "Buff Shield",
+                          "Charm",
+                          "Slow",
+                          "Speed",
+                          "Strong Ult"
                       ]
     },
     {
@@ -31165,6 +32822,25 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Airborne",
+                          "Aoe",
+                          "Sight",
+                          "Slow",
+                          "Speed",
+                          "Stun",
+                          "TeamFight",
+                          "Engage",
+                          "Bonus Armor",
+                          "Bonus Magic Resistance",
+                          "On-hit",
+                          "Imba",
+                          "Auto Target",
+                          "Bonus AS",
+                          "Taunt",
+                          "Dash",
+                          "Strong Ult"
                       ]
     },
     {
@@ -31504,6 +33180,24 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Heal",
+                          "Aoe",
+                          "Clearwave",
+                          "Reset",
+                          "Uncancellable Windup",
+                          "Airborne",
+                          "Sight",
+                          "Speed",
+                          "Burst Dame",
+                          "Dash",
+                          "Blink",
+                          "Trap",
+                          "TeamFight",
+                          "Engage",
+                          "Displacement Immunity",
+                          "Vanish"
                       ]
     },
     {
@@ -31803,6 +33497,21 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Armor",
+                          "Bonus Magic Resistance",
+                          "On-Hit",
+                          "Destroy Shields",
+                          "Stun",
+                          "TeamFight",
+                          "Airborne",
+                          "Aoe",
+                          "Speed",
+                          "Buff Dame",
+                          "Buff Speed",
+                          "Strong Ult",
+                          "Kinematics"
                       ]
     },
     {
@@ -32107,6 +33816,29 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Airborne",
+                          "Root",
+                          "Sight",
+                          "Speed",
+                          "Stun",
+                          "Tether",
+                          "Hook",
+                          "Disengage",
+                          "Bonus Speed",
+                          "Buff AS",
+                          "Death",
+                          "Takedown",
+                          "True Dame",
+                          "Imba",
+                          "Aoe",
+                          "Shield",
+                          "Slow",
+                          "Buff Shield",
+                          "Berserk",
+                          "Strong Ult",
+                          "TeamFight"
                       ]
     },
     {
@@ -32396,6 +34128,20 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Heal",
+                          "Destroy Shields",
+                          "On-hit",
+                          "Reset",
+                          "Stun",
+                          "Armor penetration",
+                          "Dash",
+                          "Engage",
+                          "Bonus Health"
                       ]
     },
     {
@@ -32697,6 +34443,25 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Burst Dame",
+                          "Dash",
+                          "Takedown",
+                          "TeamFight",
+                          "Engage",
+                          "Clearwave",
+                          "Reset",
+                          "Uncancellable Windup",
+                          "Heal",
+                          "Removal",
+                          "Aoe",
+                          "Root",
+                          "Sight",
+                          "Slow",
+                          "Armor penetration",
+                          "Camouflage",
+                          "Speed"
                       ]
     },
     {
@@ -32988,6 +34753,19 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Burst Dame",
+                          "Life steal",
+                          "Airborne",
+                          "Aoe",
+                          "Clearwave",
+                          "Dash",
+                          "Reset",
+                          "Engage",
+                          "Stun",
+                          "Shield",
+                          "Bonus Dame"
                       ]
     },
     {
@@ -33265,6 +35043,20 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Engage",
+                          "Shield",
+                          "Speed",
+                          "Magic penetration",
+                          "Poke",
+                          "Slow",
+                          "Dps",
+                          "Strong Ult",
+                          "TeamFight"
                       ]
     },
     {
@@ -33541,6 +35333,21 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Mana",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Speed",
+                          "Slow",
+                          "Snare / Root",
+                          "TeamFight",
+                          "Disengage",
+                          "Aoe",
+                          "Global",
+                          "Strong Ult",
+                          "Blink",
+                          "Imba"
                       ]
     },
     {
@@ -33848,6 +35655,21 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Burst Dame",
+                          "On-Hit",
+                          "Uncancellable Windup",
+                          "Aoe",
+                          "Clearwave",
+                          "Projectile",
+                          "Disengage",
+                          "Bonus AS",
+                          "Dash",
+                          "Takedown",
+                          "Engage",
+                          "Strong Ult",
+                          "Life steal"
                       ]
     },
     {
@@ -34143,6 +35965,22 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Armor",
+                          "Bonus Magic Resistance",
+                          "Stun",
+                          "Airborne",
+                          "Dash",
+                          "TeamFight",
+                          "Engage",
+                          "Aoe",
+                          "Clearwave",
+                          "Slow",
+                          "On-Hit",
+                          "Reset",
+                          "Sight",
+                          "Strong Ult"
                       ]
     },
     {
@@ -34424,6 +36262,28 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Non-Projectile",
+                          "On-Hit",
+                          "Scaling",
+                          "Speed",
+                          "Imba",
+                          "Buff Heal",
+                          "Clearwave",
+                          "Heal",
+                          "Slow",
+                          "Poke",
+                          "Aoe",
+                          "Snare / Root",
+                          "TeamFight",
+                          "Disengage",
+                          "Camouflage",
+                          "Global",
+                          "Strong Ult",
+                          "Shield",
+                          "Sight",
+                          "Buff Shield"
                       ]
     },
     {
@@ -34711,6 +36571,22 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Aoe",
+                          "Clearwave",
+                          "Buff Heal",
+                          "Shield",
+                          "Speed",
+                          "Disengage",
+                          "Root",
+                          "Slow",
+                          "Stun",
+                          "TeamFight",
+                          "Poke",
+                          "Charm",
+                          "Strong Ult",
+                          "Sight"
                       ]
     },
     {
@@ -34996,6 +36872,23 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Health regeneration",
+                          "Burst Dame",
+                          "Reset",
+                          "Speed",
+                          "Engage",
+                          "Aoe",
+                          "Shield",
+                          "True Dame",
+                          "Airborne",
+                          "Slow",
+                          "Stun",
+                          "TeamFight",
+                          "Dash",
+                          "Suppression",
+                          "Strong Ult"
                       ]
     },
     {
@@ -35283,6 +37176,20 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Burst Dame",
+                          "Invisibility",
+                          "Blink",
+                          "Disengage",
+                          "Aoe",
+                          "Fear / Flee",
+                          "Trap",
+                          "Poke",
+                          "Dash",
+                          "Strong Ult",
+                          "Vanish",
+                          "Clone"
                       ]
     },
     {
@@ -35569,6 +37476,25 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Shield",
+                          "Bonus AS",
+                          "Bonus Dame",
+                          "Slow",
+                          "Aoe",
+                          "Block",
+                          "Disengage",
+                          "Dash",
+                          "Taunt",
+                          "TeamFight",
+                          "Engage",
+                          "Blink",
+                          "Global",
+                          "Strong Ult",
+                          "Projectile",
+                          "Imba",
+                          "Buff Shield"
                       ]
     },
     {
@@ -35855,6 +37781,22 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Armor",
+                          "Bonus Magic Resistance",
+                          "Bonus AS",
+                          "On-hit",
+                          "Aoe",
+                          "Clearwave",
+                          "Speed",
+                          "On-Hit",
+                          "Poke",
+                          "Bonus Health",
+                          "Dash",
+                          "Strong Ult",
+                          "TeamFight",
+                          "Engage"
                       ]
     },
     {
@@ -36137,6 +38079,23 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Speed",
+                          "Aoe",
+                          "Clearwave",
+                          "Poisoned",
+                          "Ground",
+                          "Slow",
+                          "TeamFight",
+                          "Engage",
+                          "Airborne",
+                          "Auto Target",
+                          "Root",
+                          "Bonus Armor",
+                          "Bonus Health",
+                          "Bonus Magic Resistance",
+                          "Bonus Mana Regeneration"
                       ]
     },
     {
@@ -36441,6 +38400,25 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "On-Hit",
+                          "Zombie states",
+                          "Imba",
+                          "Airborne",
+                          "Aoe",
+                          "Clearwave",
+                          "Slow",
+                          "Stun",
+                          "TeamFight",
+                          "Engage",
+                          "Scaling",
+                          "Shield",
+                          "Armor penetration",
+                          "Immunity",
+                          "Lunge",
+                          "Speed",
+                          "Strong Ult"
                       ]
     },
     {
@@ -36727,6 +38705,21 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Speed",
+                          "Clearwave",
+                          "Poke",
+                          "Bonus AS",
+                          "Reset",
+                          "Spell shield",
+                          "Disengage",
+                          "Aoe",
+                          "Takedown",
+                          "Strong Ult",
+                          "TeamFight",
+                          "Engage",
+                          "Buff Speed"
                       ]
     },
     {
@@ -37022,6 +39015,21 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Aoe",
+                          "Clearwave",
+                          "Poke",
+                          "Slow",
+                          "Uncancellable Windup",
+                          "Shield",
+                          "Sight",
+                          "Speed",
+                          "Stun",
+                          "Suppression",
+                          "TeamFight",
+                          "Engage",
+                          "Strong Ult"
                       ]
     },
     {
@@ -37321,6 +39329,23 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Aoe",
+                          "Clearwave",
+                          "Execute",
+                          "Life steal",
+                          "On-hit",
+                          "Poke",
+                          "Scaling",
+                          "Imba",
+                          "Slow",
+                          "TeamFight",
+                          "Disengage",
+                          "Speed",
+                          "Heal",
+                          "Strong Ult",
+                          "Sight"
                       ]
     },
     {
@@ -37607,6 +39632,22 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Buff Dame",
+                          "Clearwave",
+                          "Poke",
+                          "Sight",
+                          "Bonus Shield",
+                          "Buff Heal",
+                          "Heal",
+                          "Disengage",
+                          "Buff Speed",
+                          "Speed",
+                          "Aoe",
+                          "Strong Ult",
+                          "Stun",
+                          "TeamFight"
                       ]
     },
     {
@@ -37885,6 +39926,17 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Speed",
+                          "Aoe",
+                          "Heal",
+                          "Disengage",
+                          "Buff Heal",
+                          "Silence",
+                          "Imba",
+                          "Global",
+                          "Strong Ult"
                       ]
     },
     {
@@ -38190,6 +40242,24 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Health",
+                          "Scaling",
+                          "Aoe",
+                          "Clearwave",
+                          "Poke",
+                          "Sight",
+                          "Slow",
+                          "Disengage",
+                          "Airborne",
+                          "Hook",
+                          "Root",
+                          "TeamFight",
+                          "Engage",
+                          "Heal",
+                          "Strong Ult",
+                          "Takedown"
                       ]
     },
     {
@@ -38492,6 +40562,23 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus AS",
+                          "Clearwave",
+                          "Uncancellable Windup",
+                          "Imba",
+                          "Aoe",
+                          "Burst Dame",
+                          "Poke",
+                          "Slow",
+                          "Dash",
+                          "Heal",
+                          "Stun",
+                          "TeamFight",
+                          "Engage",
+                          "Copy",
+                          "Strong Ult"
                       ]
     },
     {
@@ -38781,6 +40868,20 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Scaling",
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Poke",
+                          "Sight",
+                          "Slow",
+                          "Airborne",
+                          "Stun",
+                          "TeamFight",
+                          "Disengage",
+                          "Auto Target"
                       ]
     },
     {
@@ -39081,6 +41182,25 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "On-Hit",
+                          "Heal",
+                          "Poke",
+                          "Slow",
+                          "Stun",
+                          "Disengage",
+                          "Airborne",
+                          "Aoe",
+                          "Blink",
+                          "TeamFight",
+                          "Engage",
+                          "Shield",
+                          "Cover",
+                          "Strong Ult",
+                          "Speed",
+                          "Suppression",
+                          "Buff Shield"
                       ]
     },
     {
@@ -39380,6 +41500,22 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Speed",
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Poke",
+                          "Sight",
+                          "Airborne",
+                          "TeamFight",
+                          "Disengage",
+                          "Slow",
+                          "Stun",
+                          "Imba",
+                          "Global",
+                          "Strong Ult"
                       ]
     },
     {
@@ -39656,6 +41792,19 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bleed",
+                          "Burst Dame",
+                          "Reset",
+                          "TeamFight",
+                          "Engage",
+                          "Aoe",
+                          "Clearwave",
+                          "Slow",
+                          "Dash",
+                          "Invisibility",
+                          "Speed"
                       ]
     },
     {
@@ -39947,6 +42096,23 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus AS",
+                          "Aoe",
+                          "Buff Heal",
+                          "Heal",
+                          "Reset",
+                          "Disengage",
+                          "Bonus Armor",
+                          "Shield",
+                          "Tether",
+                          "Buff Shield",
+                          "Stun",
+                          "TeamFight",
+                          "Strong Ult",
+                          "Invulnerability",
+                          "Imba"
                       ]
     },
     {
@@ -40230,6 +42396,22 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Invisibility",
+                          "Blind",
+                          "Burst Dame",
+                          "Poisoned",
+                          "Poke",
+                          "Disengage",
+                          "Speed",
+                          "Clearwave",
+                          "On-Hit",
+                          "Aoe",
+                          "Strong Ult",
+                          "Sight",
+                          "Slow",
+                          "Trap"
                       ]
     },
     {
@@ -40526,6 +42708,23 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Armor",
+                          "Bonus Dame",
+                          "Scaling",
+                          "Airborne",
+                          "Dash",
+                          "Hook",
+                          "Sight",
+                          "Stun",
+                          "TeamFight",
+                          "Engage",
+                          "Disengage",
+                          "Shield",
+                          "Aoe",
+                          "Burst Dame",
+                          "Slow"
                       ]
     },
     {
@@ -40799,6 +42998,21 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Range",
+                          "Bonus AS",
+                          "Dash",
+                          "Slow",
+                          "Engage",
+                          "Disengage",
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "On-Hit",
+                          "Tower",
+                          "Airborne",
+                          "Stun"
                       ]
     },
     {
@@ -41081,6 +43295,24 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Heal",
+                          "Bonus AS",
+                          "Clearwave",
+                          "Slow",
+                          "Uncancellable Windup",
+                          "Speed",
+                          "Engage",
+                          "Disengage",
+                          "Airborne",
+                          "Aoe",
+                          "TeamFight",
+                          "Armor penetration",
+                          "Bonus Armor",
+                          "Bonus Magic Resistance",
+                          "Strong Ult",
+                          "Magic penetration"
                       ]
     },
     {
@@ -41352,6 +43584,19 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Dame",
+                          "Bonus AS",
+                          "Heal",
+                          "Aoe",
+                          "Slow",
+                          "TeamFight",
+                          "Engage",
+                          "Clearwave",
+                          "Dash",
+                          "Strong Ult",
+                          "minimum health threshold"
                       ]
     },
     {
@@ -41639,6 +43884,25 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Gold",
+                          "Imba",
+                          "Clearwave",
+                          "Poke",
+                          "Aoe",
+                          "Burst Dame",
+                          "Reset",
+                          "Slow",
+                          "Stun",
+                          "TeamFight",
+                          "Engage",
+                          "Disengage",
+                          "On-Hit",
+                          "Blink",
+                          "Global",
+                          "Strong Ult",
+                          "Sight"
                       ]
     },
     {
@@ -41925,6 +44189,21 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "On-Hit",
+                          "Poisoned",
+                          "Bonus AS",
+                          "Camouflage",
+                          "Speed",
+                          "Aoe",
+                          "Clearwave",
+                          "Slow",
+                          "Disengage",
+                          "Burst Dame",
+                          "Dps",
+                          "Strong Ult",
+                          "TeamFight"
                       ]
     },
     {
@@ -42209,6 +44488,25 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus AS",
+                          "Auto Target",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Heal",
+                          "Life steal",
+                          "Shield",
+                          "Dash",
+                          "Immunity",
+                          "Speed",
+                          "Stun",
+                          "Uncancellable Windup",
+                          "TeamFight",
+                          "Engage",
+                          "Aoe",
+                          "Sight",
+                          "Slow"
                       ]
     },
     {
@@ -42487,6 +44785,22 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "On-Hit",
+                          "Aoe",
+                          "Clearwave",
+                          "Slow",
+                          "Bonus AS",
+                          "Burst Dame",
+                          "On-hit",
+                          "Airborne",
+                          "Dash",
+                          "Stun",
+                          "Engage",
+                          "Execute",
+                          "Strong Ult",
+                          "Sight"
                       ]
     },
     {
@@ -42785,6 +45099,23 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus AS",
+                          "Bonus Dame",
+                          "Takedown",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Poke",
+                          "Dps",
+                          "Aoe",
+                          "Grievous Wounds",
+                          "Slow",
+                          "Strong Ult",
+                          "Root",
+                          "Sight",
+                          "TeamFight",
+                          "Disengage"
                       ]
     },
     {
@@ -43078,6 +45409,23 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Speed",
+                          "Dash",
+                          "Reset",
+                          "Uncancellable Windup",
+                          "Disengage",
+                          "Clearwave",
+                          "On-hit",
+                          "True Dame",
+                          "Airborne",
+                          "Auto Target",
+                          "Stun",
+                          "Bonus Dame",
+                          "Invisibility",
+                          "Takedown",
+                          "Strong Ult"
                       ]
     },
     {
@@ -43349,6 +45697,20 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Scaling",
+                          "Takedown",
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Poke",
+                          "Knockdown",
+                          "Stun",
+                          "TeamFight",
+                          "Disengage",
+                          "Auto Target",
+                          "Strong Ult"
                       ]
     },
     {
@@ -43637,6 +45999,17 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "True Dame",
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Poke",
+                          "Sight",
+                          "Slow",
+                          "Airborne",
+                          "Stun"
                       ]
     },
     {
@@ -43936,6 +46309,22 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Knockdown",
+                          "Fear / Flee",
+                          "Clearwave",
+                          "Poke",
+                          "Aoe",
+                          "Disengage",
+                          "Shield",
+                          "Slow",
+                          "Dash",
+                          "Global",
+                          "Strong Ult",
+                          "Sight",
+                          "TeamFight",
+                          "Engage"
                       ]
     },
     {
@@ -44223,6 +46612,22 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Shield",
+                          "Airborne",
+                          "Burst Dame",
+                          "Dash",
+                          "Aoe",
+                          "TeamFight",
+                          "Engage",
+                          "Armor penetration",
+                          "Clearwave",
+                          "On-hit",
+                          "Reset",
+                          "Uncancellable Windup",
+                          "Auto Target",
+                          "Sight"
                       ]
     },
     {
@@ -44521,6 +46926,28 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Heal",
+                          "Speed",
+                          "Takedown",
+                          "Imba",
+                          "Burst Dame",
+                          "Clearwave",
+                          "On-hit",
+                          "Reset",
+                          "Dash",
+                          "Stun",
+                          "TeamFight",
+                          "Engage",
+                          "Bonus AS",
+                          "Camouflage",
+                          "Airborne",
+                          "Aoe",
+                          "Blink",
+                          "Displacement Immunity",
+                          "Strong Ult",
+                          "Slow"
                       ]
     },
     {
@@ -44824,6 +47251,25 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Scaling",
+                          "Takedown",
+                          "Auto Target",
+                          "Burst Dame",
+                          "Non-Projectile",
+                          "Poke",
+                          "Shield",
+                          "Speed",
+                          "Aoe",
+                          "Knockdown",
+                          "Slow",
+                          "Stun",
+                          "TeamFight",
+                          "Disengage",
+                          "Clearwave",
+                          "Sight",
+                          "Strong Ult"
                       ]
     },
     {
@@ -45119,6 +47565,21 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Dame",
+                          "Bonus Health",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Heal",
+                          "Poke",
+                          "Engage",
+                          "Aoe",
+                          "Speed",
+                          "Untargetability",
+                          "Slow",
+                          "Strong Ult",
+                          "TeamFight"
                       ]
     },
     {
@@ -45419,6 +47880,30 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Aoe",
+                          "Bonus AS",
+                          "Bonus Dame",
+                          "On-Hit",
+                          "Dash",
+                          "Reset",
+                          "Speed",
+                          "Stun",
+                          "Uncancellable Windup",
+                          "TeamFight",
+                          "Engage",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Heal",
+                          "Life steal",
+                          "On-hit",
+                          "Shield",
+                          "Sight",
+                          "Slow",
+                          "Bonus Health",
+                          "Displacement Immunity",
+                          "Strong Ult"
                       ]
     },
     {
@@ -45712,6 +48197,28 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Heal",
+                          "On-Hit",
+                          "Clearwave",
+                          "Dash",
+                          "Displacement Immunity",
+                          "Life steal",
+                          "Lunge",
+                          "On-hit",
+                          "Bonus AS",
+                          "Speed",
+                          "Engage",
+                          "Aoe",
+                          "Fear / Flee",
+                          "Slow",
+                          "Immunity",
+                          "Knockdown",
+                          "Sight",
+                          "Suppression",
+                          "Strong Ult",
+                          "TeamFight"
                       ]
     },
     {
@@ -46004,6 +48511,25 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Armor",
+                          "Health regeneration",
+                          "Armor penetration",
+                          "Clearwave",
+                          "Reset",
+                          "Uncancellable Windup",
+                          "Clone",
+                          "Dash",
+                          "Invisibility",
+                          "Aoe",
+                          "Burst Dame",
+                          "TeamFight",
+                          "Engage",
+                          "Airborne",
+                          "Bonus AS",
+                          "Strong Ult",
+                          "Speed"
                       ]
     },
     {
@@ -46296,6 +48822,21 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Aoe",
+                          "Clearwave",
+                          "Poke",
+                          "Bonus AS",
+                          "Dps",
+                          "On-hit",
+                          "Speed",
+                          "Burst Dame",
+                          "Root",
+                          "Disengage",
+                          "Strong Ult",
+                          "Untargetability",
+                          "Imba"
                       ]
     },
     {
@@ -46575,6 +49116,17 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Aoe",
+                          "Clearwave",
+                          "Poke",
+                          "Burst Dame",
+                          "Sight",
+                          "Slow",
+                          "Stun",
+                          "Global",
+                          "Strong Ult"
                       ]
     },
     {
@@ -46873,6 +49425,26 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Heal",
+                          "Airborne",
+                          "Auto Target",
+                          "Burst Dame",
+                          "Reset",
+                          "Uncancellable Windup",
+                          "Aoe",
+                          "Bonus AS",
+                          "Clearwave",
+                          "Poke",
+                          "Slow",
+                          "TeamFight",
+                          "Dash",
+                          "Engage",
+                          "Invulnerability",
+                          "Stun",
+                          "Strong Ult",
+                          "Imba"
                       ]
     },
     {
@@ -47172,6 +49744,25 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Dps",
+                          "Shield",
+                          "Imba",
+                          "Airborne",
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "On-hit",
+                          "Poke",
+                          "TeamFight",
+                          "Projectile",
+                          "Sight",
+                          "Dash",
+                          "Engage",
+                          "Armor penetration",
+                          "Blink",
+                          "Strong Ult"
                       ]
     },
     {
@@ -47469,6 +50060,27 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Dps",
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Dash",
+                          "Imba",
+                          "On-hit",
+                          "TeamFight",
+                          "Engage",
+                          "Airborne",
+                          "Shield",
+                          "Removal",
+                          "Speed",
+                          "True Dame",
+                          "Untargetability",
+                          "Strong Ult",
+                          "Knockdown",
+                          "Stun",
+                          "Blink"
                       ]
     },
     {
@@ -47764,6 +50376,21 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Pet",
+                          "Clearwave",
+                          "Heal",
+                          "Reset",
+                          "Airborne",
+                          "Aoe",
+                          "Sight",
+                          "TeamFight",
+                          "Engage",
+                          "Poke",
+                          "Slow",
+                          "Dps",
+                          "Tower"
                       ]
     },
     {
@@ -48063,6 +50690,21 @@
                               "form":  "alternate",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Dame",
+                          "Bonus AS",
+                          "Life steal",
+                          "On-Hit",
+                          "Clearwave",
+                          "Aoe",
+                          "Poke",
+                          "Sight",
+                          "Slow",
+                          "Speed",
+                          "Dash",
+                          "Reset",
+                          "Buff Dame"
                       ]
     },
     {
@@ -48346,6 +50988,19 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Buff Heal",
+                          "Buff Dame",
+                          "Sight",
+                          "Slow",
+                          "Disengage",
+                          "Dash",
+                          "Imba",
+                          "Buff Shield",
+                          "Buff Speed",
+                          "Aoe",
+                          "Strong Ult"
                       ]
     },
     {
@@ -48632,6 +51287,23 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Heal",
+                          "Resurrection",
+                          "Airborne",
+                          "Clearwave",
+                          "Reset",
+                          "Root",
+                          "Sight",
+                          "Slow",
+                          "Stun",
+                          "Tether",
+                          "Engage",
+                          "Aoe",
+                          "Dash",
+                          "TeamFight",
+                          "Speed"
                       ]
     },
     {
@@ -48912,6 +51584,18 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Burst Dame",
+                          "Clearwave",
+                          "Aoe",
+                          "Poke",
+                          "Blink",
+                          "Engage",
+                          "Dash",
+                          "Untargetability",
+                          "Strong Ult",
+                          "TeamFight"
                       ]
     },
     {
@@ -49204,6 +51888,20 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Dps",
+                          "Clearwave",
+                          "On-hit",
+                          "Imba",
+                          "Aoe",
+                          "Poke",
+                          "Slow",
+                          "TeamFight",
+                          "Dash",
+                          "Engage",
+                          "Disengage",
+                          "Strong Ult"
                       ]
     },
     {
@@ -49491,6 +52189,23 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Bonus Dame",
+                          "Aoe",
+                          "Clearwave",
+                          "Poke",
+                          "Airborne",
+                          "Dash",
+                          "Sight",
+                          "Tower",
+                          "Imba",
+                          "Disengage",
+                          "Slow",
+                          "Trap",
+                          "Burst Dame",
+                          "Global",
+                          "Strong Ult"
                       ]
     },
     {
@@ -49768,6 +52483,25 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Exp",
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Sight",
+                          "Stun",
+                          "Trap",
+                          "TeamFight",
+                          "Poke",
+                          "Disengage",
+                          "Auto Target",
+                          "Slow",
+                          "Speed",
+                          "Airborne",
+                          "Buff Speed",
+                          "Buff Resurrection",
+                          "Strong Ult"
                       ]
     },
     {
@@ -50054,6 +52788,22 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Non-Projectile",
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Imba",
+                          "Poke",
+                          "Speed",
+                          "Drowsy",
+                          "Magic penetration",
+                          "Sleep",
+                          "Slow",
+                          "True Dame",
+                          "TeamFight",
+                          "Blink"
                       ]
     },
     {
@@ -50337,6 +53087,19 @@
                               "form":  "base",
                               "source":  "imported"
                           }
+                      ],
+        "skillTags":  [
+                          "Pet",
+                          "Sight",
+                          "Aoe",
+                          "Burst Dame",
+                          "Clearwave",
+                          "Poke",
+                          "Takedown",
+                          "Root",
+                          "Airborne",
+                          "Strong Ult",
+                          "TeamFight"
                       ]
     }
 ]
