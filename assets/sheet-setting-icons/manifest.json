@@ -1,0 +1,19 @@
+{
+  "source": {
+    "workbook": "lol/Tool League of Legends.live.xlsx",
+    "sheet": "Setting",
+    "method": "Exact binary extraction from the XLSX media package"
+  },
+  "assets": [
+    { "order": 1, "cell": "F4", "label": "Engage", "file": "01_F4_engage.png", "sourceMedia": "xl/media/image3.png", "width": 48, "height": 48, "bytes": 6002, "sha256": "1f9fb485b8f6cd0c75a64bdf46b6a13f12b0569c2e6b450adc649df565032445" },
+    { "order": 2, "cell": "F5", "label": "Disengage", "file": "02_F5_disengage.png", "sourceMedia": "xl/media/image10.png", "width": 48, "height": 48, "bytes": 6066, "sha256": "2e43da4e7ff5cbbd53da9e41fe4071b5ab420d7f3d4319b936404f097cffa4ed" },
+    { "order": 3, "cell": "F6", "label": "Poke", "file": "03_F6_poke.png", "sourceMedia": "xl/media/image9.png", "width": 48, "height": 48, "bytes": 5916, "sha256": "9f96c4451c4914d0e2776648137e5c7c4a5b9069bf18e520c8971d886017f310" },
+    { "order": 4, "cell": "F7", "label": "Blue Sentinel", "file": "04_F7_bluesentinel.png", "sourceMedia": "xl/media/image11.png", "width": 48, "height": 48, "bytes": 6300, "sha256": "9db48e6b781fe70c5684f2a40bb85f17312d5dafa51b691bc46fa586adb2797d" },
+    { "order": 5, "cell": "F8", "label": "Gromp", "file": "05_F8_gromp.png", "sourceMedia": "xl/media/image4.png", "width": 48, "height": 48, "bytes": 6123, "sha256": "1030682b7bb34b8f579812cfb26e7376e70c83202cb315a24a12d04637aa0b9a" },
+    { "order": 6, "cell": "F9", "label": "Murkwolves", "file": "06_F9_murkwolves.png", "sourceMedia": "xl/media/image6.png", "width": 48, "height": 48, "bytes": 6421, "sha256": "6cc545dcbd23d94f705bfd4d8d96aa0251fa69aa68ce6804a582ac3f5a50ba66" },
+    { "order": 7, "cell": "F10", "label": "Rift Scuttler", "file": "07_F10_riftscuttler.png", "sourceMedia": "xl/media/image7.png", "width": 48, "height": 48, "bytes": 5944, "sha256": "10f90ddc901f4d22e5c35d75e778c5fc799293f19f02fa230643888b123d04a0" },
+    { "order": 8, "cell": "F11", "label": "Gank", "file": "08_F11_gank.png", "sourceMedia": "xl/media/image12.png", "width": 50, "height": 50, "bytes": 277, "sha256": "dbaa5d0de42606c945b722c0403ca7b6ebed009bb1cb5a1e9b11c662cce77630" },
+    { "order": 9, "cell": "E15", "label": "Cell E15", "file": "09_E15_cell-e15.jpg", "sourceMedia": "xl/media/image8.jpg", "width": 1200, "height": 1200, "bytes": 169036, "sha256": "7353f5b6ff67d75aee77f30ead03f274ca558029ba6825b12e8b78ff5ae1b72e" },
+    { "order": 10, "cell": "E16", "label": "Cell E16", "file": "10_E16_cell-e16.png", "sourceMedia": "xl/media/image5.png", "width": 512, "height": 512, "bytes": 52976, "sha256": "b2b131f00bc48c415539f4e9f31ea3f9c5e346b080937606307f3000c3d9e247" }
+  ]
+}
