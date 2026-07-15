@@ -1341,7 +1341,6 @@ body[data-route="team"] .slot-insight{
   stroke-width:1;
 }
 .radar-fill{
-  fill:url(#radarGlow-aatrox);
   fill:#14c8df;
   fill-opacity:.48;
 }
