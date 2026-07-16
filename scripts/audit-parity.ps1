@@ -32,6 +32,9 @@ Add-Contract 'Data' 'Live Riot roster updater preserves workbook forms and adds 
 $riotData = [IO.File]::ReadAllText((Join-Path $root 'src\data\riot-data.json'),[Text.Encoding]::UTF8) | ConvertFrom-Json
 $riotIds = @($riotData.champions.id)
 Add-Contract 'Data' 'Patch 16.14 roster includes Locke, Zaahen and workbook forms' ([string]$riotData.patch -eq '16.14.1' -and @('locke','zaahen','kledskaarl','megagnar').Where({$_ -notin $riotIds}).Count -eq 0 -and $riotIds.Count -eq 175) '173 official champions + 2 workbook form records'
+$manualData = [IO.File]::ReadAllText((Join-Path $root 'src\data\manual-data.json'),[Text.Encoding]::UTF8) | ConvertFrom-Json
+$tierValues = @($manualData.champions.tier | Select-Object -Unique)
+Add-Contract 'Data' 'All champions use the sourced four-level meta tier contract' (@($manualData.champions).Count -eq 175 -and @($tierValues | Where-Object { $_ -notin @('S+','S','A+','A') }).Count -eq 0 -and @($manualData.champions | Where-Object { [string]$_.evidence.tier -notmatch '^lolalytics:' }).Count -eq 0 -and (Test-Path (Join-Path $root 'scripts\update-meta-tiers.ps1'))) 'LoLalytics Emerald+ global snapshot mapped to S+, S, A+, A'
 
 $renderers = @('renderTeamFull','renderDraftFull','renderFinderFull','renderMatchupsFull','renderTeamfightFull','renderCompareFull','renderMapFull','renderStrategyFull','renderChampionsFull','renderSkillsFull','renderRoutesFull','renderCcFull','renderSystemFull')
 Add-Contract 'Navigation' 'All 13 application modules have renderers' (Has-All $app ($renderers | ForEach-Object { "function\s+$([regex]::Escape($_))\s*\(" })) ($renderers -join ', ')

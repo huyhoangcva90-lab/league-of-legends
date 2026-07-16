@@ -48,6 +48,8 @@ foreach ($pair in $specialNames.GetEnumerator()) {
 }
 $knownNames = @{}; foreach ($champion in $riot.champions) { $knownNames[($champion.name -replace '[^a-zA-Z0-9]','').ToLowerInvariant()] = $true; $knownNames[$champion.id.ToLowerInvariant()] = $true }
 foreach ($champion in $manual.champions) {
+    if ([string]$champion.tier -notin @('S+','S','A+','A')) { $errors.Add("manual-data.json: '$($champion.id).tier' must be S+, S, A+ or A.") }
+    if ([string]$champion.evidence.tier -notmatch '^lolalytics:') { $errors.Add("manual-data.json: '$($champion.id).evidence.tier' must identify the LoLalytics snapshot.") }
     if ([string]$champion.damage.type -notin @('Physical','Magic','Hybrid','True')) { $errors.Add("manual-data.json: '$($champion.id).damage.type' is invalid.") }
     $attackShare = 0.0
     if (-not [double]::TryParse([string]$champion.damage.basicAttackShare, [ref]$attackShare) -or $attackShare -lt 0 -or $attackShare -gt 1) { $errors.Add("manual-data.json: '$($champion.id).damage.basicAttackShare' must be between 0 and 1.") }
