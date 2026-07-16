@@ -53,6 +53,7 @@ foreach ($champion in $manual.champions) {
     if ([string]$champion.damage.type -notin @('Physical','Magic','Hybrid','True')) { $errors.Add("manual-data.json: '$($champion.id).damage.type' is invalid.") }
     $attackShare = 0.0
     if (-not [double]::TryParse([string]$champion.damage.basicAttackShare, [ref]$attackShare) -or $attackShare -lt 0 -or $attackShare -gt 1) { $errors.Add("manual-data.json: '$($champion.id).damage.basicAttackShare' must be between 0 and 1.") }
+    if ($champion.roles -isnot [System.Array]) { $errors.Add("manual-data.json: '$($champion.id).roles' must be an array.") }
     foreach ($role in @($champion.roles)) {
         if ($role -notin @('Top','Jungle','Mid','AD','Support')) { $errors.Add("manual-data.json: '$($champion.id).roles' contains invalid role '$role'.") }
     }

@@ -49,7 +49,7 @@ function Get-InferredAbilityTags([string]$text) {
 
 function New-ManualChampion($entry, $detail, [string]$id, $abilities) {
     $officialTags = @($entry.tags)
-    $roles = switch ($id) {
+    [string[]]$roles = switch ($id) {
         'locke' { @('Mid') }
         'zaahen' { @('Top') }
         default {

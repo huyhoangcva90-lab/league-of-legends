@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "root": "assets/ui-icons",
+  "style": "Pale-gold game UI emblems on near-black square backgrounds",
+  "sources": {
+    "laneAndClass": "User-supplied WebP references",
+    "tactical": "AI-generated 5x4 atlas, cropped into deterministic 256px PNG files"
+  },
+  "lane": ["top", "jungle", "mid", "ad", "support"],
+  "class": ["controller", "fighter", "mage", "marksman", "slayer", "specialist", "tank"],
+  "tactical": ["basic-attack", "ability", "hybrid", "engage", "disengage", "poke", "split", "catch", "dive", "melee", "ranged", "physical", "magic", "true-damage", "frontline", "midline", "backline", "flank", "flex", "vision"]
+}

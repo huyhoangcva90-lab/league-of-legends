@@ -1167,6 +1167,415 @@ body[data-route="finder"] .check-effect-picker select{min-height:34px;font-size:
   body[data-route="finder"] .check-multi-filter>div{grid-template-columns:1fr 1fr}
 }
 
+/* Shared semantic icon assets. Lane/class files are supplied references; tactical files use the AI atlas. */
+.ui-icon{
+  display:block;
+  width:22px;
+  height:22px;
+  flex:0 0 22px;
+  border-radius:3px;
+  background:#070707;
+  object-fit:contain;
+}
+.official-role-icon .ui-icon,.term-icon .ui-icon,.tactical-tag .ui-icon,.pill .ui-icon{width:18px;height:18px;flex-basis:18px}
+.check-filter-icon .ui-icon,.check-lane-icon .ui-icon{width:24px;height:24px;flex-basis:24px}
+.check-champ-icons .ui-icon{width:12px;height:12px;flex-basis:12px}
+
+/* Check canonical layout: tooltip content must never participate in grid sizing. */
+body[data-route="finder"] .check-body{
+  grid-template-columns:82px minmax(676px,1fr) 310px;
+  align-items:start;
+}
+body[data-route="finder"] .check-champion-grid{
+  grid-template-columns:repeat(13,minmax(52px,1fr))!important;
+  grid-auto-flow:row;
+  align-content:start;
+  min-width:676px!important;
+  max-height:760px;
+  overflow:auto!important;
+}
+body[data-route="finder"] .check-champion-grid>button{
+  position:relative!important;
+  display:block!important;
+  width:auto!important;
+  min-width:0!important;
+  height:auto!important;
+  min-height:0!important;
+  aspect-ratio:1!important;
+  overflow:visible!important;
+  contain:layout;
+}
+body[data-route="finder"] .check-champion-grid>button>.portrait{
+  position:absolute!important;
+  inset:0!important;
+  z-index:0!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+}
+body[data-route="finder"] .check-champion-grid>button>.check-champ-label{
+  position:absolute!important;
+  inset:auto 0 0!important;
+  z-index:4!important;
+  display:grid!important;
+  min-width:0!important;
+  height:auto!important;
+}
+body[data-route="finder"] .check-champion-grid>button>.check-champ-icons{
+  position:absolute!important;
+  inset:2px 2px auto auto!important;
+  z-index:5!important;
+  display:flex!important;
+}
+body[data-route="finder"] .check-champion-grid>button>.check-hover-card{
+  position:absolute!important;
+  left:calc(100% + 8px)!important;
+  right:auto!important;
+  top:50%!important;
+  z-index:9999!important;
+  display:grid!important;
+  width:260px!important;
+  height:auto!important;
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+  transform:translate(6px,-50%) scale(.98)!important;
+  contain:content;
+}
+body[data-route="finder"] .check-champion-grid>button:nth-child(13n+10)>.check-hover-card,
+body[data-route="finder"] .check-champion-grid>button:nth-child(13n+11)>.check-hover-card,
+body[data-route="finder"] .check-champion-grid>button:nth-child(13n+12)>.check-hover-card,
+body[data-route="finder"] .check-champion-grid>button:nth-child(13n+13)>.check-hover-card{
+  left:auto!important;
+  right:calc(100% + 8px)!important;
+  transform:translate(-6px,-50%) scale(.98)!important;
+}
+body[data-route="finder"] .check-champion-grid>button:hover>.check-hover-card,
+body[data-route="finder"] .check-champion-grid>button:focus-visible>.check-hover-card{
+  opacity:1!important;
+  visibility:visible!important;
+  transform:translate(0,-50%) scale(1)!important;
+}
+body[data-route="finder"] .check-hover-card .portrait{position:static!important;width:38px!important;height:44px!important}
+
+@media(max-width:1360px){
+  body[data-route="finder"] .check-body{grid-template-columns:82px minmax(676px,1fr)!important}
+  body[data-route="finder"] .check-filter-console{
+    grid-column:1/-1;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+    max-height:none;
+    border-top:1px solid var(--line-strong);
+  }
+  body[data-route="finder"] .check-selected-preview,
+  body[data-route="finder"] .check-effect-picker{grid-column:1/-1}
+}
+@media(max-width:900px){
+  body[data-route="finder"] .check-body{display:block!important}
+  body[data-route="finder"] .check-name-rail{display:block;border-right:0;border-bottom:1px solid var(--line-strong)}
+  body[data-route="finder"] .check-name-rail>div{display:flex;max-height:none;overflow-x:auto}
+  body[data-route="finder"] .check-name-rail button{flex:0 0 auto;width:auto;white-space:nowrap}
+  body[data-route="finder"] .check-champion-grid{grid-template-columns:repeat(7,minmax(54px,1fr))!important;min-width:0!important;max-height:680px}
+}
+@media(max-width:600px){
+  body[data-route="finder"] .check-champion-grid{grid-template-columns:repeat(5,minmax(54px,1fr))!important}
+  body[data-route="finder"] .check-filter-console{grid-template-columns:1fr}
+  body[data-route="finder"] .check-selected-preview,
+  body[data-route="finder"] .check-effect-picker{grid-column:1}
+  body[data-route="finder"] .check-champion-grid>button>.check-hover-card{
+    position:fixed!important;
+    left:50%!important;
+    right:auto!important;
+    top:50%!important;
+    width:min(280px,calc(100vw - 24px))!important;
+    transform:translate(-50%,-50%) scale(.98)!important;
+  }
+  body[data-route="finder"] .check-champion-grid>button:hover>.check-hover-card,
+  body[data-route="finder"] .check-champion-grid>button:focus-visible>.check-hover-card{transform:translate(-50%,-50%) scale(1)!important}
+}
+
+/* Final Team readability pass: plan/spike/gameplan text must be readable, not spreadsheet-micro. */
+body[data-route="team"] .team-plan-side,
+body[data-route="team"] .team-spike-side,
+body[data-route="team"] .team-focus-panel,
+body[data-route="team"] .team-workbook-matrices,
+body[data-route="team"] .team-balance-panel{
+  font-size:13px!important;
+}
+body[data-route="team"] .team-plan-side,
+body[data-route="team"] .team-spike-side,
+body[data-route="team"] .team-focus-panel{
+  background:#fbfdff!important;
+  color:#172737!important;
+}
+body[data-route="team"] .team-plan-side.red,
+body[data-route="team"] .team-spike-side.red{
+  background:#fffafb!important;
+}
+body[data-route="team"] .team-plan-side>header,
+body[data-route="team"] .team-spike-side>header,
+body[data-route="team"] .team-focus-controls,
+body[data-route="team"] .team-matrix-group>header{
+  align-items:center;
+}
+body[data-route="team"] .team-plan-side>header,
+body[data-route="team"] .team-spike-side>header{
+  margin:-11px -11px 10px!important;
+  border-bottom:1px solid #bfd4e4!important;
+  background:linear-gradient(90deg,#e9f4ff,#f7fbff)!important;
+  padding:11px 13px!important;
+  color:#123d62!important;
+}
+body[data-route="team"] .team-plan-side.red>header,
+body[data-route="team"] .team-spike-side.red>header{
+  border-bottom-color:#efc7cc!important;
+  background:linear-gradient(90deg,#fff0f2,#fffafb)!important;
+  color:#7d1e2a!important;
+}
+body[data-route="team"] .team-plan-side h3,
+body[data-route="team"] .team-spike-side h3,
+body[data-route="team"] .team-focus-champion header h3,
+body[data-route="team"] .team-workbook-matrices>.section-head h2,
+body[data-route="team"] .team-balance-panel>header>span b{
+  font-size:16px!important;
+  line-height:1.25!important;
+}
+body[data-route="team"] .team-plan-side header span,
+body[data-route="team"] .team-spike-side header span,
+body[data-route="team"] .team-focus-controls>div>small,
+body[data-route="team"] .team-focus-champion header>div>small,
+body[data-route="team"] .team-focus-champion>section small,
+body[data-route="team"] .team-matrix-group header small,
+body[data-route="team"] .team-balance-panel>header small,
+body[data-route="team"] .lane-balance-list small,
+body[data-route="team"] .lane-balance-list em,
+body[data-route="team"] .team-pros-cons>div>small{
+  color:#4b6275!important;
+  font-size:10px!important;
+  line-height:1.35!important;
+}
+body[data-route="team"] .team-plan-side>header span,
+body[data-route="team"] .team-spike-side>header span{
+  color:#355d7a!important;
+}
+body[data-route="team"] .team-plan-side.red>header span,
+body[data-route="team"] .team-spike-side.red>header span{
+  color:#9b4350!important;
+}
+body[data-route="team"] .team-plan-side details,
+body[data-route="team"] .team-spike-side>article{
+  border-color:#c9d8e3!important;
+}
+body[data-route="team"] .team-plan-side.red details,
+body[data-route="team"] .team-spike-side.red>article{
+  border-color:#efd0d4!important;
+}
+body[data-route="team"] .team-plan-side summary,
+body[data-route="team"] .team-spike-side summary{
+  background:#f3f8fc!important;
+  color:#1d3447!important;
+  min-height:52px!important;
+  gap:10px!important;
+  font-size:13px!important;
+  padding-inline:8px!important;
+}
+body[data-route="team"] .team-plan-side.red summary,
+body[data-route="team"] .team-spike-side.red summary{
+  background:#fff4f5!important;
+  color:#542630!important;
+}
+body[data-route="team"] .team-plan-side details[open] summary,
+body[data-route="team"] .team-spike-side details[open] summary{
+  border-bottom:1px solid #c9d8e3!important;
+  background:#e8f3ff!important;
+}
+body[data-route="team"] .team-plan-side.red details[open] summary,
+body[data-route="team"] .team-spike-side.red details[open] summary{
+  border-bottom-color:#efd0d4!important;
+  background:#ffebee!important;
+}
+body[data-route="team"] .team-plan-side details>div{
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr))!important;
+  gap:10px!important;
+  padding:10px!important;
+}
+body[data-route="team"] .team-plan-side summary b,
+body[data-route="team"] .team-spike-side summary b,
+body[data-route="team"] .team-focus-role>b,
+body[data-route="team"] .team-matrix-group h3,
+body[data-route="team"] .team-matrix-row>b,
+body[data-route="team"] .lane-balance-list b{
+  font-size:13px!important;
+  line-height:1.25!important;
+}
+body[data-route="team"] .team-plan-side article{
+  border-color:#cbdbe7!important;
+  background:#ffffff!important;
+  padding:12px!important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.75)!important;
+}
+body[data-route="team"] .team-plan-side.red article{
+  border-color:#efd0d4!important;
+  background:#fffdfd!important;
+}
+body[data-route="team"] .team-plan-side article>b,
+body[data-route="team"] .team-spike-side article b{
+  color:#173f60!important;
+  font-size:13px!important;
+}
+body[data-route="team"] .team-plan-side.red article>b,
+body[data-route="team"] .team-spike-side.red article b{
+  color:#842634!important;
+}
+body[data-route="team"] .team-spike-side article>section>span,
+body[data-route="team"] .team-plan-side article{
+  border-radius:7px!important;
+}
+body[data-route="team"] .team-spike-side article>section>span{
+  border:1px solid #d5e2ec!important;
+  background:#f9fcff!important;
+  padding:8px!important;
+}
+body[data-route="team"] .team-spike-side.red article>section>span{
+  border-color:#efd0d4!important;
+  background:#fffafa!important;
+}
+body[data-route="team"] .team-plan-side p,
+body[data-route="team"] .team-spike-side p,
+body[data-route="team"] .team-focus-champion>section p,
+body[data-route="team"] .team-pros-cons p span,
+body[data-route="team"] .warning-side article p,
+body[data-route="team"] .final-verdict .win-plan p,
+body[data-route="team"] .win-plan p{
+  color:#263d4e!important;
+  font-size:14px!important;
+  line-height:1.62!important;
+  letter-spacing:0!important;
+}
+body[data-route="team"] .team-spike-side p,
+body[data-route="team"] .team-plan-side p{
+  background:#fff!important;
+  border-radius:6px!important;
+  padding:8px 9px!important;
+}
+body[data-route="team"] .team-focus-panel{
+  border-color:#b7c8d6!important;
+}
+body[data-route="team"] .team-focus-controls{
+  border-color:#c4d4df!important;
+  background:#eef6fc!important;
+}
+body[data-route="team"] .team-focus-champion{
+  background:#ffffff!important;
+}
+body[data-route="team"] .team-focus-champion.red{
+  background:#fffdfd!important;
+}
+body[data-route="team"] .team-focus-champion>header{
+  background:#f4f9fd!important;
+}
+body[data-route="team"] .team-focus-champion.red>header{
+  background:#fff4f5!important;
+}
+body[data-route="team"] .team-focus-champion>section>div{
+  background:#ffffff!important;
+}
+body[data-route="team"] .team-focus-champion>section>div+div{
+  background:#f6f9fc!important;
+}
+body[data-route="team"] .team-focus-champion.red>section>div+div{
+  background:#fff7f8!important;
+}
+body[data-route="team"] .team-focus-champion>section p{
+  background:#fff!important;
+  border:1px solid #d5e2ec!important;
+  border-radius:7px!important;
+  padding:9px!important;
+}
+body[data-route="team"] .team-focus-champion>section p{
+  -webkit-line-clamp:12!important;
+}
+body[data-route="team"] .team-focus-skills b{
+  font-size:11px!important;
+  line-height:1.2!important;
+}
+body[data-route="team"] .team-focus-skills small{
+  font-size:9px!important;
+  line-height:1.25!important;
+}
+body[data-route="team"] .team-focus-champion header .tactical-tag,
+body[data-route="team"] .tactical-tag b{
+  font-size:10px!important;
+}
+body[data-route="team"] .team-focus-champion header>strong{
+  font-size:12px!important;
+  line-height:1.25!important;
+}
+body[data-route="team"] .team-pros-cons p{
+  gap:6px!important;
+}
+body[data-route="team"] .team-pros-cons p span{
+  white-space:normal!important;
+  overflow:visible!important;
+}
+body[data-route="team"] .team-pros-cons p svg{
+  width:16px!important;
+  height:16px!important;
+  flex-basis:16px!important;
+}
+body[data-route="team"] .team-matrix-row>span strong{
+  font-size:11px!important;
+}
+body[data-route="team"] .team-matrix-faces small{
+  font-size:9px!important;
+  line-height:1.15!important;
+}
+body[data-route="team"] .slot-insight-head small,
+body[data-route="team"] .slot-insight-head em,
+body[data-route="team"] .slot-phase small,
+body[data-route="team"] .slot-ratings span,
+body[data-route="team"] .slot-skill-grid small,
+body[data-route="team"] .slot-skill-grid em{
+  font-size:9px!important;
+}
+body[data-route="team"] .slot-insight-head strong{
+  font-size:17px!important;
+}
+body[data-route="team"] .slot-phase b,
+body[data-route="team"] .slot-ratings b,
+body[data-route="team"] .slot-skill-grid b{
+  font-size:11px!important;
+}
+.profile-section .guide-grid p,
+.profile-section .plan-grid p,
+.compare-guides p,
+.compare-guides small{
+  font-size:13px!important;
+  line-height:1.6!important;
+}
+.profile-section .plan-grid article>b,
+.compare-guides article>div>b{
+  font-size:13px!important;
+}
+@media(max-width:720px){
+  body[data-route="team"] .team-plan-side p,
+  body[data-route="team"] .team-spike-side p,
+  body[data-route="team"] .team-focus-champion>section p,
+  body[data-route="team"] .team-pros-cons p span,
+  body[data-route="team"] .warning-side article p,
+  body[data-route="team"] .win-plan p{
+    font-size:14px!important;
+    line-height:1.62!important;
+  }
+  body[data-route="team"] .team-plan-side h3,
+  body[data-route="team"] .team-spike-side h3,
+  body[data-route="team"] .team-focus-champion header h3{
+    font-size:17px!important;
+  }
+}
+
 /* Team sheet workspace: fixed mirrored roster, contributor matrices and focused plans. */
 body[data-route="team"] #app-main{max-width:1800px;margin-inline:auto;background:#f4f6f8}
 body[data-route="team"] .page-intro{margin-bottom:10px}
@@ -1296,11 +1705,136 @@ body[data-route="finder"] .empty-slot{display:grid;place-items:center;min-height
   body[data-route="finder"] .check-body{grid-template-columns:78px minmax(520px,1fr) 292px}
   body[data-route="finder"] .check-champion-grid{min-width:520px !important}
 }
+@media(max-width:900px){
+  body[data-route="finder"] .check-champion-grid{grid-template-columns:repeat(7,minmax(48px,1fr))!important;min-width:0!important;width:100%!important}
+  body[data-route="finder"] .check-champion-grid>button{width:auto!important;height:auto!important;min-width:0!important;aspect-ratio:1!important}
+}
 @media(max-width:700px){
-  body[data-route="finder"] .check-champion-grid{grid-template-columns:repeat(var(--check-columns),44px) !important;min-width:0 !important}
-  body[data-route="finder"] .check-champion-grid>button{width:44px;height:44px;min-width:44px !important}
+  body[data-route="finder"] .check-champion-grid{grid-template-columns:repeat(5,minmax(48px,1fr))!important;min-width:0!important;width:100%!important}
+  body[data-route="finder"] .check-champion-grid>button{width:auto!important;height:auto!important;min-width:0!important;aspect-ratio:1!important}
   body[data-route="finder"] .check-slot-row{grid-template-columns:78px minmax(0,1fr)}
   body[data-route="finder"] .check-slot-row>section{grid-template-columns:repeat(auto-fill,minmax(84px,1fr))}
+}
+
+/* Map route icons: use Setting-sheet jungle camp images directly on Summoner's Rift. */
+.route-map.route-map-icons{
+  background:#07111f;
+  border:2px solid #1e3144;
+  border-radius:10px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 10px 28px rgba(10,20,32,.18);
+}
+.route-map.route-map-icons>img{filter:saturate(1.06) contrast(1.04) brightness(.88)}
+.route-map .route-polyline{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  width:100%;
+  height:100%;
+  overflow:visible;
+  pointer-events:none;
+}
+.route-map .route-polyline polyline{
+  fill:none;
+  stroke:#38bdf8;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-dasharray:4 3;
+  filter:drop-shadow(0 1px 2px rgba(0,0,0,.75));
+  vector-effect:non-scaling-stroke;
+}
+.route-map.red .route-polyline polyline{stroke:#fb7185}
+.route-map.route-map-icons span{
+  z-index:3;
+  display:grid;
+  place-items:center;
+}
+.route-map.route-map-icons span>b{
+  position:relative;
+  display:grid;
+  place-items:center;
+  width:38px;
+  height:38px;
+  border:2px solid #fff;
+  border-radius:9px;
+  background:#0f172a;
+  color:#fff;
+  box-shadow:0 5px 12px rgba(0,0,0,.55),0 0 0 2px rgba(56,189,248,.34);
+  overflow:visible;
+}
+.route-map.route-map-icons.red span>b,
+.map-route-sheet.red .route-map.route-map-icons span>b{box-shadow:0 5px 12px rgba(0,0,0,.55),0 0 0 2px rgba(251,113,133,.38)}
+.route-map.route-map-icons span>b .map-token-img{
+  width:100%;
+  height:100%;
+  border-radius:7px;
+  object-fit:cover;
+  box-shadow:none;
+}
+.route-map.route-map-icons span>b>i{
+  position:absolute;
+  right:-8px;
+  top:-8px;
+  display:grid;
+  place-items:center;
+  min-width:18px;
+  height:18px;
+  border:2px solid #fff;
+  border-radius:999px;
+  background:#155ea5;
+  color:#fff;
+  font-size:9px;
+  font-style:normal;
+  font-weight:900;
+  line-height:1;
+}
+.map-route-sheet.red .route-map.route-map-icons span>b>i{background:#b31d2c}
+.route-map.route-map-icons span.gank>b{box-shadow:0 5px 12px rgba(0,0,0,.55),0 0 0 3px rgba(245,158,11,.5)}
+.route-map.route-map-icons span.objective>b{box-shadow:0 5px 12px rgba(0,0,0,.55),0 0 0 3px rgba(139,92,246,.5)}
+.route-map.route-map-icons span.invade>b{box-shadow:0 5px 12px rgba(0,0,0,.55),0 0 0 3px rgba(17,24,39,.6)}
+.route-map.route-map-icons span>small{
+  left:24px;
+  top:28px;
+  z-index:4;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(7,17,31,.92);
+  font-size:8px;
+  font-weight:800;
+}
+.route-map.route-map-icons span:not(:last-child):after{display:none}
+.route-marker-icon{display:block}
+.route-steps-icons span,
+.route-nine>span{
+  display:grid;
+  grid-template-rows:auto 34px auto;
+  place-items:center;
+  gap:3px;
+  min-height:72px;
+  text-align:center;
+}
+.route-steps-icons .map-token-img,
+.route-nine .map-token-img{
+  width:32px;
+  height:32px;
+  border-radius:7px;
+  object-fit:cover;
+}
+.route-steps-icons span.camp,
+.route-nine>span.camp{background:linear-gradient(180deg,#fff,#f8fafc)}
+.route-steps-icons span.gank,
+.route-nine>span.gank{border-color:#f0c46f;background:var(--amber-soft)}
+.route-steps-icons span.objective,
+.route-nine>span.objective{border-color:#c4b5fd;background:#f1ecff}
+.route-steps-icons span.invade,
+.route-nine>span.invade{border-color:#9ca3af;background:#e5e7eb}
+.route-steps-icons span i,
+.route-nine>span i{
+  display:block;
+  width:32px;
+  height:32px;
+  border:1px dashed var(--line-strong);
+  border-radius:7px;
+  background:#eef3f6;
 }
 
 /* Check image-state color: tint the champion portraits themselves, not only labels/borders. */
