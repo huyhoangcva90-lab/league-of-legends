@@ -1167,6 +1167,301 @@ body[data-route="finder"] .check-effect-picker select{min-height:34px;font-size:
   body[data-route="finder"] .check-multi-filter>div{grid-template-columns:1fr 1fr}
 }
 
+/* Broadcast ban/pick board */
+body[data-route="draft"]{
+  --draft-blue:#1597ff;
+  --draft-blue-deep:#063b68;
+  --draft-red:#f03749;
+  --draft-red-deep:#641923;
+  --draft-ink:#05080d;
+  --draft-panel:#0b1017;
+}
+body[data-route="draft"] #app-main{max-width:1920px}
+body[data-route="draft"] .draft-layout{grid-template-columns:minmax(0,1fr)}
+body[data-route="draft"] .draft-main{
+  overflow:hidden;
+  border-color:#27303b;
+  background:linear-gradient(180deg,#111720 0,#070b10 100%);
+  box-shadow:0 20px 45px rgba(0,0,0,.28);
+}
+body[data-route="draft"] .pro-draft-board{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 154px minmax(0,1fr);
+  gap:0;
+  overflow:hidden;
+  border:1px solid #303945;
+  border-radius:10px;
+  background:var(--draft-ink);
+}
+body[data-route="draft"] .broadcast-roster{
+  display:flex;
+  min-width:0;
+  flex-direction:column;
+  border:0;
+  border-radius:0;
+  background:var(--draft-panel);
+}
+body[data-route="draft"] .broadcast-roster>header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:46px;
+  padding:0 14px;
+  border:0;
+  color:#f6f9fc;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+body[data-route="draft"] .broadcast-roster.blue>header{
+  border-bottom:4px solid var(--draft-blue);
+  background:linear-gradient(90deg,var(--draft-blue-deep),#101720 70%);
+}
+body[data-route="draft"] .broadcast-roster.red>header{
+  flex-direction:row-reverse;
+  border-bottom:4px solid var(--draft-red);
+  background:linear-gradient(270deg,var(--draft-red-deep),#101720 70%);
+}
+body[data-route="draft"] .broadcast-roster>header span{font-size:16px;font-weight:950}
+body[data-route="draft"] .broadcast-roster>header b{color:#9da9b7;font-size:9px}
+body[data-route="draft"] .broadcast-bans{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  min-height:58px;
+  padding:6px 9px;
+  border:0;
+  background:#080d13;
+}
+body[data-route="draft"] .broadcast-roster.red .broadcast-bans{flex-direction:row-reverse}
+body[data-route="draft"] .broadcast-bans strong{
+  flex:0 0 auto;
+  color:#788696;
+  font-size:8px;
+  letter-spacing:.14em;
+  writing-mode:vertical-rl;
+}
+body[data-route="draft"] .broadcast-bans button{
+  position:relative;
+  display:block;
+  width:44px;
+  height:44px;
+  min-width:44px;
+  overflow:hidden;
+  border:1px solid #35404d;
+  border-radius:3px;
+  background:#141b24;
+  padding:0;
+  color:#718093;
+  cursor:pointer;
+}
+body[data-route="draft"] .broadcast-bans button:hover,
+body[data-route="draft"] .broadcast-bans button:focus-visible{border-color:#f7fbff;outline:none}
+body[data-route="draft"] .broadcast-bans .portrait,
+body[data-route="draft"] .broadcast-bans img{width:100%;height:100%;border:0;border-radius:0;object-fit:cover}
+body[data-route="draft"] .broadcast-bans button>span{font-size:11px;font-weight:900}
+body[data-route="draft"] .broadcast-bans small{
+  position:absolute;
+  right:0;
+  bottom:0;
+  left:0;
+  overflow:hidden;
+  background:rgba(0,0,0,.78);
+  padding:2px;
+  color:#fff;
+  font-size:6px;
+  font-weight:900;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+body[data-route="draft"] .broadcast-picks{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  min-height:390px;
+}
+body[data-route="draft"] .broadcast-pick{
+  position:relative;
+  min-width:0;
+  min-height:390px;
+  overflow:hidden;
+  border:0;
+  border-right:1px solid rgba(255,255,255,.11);
+  border-radius:0;
+  background:radial-gradient(circle at 50% 35%,#1c2936,#090e14 72%);
+  padding:0;
+  color:#fff;
+  cursor:pointer;
+  isolation:isolate;
+}
+body[data-route="draft"] .broadcast-roster.red .broadcast-pick{border-right:0;border-left:1px solid rgba(255,255,255,.11)}
+body[data-route="draft"] .broadcast-pick::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:linear-gradient(180deg,rgba(2,5,9,0) 35%,rgba(2,5,9,.24) 58%,rgba(2,5,9,.96) 100%);
+  pointer-events:none;
+}
+body[data-route="draft"] .broadcast-pick:hover .draft-splash,
+body[data-route="draft"] .broadcast-pick:focus-visible .draft-splash{transform:scale(1.035)}
+body[data-route="draft"] .broadcast-pick:focus-visible{outline:3px solid #fff;outline-offset:-3px}
+body[data-route="draft"] .draft-splash{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:50% 18%;
+  transition:transform .22s ease;
+}
+body[data-route="draft"] .draft-pick-copy{
+  position:absolute;
+  right:8px;
+  bottom:12px;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  gap:5px;
+  text-align:left;
+}
+body[data-route="draft"] .broadcast-roster.red .draft-pick-copy{right:auto;left:8px}
+body[data-route="draft"] .draft-pick-copy small{
+  position:absolute;
+  right:22px;
+  bottom:0;
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:3px;
+  background:rgba(3,7,12,.78);
+  padding:3px 5px;
+  color:#d7e0e9;
+  font-size:7px;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+body[data-route="draft"] .broadcast-roster.red .draft-pick-copy small{right:auto;left:22px}
+body[data-route="draft"] .draft-pick-copy b{
+  display:block;
+  max-height:250px;
+  overflow:hidden;
+  color:#fff;
+  font-size:14px;
+  font-weight:950;
+  letter-spacing:.08em;
+  line-height:1;
+  text-overflow:ellipsis;
+  text-shadow:0 2px 8px #000;
+  text-transform:uppercase;
+  white-space:nowrap;
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+}
+body[data-route="draft"] .draft-pick-copy em{display:none}
+body[data-route="draft"] .draft-pick-empty{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  color:#4d5a68;
+  font-size:44px;
+  font-weight:200;
+}
+body[data-route="draft"] .broadcast-pick>i{
+  position:absolute;
+  top:7px;
+  right:7px;
+  z-index:3;
+  display:grid;
+  width:30px;
+  height:30px;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.45);
+  border-radius:50%;
+  background:rgba(3,7,12,.74);
+  color:#fff;
+  font-size:18px;
+  font-style:normal;
+  opacity:0;
+}
+body[data-route="draft"] .broadcast-pick:hover>i,
+body[data-route="draft"] .broadcast-pick:focus-visible>i{opacity:1}
+body[data-route="draft"] .draft-center{
+  position:relative;
+  z-index:2;
+  display:flex;
+  min-width:0;
+  align-self:stretch;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  border:0;
+  border-right:1px solid #313b47;
+  border-left:1px solid #313b47;
+  border-radius:0;
+  background:
+    linear-gradient(135deg,rgba(21,151,255,.13) 0 49%,rgba(240,55,73,.13) 51% 100%),
+    #090e14;
+  padding:16px 10px;
+  text-align:center;
+  box-shadow:0 0 30px rgba(0,0,0,.48);
+}
+body[data-route="draft"] .draft-center::before{
+  content:"DRAFT";
+  color:#5d6977;
+  font-size:9px;
+  font-weight:950;
+  letter-spacing:.28em;
+}
+body[data-route="draft"] .draft-center b{
+  display:grid;
+  width:68px;
+  height:68px;
+  place-items:center;
+  border:2px solid #cad4df;
+  border-radius:50%;
+  background:#0f1720;
+  color:#fff;
+  font-size:27px;
+  box-shadow:0 0 0 7px rgba(255,255,255,.045);
+}
+body[data-route="draft"] .draft-center span{color:#fff;font-size:10px;font-weight:950;text-transform:uppercase}
+body[data-route="draft"] .draft-center small{color:#8996a5;font-size:8px;line-height:1.5}
+body[data-route="draft"] .draft-status{
+  border-color:#2a3440;
+  background:#080d13;
+  color:#d9e2eb;
+}
+body[data-route="draft"] .draft-timeline{border-color:#27313d;background:#090e14}
+body[data-route="draft"] .draft-assistant{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+@media(max-width:1100px){
+  body[data-route="draft"] .pro-draft-board{grid-template-columns:minmax(0,1fr) 112px minmax(0,1fr)}
+  body[data-route="draft"] .broadcast-picks,
+  body[data-route="draft"] .broadcast-pick{min-height:320px}
+  body[data-route="draft"] .broadcast-bans{gap:4px;padding-inline:6px}
+  body[data-route="draft"] .broadcast-bans button{width:44px;height:44px;min-width:44px}
+}
+@media(max-width:820px){
+  body[data-route="draft"] .pro-draft-board{grid-template-columns:1fr}
+  body[data-route="draft"] .draft-center{min-height:96px;order:2;border:1px solid #313b47}
+  body[data-route="draft"] .draft-center b{width:48px;height:48px;font-size:19px}
+  body[data-route="draft"] .broadcast-roster.blue{order:1}
+  body[data-route="draft"] .broadcast-roster.red{order:3}
+  body[data-route="draft"] .broadcast-picks,
+  body[data-route="draft"] .broadcast-pick{min-height:260px}
+  body[data-route="draft"] .draft-assistant{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  body[data-route="draft"] .draft-main{padding:5px}
+  body[data-route="draft"] .broadcast-picks{grid-template-columns:repeat(5,132px);overflow-x:auto;overscroll-behavior-inline:contain}
+  body[data-route="draft"] .broadcast-pick{min-height:230px}
+  body[data-route="draft"] .broadcast-roster>header span{font-size:13px}
+  body[data-route="draft"] .broadcast-bans{overflow-x:auto}
+  body[data-route="draft"] .draft-pick-copy b{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  body[data-route="draft"] .draft-splash{transition:none}
+}
+
 /* Team: official subclass taxonomy plus transparent tactical inferences. */
 body[data-route="team"] .advanced-teamfight-panel{
   margin-top:12px;
@@ -1851,6 +2146,375 @@ body[data-route="team"] .slot-skill-grid b{
   body[data-route="team"] .team-spike-side h3,
   body[data-route="team"] .team-focus-champion header h3{
     font-size:17px!important;
+  }
+}
+
+/* Final Champion/Skill wiki pass: ability kit first, readable tags, radar profile. */
+.champion-wiki-layout,
+.skill-library-layout{
+  grid-template-columns:260px minmax(0,1fr);
+}
+.champion-wiki-profile,
+.skill-workbook-profile{
+  display:grid;
+  gap:14px;
+}
+.champion-wiki-profile>.profile-head,
+.skill-workbook-profile>.skill-hero{
+  border:1px solid #b9c8d5;
+  border-top:4px solid #1769aa;
+  border-radius:10px;
+  background:linear-gradient(90deg,#f2f8fd,#fff);
+  padding:14px;
+  box-shadow:0 8px 24px rgba(23,44,65,.08);
+}
+.champion-wiki-profile>.ability-preview,
+.champion-wiki-profile>.profile-section:has(.rating-grid),
+.champion-skill-panel+.strong-skill-panel,
+.skill-workbook-profile>.strong-skill-panel{
+  display:none!important;
+}
+.ability-kit-panel,
+.champion-radar-card,
+.skill-tag-standard,
+.skill-card-section.secondary-skill-records{
+  border:1px solid #b9c8d5;
+  border-radius:10px;
+  background:#fff;
+  box-shadow:0 8px 24px rgba(23,44,65,.07);
+  overflow:hidden;
+}
+.ability-kit-panel>.section-head,
+.champion-radar-card>.section-head,
+.skill-tag-standard>.section-head,
+.secondary-skill-records>.section-head{
+  margin:0;
+  border-bottom:1px solid #c9d6e0;
+  background:#eef6fc;
+  padding:12px 14px;
+}
+.ability-kit-panel>.section-head h3,
+.champion-radar-card>.section-head h3,
+.skill-tag-standard>.section-head h3{
+  font-size:16px;
+}
+.ability-kit-top{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  padding:12px;
+  background:linear-gradient(180deg,#f8fbfd,#fff);
+}
+.ability-bar{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:8px;
+  align-self:start;
+}
+.ability-bar>span{
+  position:relative;
+  display:grid;
+  grid-template-rows:58px auto auto;
+  place-items:center;
+  gap:4px;
+  min-height:104px;
+  border:1px solid #c6d3dd;
+  border-radius:10px;
+  background:#101b2b;
+  color:#e7f3ff;
+  padding:8px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);
+}
+.ability-bar>span.active{
+  border-color:#d7b75b;
+  box-shadow:0 0 0 2px rgba(215,183,91,.25),inset 0 0 0 1px rgba(255,255,255,.12);
+}
+.ability-bar img,
+.ability-bar i{
+  width:58px;
+  height:58px;
+  border:1px solid #7f93a6;
+  border-radius:9px;
+  object-fit:cover;
+  background:#17283b;
+}
+.ability-bar i{
+  display:grid;
+  place-items:center;
+  color:#d7b75b;
+  font-style:normal;
+  font-weight:900;
+}
+.ability-bar b{
+  color:#fff;
+  font-size:13px;
+}
+.ability-bar small{
+  max-width:100%;
+  overflow:hidden;
+  color:#aebfd0;
+  font-size:10px;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.wiki-skill-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(300px,1fr));
+  gap:12px;
+  padding:12px;
+}
+.wiki-skill-card{
+  position:relative;
+  display:grid;
+  gap:10px;
+  border:1px solid #c7d4de;
+  border-left:5px solid #7d93a6;
+  border-radius:10px;
+  background:#fff;
+  padding:12px;
+  box-shadow:0 4px 14px rgba(23,44,65,.05);
+}
+.wiki-skill-card.passive{
+  max-width:none;
+  min-height:100%;
+  border-left-color:#8b6f2f;
+  background:linear-gradient(180deg,#fffaf0,#fff);
+}
+.wiki-skill-card.slot-q{border-left-color:#2f80ed}
+.wiki-skill-card.slot-w{border-left-color:#23a56f}
+.wiki-skill-card.slot-e{border-left-color:#a35be0}
+.wiki-skill-card.slot-r{border-left-color:#b31d2c}
+.wiki-skill-card.strong-skill{
+  background:linear-gradient(180deg,#fff9e8,#fff);
+  box-shadow:0 0 0 2px rgba(215,183,91,.22),0 8px 24px rgba(23,44,65,.08);
+}
+.wiki-skill-card.high-impact{border-top:3px solid #b31d2c}
+.wiki-skill-card.mid-impact{border-top:3px solid #d39b2a}
+.wiki-skill-card header{
+  display:grid;
+  grid-template-columns:36px 64px minmax(0,1fr) auto;
+  gap:10px;
+  align-items:center;
+}
+.wiki-skill-slot{
+  display:grid;
+  place-items:center;
+  width:36px;
+  height:36px;
+  border-radius:8px;
+  background:#102235;
+  color:#d7b75b;
+  font-size:13px;
+  font-weight:900;
+}
+.wiki-skill-card header>img,
+.wiki-skill-card header>i{
+  width:64px;
+  height:64px;
+  border:1px solid #b7c5d0;
+  border-radius:10px;
+  object-fit:cover;
+  background:#101820;
+}
+.wiki-skill-card header>i{
+  display:grid;
+  place-items:center;
+  color:#d7b75b;
+  font-style:normal;
+  font-weight:900;
+}
+.wiki-skill-card small,
+.wiki-skill-card em{
+  display:block;
+  color:#64788b;
+  font-size:10px;
+  font-style:normal;
+}
+.wiki-skill-card h3{
+  margin:3px 0;
+  color:#172737;
+  font-size:16px;
+}
+.wiki-skill-card em{
+  font-weight:800;
+  color:#38566f;
+}
+.strong-order{
+  align-self:start;
+  border:1px solid #c79b2d;
+  border-radius:999px;
+  background:#fff2ca;
+  color:#6f4d04;
+  padding:5px 8px;
+  font-size:10px;
+  white-space:nowrap;
+}
+.wiki-skill-forms{
+  display:flex;
+  gap:5px;
+  margin-left:46px;
+}
+.wiki-skill-forms img{
+  width:30px;
+  height:30px;
+  border:1px solid #c8d4df;
+  border-radius:6px;
+  object-fit:cover;
+}
+.wiki-skill-meta{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:6px;
+}
+.wiki-skill-meta span{
+  min-width:0;
+  border:1px solid #d7e0e8;
+  border-radius:7px;
+  background:#f8fbfd;
+  padding:7px;
+}
+.wiki-skill-meta small,
+.wiki-skill-meta b{
+  display:block;
+}
+.wiki-skill-meta small{
+  color:#607488;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+.wiki-skill-meta b{
+  overflow:hidden;
+  margin-top:3px;
+  color:#172737;
+  font-size:11px;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.wiki-skill-tags,
+.skill-tag-standard article p{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+}
+.wiki-skill-tags .pill,
+.skill-tag-standard .pill{
+  min-height:23px;
+  font-size:10px;
+}
+.skill-tag-standard{
+  margin:0 12px 12px;
+}
+.skill-tag-standard>div:last-child{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:10px;
+  padding:12px;
+}
+.skill-tag-standard article{
+  border:1px solid #d7e0e8;
+  border-radius:9px;
+  background:#f9fbfd;
+  padding:10px;
+}
+.skill-tag-standard article>b{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-bottom:8px;
+  color:#173f60;
+  font-size:12px;
+}
+.skill-tag-standard article>b svg{
+  width:16px;
+  height:16px;
+  fill:none;
+  stroke:#a88745;
+  stroke-width:2;
+}
+.champion-radar-wrap{
+  display:grid;
+  grid-template-columns:210px minmax(0,1fr);
+  gap:16px;
+  align-items:center;
+  padding:16px;
+  background:#0d1b2a;
+  color:#edf7ff;
+}
+.champion-radar-wrap .radar-stage{
+  justify-self:center;
+}
+.champion-radar-values{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:8px;
+}
+.champion-radar-values span{
+  display:grid;
+  grid-template-columns:26px minmax(0,1fr) auto;
+  align-items:center;
+  gap:8px;
+  border:1px solid #28475f;
+  border-radius:8px;
+  background:#142536;
+  padding:8px;
+}
+.champion-radar-values i{
+  display:grid;
+  place-items:center;
+  width:26px;
+  height:26px;
+  border-radius:7px;
+  background:#0b1720;
+  color:#d7b75b;
+}
+.champion-radar-values svg{
+  width:17px;
+  height:17px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2;
+}
+.champion-radar-values small{
+  color:#adc0cf;
+  font-size:10px;
+  font-weight:800;
+}
+.champion-radar-values b{
+  color:#fff;
+  font-size:15px;
+}
+.secondary-skill-records .skill-card-grid{
+  padding:12px;
+}
+.secondary-skill-records .wiki-skill-card.compact{
+  box-shadow:none;
+}
+@media(max-width:1100px){
+  .ability-kit-top,
+  .wiki-skill-grid,
+  .champion-radar-wrap{
+    grid-template-columns:1fr;
+  }
+}
+@media(max-width:760px){
+  .champion-wiki-layout,
+  .skill-library-layout{
+    grid-template-columns:1fr;
+  }
+  .ability-bar{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .wiki-skill-card header{
+    grid-template-columns:32px 56px minmax(0,1fr);
+  }
+  .strong-order{
+    grid-column:1/-1;
+    justify-self:start;
+  }
+  .wiki-skill-meta{
+    grid-template-columns:1fr;
   }
 }
 
@@ -3495,4 +4159,129 @@ body[data-route="finder"] .check-effect-picker select{min-height:34px;font-size:
   body[data-route="finder"] .check-champion-grid>button{width:56px;height:56px;min-width:56px}
   body[data-route="finder"] .check-filter-console{display:grid;grid-template-columns:1fr;max-height:none}
   body[data-route="finder"] .check-multi-filter>div{grid-template-columns:1fr 1fr}
+}
+
+/* Check interaction repair: keep the atlas contained and reveal metadata progressively. */
+body[data-route="finder"] .check-selector,
+body[data-route="finder"] .check-body{overflow:hidden!important}
+body[data-route="finder"] .check-champion-grid{
+  position:relative;
+  z-index:0;
+  max-height:760px;
+  overflow:auto!important;
+  isolation:isolate;
+  overscroll-behavior:contain;
+}
+body[data-route="finder"] .check-champion-grid>button{
+  z-index:0!important;
+  overflow:hidden!important;
+  pointer-events:auto!important;
+  touch-action:manipulation;
+}
+body[data-route="finder"] .check-champion-grid>button>*{pointer-events:none!important}
+body[data-route="finder"] .check-champion-grid>button:hover,
+body[data-route="finder"] .check-champion-grid>button:focus-visible{z-index:1!important}
+body[data-route="finder"] .check-champion-grid>button.selected{
+  z-index:2!important;
+  box-shadow:inset 0 0 0 3px var(--blue),inset 0 0 0 5px #fff!important;
+}
+body[data-route="finder"] .check-champion-grid>button.selected::after{
+  content:""!important;
+  inset:0!important;
+  width:auto!important;
+  height:auto!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  padding:0!important;
+  box-shadow:none!important;
+}
+body[data-route="finder"] .check-champ-label{grid-template-columns:minmax(0,1fr)!important;min-height:18px}
+body[data-route="finder"] .check-champ-label b{font-size:7px!important;text-align:center}
+body[data-route="finder"] .check-champion-grid>button>.check-champ-label>small,
+body[data-route="finder"] .check-champion-grid>button>.check-champ-icons{display:none!important;opacity:0;visibility:hidden}
+body[data-route="finder"] .check-champion-grid>button:hover .check-champ-label,
+body[data-route="finder"] .check-champion-grid>button:focus-visible .check-champ-label{grid-template-columns:minmax(0,1fr) auto!important}
+body[data-route="finder"] .check-champion-grid>button:hover>.check-champ-label>small,
+body[data-route="finder"] .check-champion-grid>button:focus-visible>.check-champ-label>small{display:block!important;opacity:1;visibility:visible}
+body[data-route="finder"] .check-champion-grid>button:hover>.check-champ-icons,
+body[data-route="finder"] .check-champion-grid>button:focus-visible>.check-champ-icons{display:flex!important;opacity:1;visibility:visible}
+body[data-route="finder"] .check-hover-card{display:none!important}
+body[data-route="finder"] .check-name-rail button{position:relative;z-index:0;overflow:hidden}
+body[data-route="finder"] .check-name-rail button>span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+body[data-route="finder"] .check-output{position:relative;z-index:0;overflow:hidden}
+body[data-route="finder"] .check-slot-row,
+body[data-route="finder"] .check-slot-row>section{position:relative;z-index:0;min-width:0;overflow:hidden}
+body[data-route="finder"] .check-slot-row>section>button{
+  z-index:0!important;
+  min-height:44px;
+  overflow:hidden;
+  touch-action:manipulation;
+}
+body[data-route="finder"] .check-slot-row>section>button>*{pointer-events:none}
+body[data-route="finder"] .check-slot-row>section>button:focus-visible{
+  z-index:1!important;
+  outline:3px solid color-mix(in srgb,var(--blue) 40%,transparent);
+  outline-offset:-3px;
+}
+@media(max-width:700px){
+  body[data-route="finder"] .check-selector{overflow:hidden!important}
+  body[data-route="finder"] .check-champion-grid{max-height:580px;overflow:auto!important}
+  body[data-route="finder"] .check-slot-row>section{overflow-x:auto;overflow-y:hidden}
+}
+
+/* Check atlas v4: original portrait colors, 15 columns, gold-only selection. */
+body[data-route="finder"] .check-champion-grid{
+  grid-template-columns:repeat(15,minmax(0,1fr))!important;
+  min-width:0!important;
+  background:#c7d0d8;
+}
+body[data-route="finder"] .check-champion-grid>button,
+body[data-route="finder"] .check-champion-grid>button.available,
+body[data-route="finder"] .check-champion-grid>button.dimmed,
+body[data-route="finder"] .check-champion-grid>button.dimmed:not(.selected),
+body[data-route="finder"] .check-champion-grid>button.dimmed:not(.selected):hover,
+body[data-route="finder"] .check-champion-grid>button.dimmed:not(.selected):focus-visible{
+  min-width:0!important;
+  opacity:1!important;
+  filter:none!important;
+  background:#101820!important;
+}
+body[data-route="finder"] .check-champion-grid>button::before,
+body[data-route="finder"] .check-champion-grid>button::after{
+  opacity:0!important;
+  background:transparent!important;
+  mix-blend-mode:normal!important;
+  box-shadow:none!important;
+}
+body[data-route="finder"] .check-champion-grid>button .portrait,
+body[data-route="finder"] .check-champion-grid>button.available .portrait,
+body[data-route="finder"] .check-champion-grid>button.dimmed .portrait,
+body[data-route="finder"] .check-champion-grid>button.selected .portrait{
+  opacity:1!important;
+  filter:none!important;
+}
+body[data-route="finder"] .check-champion-grid>button.selected{
+  z-index:3!important;
+  outline:2px solid #d89b22!important;
+  outline-offset:-2px!important;
+  box-shadow:
+    inset 0 0 0 3px #ffd75a,
+    inset 0 0 0 5px rgba(255,250,210,.96),
+    0 0 0 2px rgba(216,155,34,.75),
+    0 0 18px rgba(255,196,45,.92)!important;
+}
+body[data-route="finder"] .check-champion-grid>button.selected::after{
+  content:""!important;
+  opacity:1!important;
+  background:linear-gradient(180deg,rgba(255,215,90,.1),transparent 32%)!important;
+  box-shadow:inset 0 0 12px rgba(255,215,90,.38)!important;
+}
+body[data-route="finder"] .check-champ-label{min-height:16px;padding:7px 2px 2px!important}
+body[data-route="finder"] .check-champ-label b{font-size:6px!important}
+@media(max-width:900px){
+  body[data-route="finder"] .check-champion-grid{grid-template-columns:repeat(10,minmax(48px,1fr))!important}
+}
+@media(max-width:700px){
+  body[data-route="finder"] .check-champion-grid{grid-template-columns:repeat(5,minmax(48px,1fr))!important}
 }
