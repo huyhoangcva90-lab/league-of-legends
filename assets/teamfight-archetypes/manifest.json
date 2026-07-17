@@ -5,8 +5,13 @@
   "officialWikiSubclasses": ["vanguard", "warden", "juggernaut", "diver", "burst", "battlemage", "artillery", "marksman", "assassin", "skirmisher", "enchanter", "catcher", "specialist"],
   "derivedTacticalRoles": {
     "hard-carry": "profiles.hyperCarry is true and ratings.toughness > 1",
-    "poke-controller": "ranged poke, control >= 2, and Controller or Support",
+    "poke-controller": "Poke Catcher: ranged poke, control >= 2, and Controller or Support; uses the spellbook icon",
     "finisher": "Execute, Takedown, Reset, or Assassin fallback"
   },
-  "files": "Each icon is a 256x256 crop from archetype-atlas-ai.png."
+  "iconMapping": {
+    "hard-carry": "bow and arrow",
+    "poke-controller": "support spellbook with target rune",
+    "catcher": "spider web"
+  },
+  "files": "The base set is cropped from archetype-atlas-ai.png. Corrected carry and Catcher mappings are cropped from catcher-role-atlas-ai.png."
 }
