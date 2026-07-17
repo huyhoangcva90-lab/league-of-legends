@@ -911,6 +911,7 @@ const draftRecommendationBase=draftRecommendation;
 draftRecommendation=function(){return draftRecommendationBase().filter(({c})=>draftRuleAllows(c))};
 
 document.addEventListener('click',event=>{
+  if(event.target.closest('select,input,textarea,option'))return;
   const filterSummary=event.target.closest('.picker-filter>summary');if(filterSummary)document.querySelectorAll('.picker-filter[open]').forEach(details=>{if(details!==filterSummary.parentElement)details.removeAttribute('open')});
   const pick=event.target.closest('[data-pick]');if(pick){applyPick(pick.dataset.pick);return}
   const pickerReset=event.target.closest('[data-picker-reset]');if(pickerReset){state.pickerFilters=structuredClone(DEFAULT_STATE.pickerFilters);renderPickerFilters();renderPicker();return}
