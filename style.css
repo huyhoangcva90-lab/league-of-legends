@@ -4459,3 +4459,121 @@ body[data-route="team"] .team-guide-card.empty .official-role-icon{width:28px;he
   body[data-route="team"] .team-strength-panel{overflow-x:auto}
   .fight-plan-grid{grid-template-columns:1fr}
 }
+
+/* Check relationships v5: complete lists and semantic, color-coded icons. */
+body[data-route="finder"] .check-output{
+  display:grid;
+  overflow:visible;
+  border-top:3px solid #253d51;
+  background:#f4f7fa;
+}
+body[data-route="finder"] .check-slot-row{
+  grid-template-columns:126px minmax(0,1fr);
+  overflow:visible;
+}
+body[data-route="finder"] .check-slot-row>b{
+  grid-template-columns:28px minmax(0,1fr) auto;
+  place-items:center start;
+  gap:7px;
+  padding:8px;
+  text-align:left;
+}
+body[data-route="finder"] .check-slot-row>b>span:not(.check-relation-icon){font-size:9px;line-height:1.15}
+body[data-route="finder"] .check-slot-row>b>small{justify-self:end;margin:0}
+.check-relation-icon{
+  display:grid;
+  width:28px;
+  height:28px;
+  place-items:center;
+  border:1px solid currentColor;
+  border-radius:7px;
+  background:rgba(255,255,255,.72);
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.45);
+}
+.check-relation-icon svg{
+  width:18px;
+  height:18px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+body[data-route="finder"] .check-slot-row.danger>b{background:linear-gradient(135deg,#ffe4e7,#f8c8cd);color:#9e2430}
+body[data-route="finder"] .check-slot-row.lane>b{background:linear-gradient(135deg,#e2f2ff,#bfdcf4);color:#155e9f}
+body[data-route="finder"] .check-slot-row.success>b{background:linear-gradient(135deg,#e2f6e7,#bfe3c7);color:#24733a}
+body[data-route="finder"] .check-slot-row.warning>b{background:linear-gradient(135deg,#fff4ce,#f4d983);color:#815e08}
+body[data-route="finder"] .check-slot-row>section{
+  grid-template-columns:repeat(auto-fill,minmax(82px,1fr));
+  align-content:start;
+  overflow:visible;
+}
+body[data-route="finder"] .check-slot-row>section>button{
+  min-height:43px;
+  padding:5px;
+  transition:background .18s ease,box-shadow .18s ease,transform .18s ease;
+}
+body[data-route="finder"] .check-slot-row>section>button .portrait{width:30px;height:32px;border-radius:3px}
+body[data-route="finder"] .check-slot-row>section>button small{
+  overflow:visible;
+  font-size:7.5px;
+  line-height:1.15;
+  text-overflow:clip;
+  white-space:normal;
+}
+body[data-route="finder"] .check-slot-row>section>button:hover,
+body[data-route="finder"] .check-slot-row>section>button:focus-visible{
+  z-index:2;
+  transform:translateY(-1px);
+}
+body[data-route="finder"] .check-slot-row.danger>section>button{background:#fff6f7;box-shadow:inset 0 -2px 0 #d64250}
+body[data-route="finder"] .check-slot-row.lane>section>button{background:#f4faff;box-shadow:inset 0 -2px 0 #2f82c8}
+body[data-route="finder"] .check-slot-row.success>section>button{background:#f4fbf5;box-shadow:inset 0 -2px 0 #49a361}
+body[data-route="finder"] .check-slot-row.warning>section>button{background:#fffbef;box-shadow:inset 0 -2px 0 #d6a92e}
+
+body[data-route="finder"] .check-filter-icon:has(.check-tag-icon){
+  overflow:visible;
+  border-right:0;
+}
+.check-tag-icon{
+  display:grid;
+  width:25px;
+  height:25px;
+  place-items:center;
+  border:1px solid color-mix(in srgb,currentColor 55%,#fff);
+  border-radius:7px;
+  color:#7359b8;
+  background:linear-gradient(145deg,#f5f0ff,#ded2ff);
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.54),0 2px 5px rgba(31,45,61,.12);
+}
+.check-tag-icon svg{
+  width:17px!important;
+  height:17px!important;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.9!important;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.check-tag-icon.family-control{color:#b2293d;background:linear-gradient(145deg,#fff0f3,#ffcbd3)}
+.check-tag-icon.family-damage{color:#a44a16;background:linear-gradient(145deg,#fff5df,#ffd48b)}
+.check-tag-icon.family-defense{color:#1763a0;background:linear-gradient(145deg,#edf8ff,#bfe1fb)}
+.check-tag-icon.family-sustain{color:#23733c;background:linear-gradient(145deg,#effbf1,#bde7c7)}
+.check-tag-icon.family-movement{color:#08747d;background:linear-gradient(145deg,#e9fcff,#afe7eb)}
+.check-tag-icon.family-utility{color:#6745a7;background:linear-gradient(145deg,#f7f1ff,#d9c8f7)}
+body[data-route="finder"] .check-filter-toggle.active .check-tag-icon{
+  border-color:rgba(255,255,255,.75);
+  color:#fff;
+  background:linear-gradient(145deg,#1d638f,#0d3f65);
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.18),0 0 0 2px rgba(29,99,143,.28);
+}
+@media(max-width:700px){
+  body[data-route="finder"] .check-slot-row{grid-template-columns:96px minmax(0,1fr)}
+  body[data-route="finder"] .check-slot-row>b{grid-template-columns:24px minmax(0,1fr);gap:5px}
+  body[data-route="finder"] .check-slot-row>b>small{grid-column:1/-1;justify-self:center}
+  .check-relation-icon{width:24px;height:24px}
+  body[data-route="finder"] .check-slot-row>section{grid-template-columns:repeat(auto-fill,minmax(74px,1fr))}
+}
+@media(prefers-reduced-motion:reduce){
+  body[data-route="finder"] .check-slot-row>section>button{transition:none}
+}
