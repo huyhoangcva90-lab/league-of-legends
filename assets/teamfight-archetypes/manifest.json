@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "style": "coral-red monoline icons on white, generated as a consistent 4x4 atlas",
+  "sourceReference": "user-provided teamfight subclass icon screenshot",
+  "officialWikiSubclasses": ["vanguard", "warden", "juggernaut", "diver", "burst", "battlemage", "artillery", "marksman", "assassin", "skirmisher", "enchanter", "catcher", "specialist"],
+  "derivedTacticalRoles": {
+    "hard-carry": "profiles.hyperCarry is true and ratings.toughness > 1",
+    "poke-controller": "ranged poke, control >= 2, and Controller or Support",
+    "finisher": "Execute, Takedown, Reset, or Assassin fallback"
+  },
+  "files": "Each icon is a 256x256 crop from archetype-atlas-ai.png."
+}
