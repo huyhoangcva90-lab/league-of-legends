@@ -7,6 +7,7 @@ $utf8 = New-Object Text.UTF8Encoding($false)
 
 $riot = [IO.File]::ReadAllText((Join-Path $root 'src\data\riot-data.json'), [Text.Encoding]::UTF8) | ConvertFrom-Json
 $manual = [IO.File]::ReadAllText((Join-Path $root 'src\data\manual-data.json'), [Text.Encoding]::UTF8) | ConvertFrom-Json
+$combatClasses = [IO.File]::ReadAllText((Join-Path $root 'src\data\combat-classes.json'), [Text.Encoding]::UTF8) | ConvertFrom-Json
 $manualById = @{}; foreach ($champion in $manual.champions) { $manualById[$champion.id] = $champion }
 $champions = foreach ($official in $riot.champions) {
     $merged = [ordered]@{ id=$official.id; name=$official.name }
@@ -17,7 +18,7 @@ $champions = foreach ($official in $riot.champions) {
     $merged.capabilities = @(@($merged.capabilities) + @($merged.skillTags) | Select-Object -Unique)
     [pscustomobject]$merged
 }
-$runtime = [ordered]@{ version=$manual.version; patch=$riot.patch; locale=$riot.locale; champions=$champions; jungleRoutes=$manual.jungleRoutes; crowdControl=$manual.crowdControl; byId=[ordered]@{}; logic=$manual.logic; dictionary=$manual.dictionary }
+$runtime = [ordered]@{ version=$manual.version; patch=$riot.patch; locale=$riot.locale; champions=$champions; combatClasses=$combatClasses; jungleRoutes=$manual.jungleRoutes; crowdControl=$manual.crowdControl; byId=[ordered]@{}; logic=$manual.logic; dictionary=$manual.dictionary }
 $json = $runtime | ConvertTo-Json -Depth 100 -Compress
 [IO.File]::WriteAllText((Join-Path $root 'data.js'), "/* Generated from src/data. Do not edit directly. */`nconst LOL_APP_DATA=$json;`n", $utf8)
 

@@ -1,17 +1,18 @@
 {
   "version": 1,
   "style": "coral-red monoline icons on white, generated as a consistent 4x4 atlas",
-  "sourceReference": "user-provided teamfight subclass icon screenshot",
-  "officialWikiSubclasses": ["vanguard", "warden", "juggernaut", "diver", "burst", "battlemage", "artillery", "marksman", "assassin", "skirmisher", "enchanter", "catcher", "specialist"],
-  "derivedTacticalRoles": {
+  "sourceReference": "user-provided custom Combat Class icon screenshot",
+  "taxonomy": "Custom combat roles independent from Riot primary and secondary champion classes",
+  "combatClasses": ["vanguard", "warden", "juggernaut", "diver", "burst", "battlemage", "artillery", "marksman", "hard-carry", "assassin", "skirmisher", "enchanter", "poke-controller", "pick-catcher", "specialist"],
+  "signatureRules": {
     "hard-carry": "profiles.hyperCarry is true and ratings.toughness > 1",
-    "poke-controller": "Poke Catcher: ranged poke, control >= 2, and Controller or Support; uses the spellbook icon",
-    "finisher": "Execute, Takedown, Reset, or Assassin fallback"
+    "poke-controller": "Support + Poke + Ranged or Control >= 1; uses the spellbook icon",
+    "pick-catcher": "Catch, Pick or Hook + hard crowd control; uses the spider-web icon"
   },
   "iconMapping": {
     "hard-carry": "bow and arrow",
     "poke-controller": "support spellbook with target rune",
-    "catcher": "spider web"
+    "pick-catcher": "catcher.png, spider web"
   },
   "files": "The base set is cropped from archetype-atlas-ai.png. Corrected carry and Catcher mappings are cropped from catcher-role-atlas-ai.png."
 }

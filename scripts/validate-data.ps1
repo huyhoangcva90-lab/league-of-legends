@@ -4,6 +4,7 @@ $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
 $riot = [IO.File]::ReadAllText((Join-Path $root 'src\data\riot-data.json'), [Text.Encoding]::UTF8) | ConvertFrom-Json
 $manual = [IO.File]::ReadAllText((Join-Path $root 'src\data\manual-data.json'), [Text.Encoding]::UTF8) | ConvertFrom-Json
+$combatClasses = [IO.File]::ReadAllText((Join-Path $root 'src\data\combat-classes.json'), [Text.Encoding]::UTF8) | ConvertFrom-Json
 $errors = New-Object Collections.Generic.List[string]
 $settingPath = Join-Path $root 'lol\setting-data.js'
 $setting = $null
@@ -19,6 +20,12 @@ $manualIds = @($manual.champions | ForEach-Object { $_.id })
 $manualById = @{}; foreach ($champion in $manual.champions) { $manualById[$champion.id] = $champion }
 foreach ($id in $riotIds | Group-Object | Where-Object Count -gt 1) { $errors.Add("riot-data.json: duplicate champion id '$($id.Name)'.") }
 foreach ($id in $manualIds | Group-Object | Where-Object Count -gt 1) { $errors.Add("manual-data.json: duplicate champion id '$($id.Name)'.") }
+$combatClassIds = @($combatClasses.classes | ForEach-Object { $_.id })
+$requiredCombatClassIds = @('vanguard','warden','juggernaut','diver','burst','battlemage','artillery','marksman','hard-carry','assassin','skirmisher','enchanter','poke-controller','pick-catcher','specialist')
+if ($combatClassIds.Count -ne 15) { $errors.Add("combat-classes.json: expected 15 Combat Classes; found $($combatClassIds.Count).") }
+foreach ($id in $combatClassIds | Group-Object | Where-Object Count -gt 1) { $errors.Add("combat-classes.json: duplicate class id '$($id.Name)'.") }
+foreach ($id in $requiredCombatClassIds | Where-Object { $_ -notin $combatClassIds }) { $errors.Add("combat-classes.json: missing required class '$id'.") }
+if (@($combatClasses.classes | Where-Object signature).Count -ne 3) { $errors.Add('combat-classes.json: Hard Carry and both Catcher variants must be the three signature rules.') }
 foreach ($id in $riotIds | Where-Object { $_ -notin $manualIds }) { $errors.Add("manual-data.json: missing champion '$id'.") }
 foreach ($id in $manualIds | Where-Object { $_ -notin $riotIds }) { $errors.Add("riot-data.json: missing champion '$id'.") }
 foreach ($champion in $riot.champions) {
@@ -121,6 +128,7 @@ if ($CheckGenerated) {
         foreach ($id in @($runtimeById.Keys)) { if ($id -notin $riotIds) { $errors.Add("data.js: contains unknown generated champion '$id'.") } }
         if (@($runtime.jungleRoutes).Count -ne @($manual.jungleRoutes).Count) { $errors.Add('data.js: jungle route count is stale.') }
         if (@($runtime.crowdControl).Count -ne @($manual.crowdControl).Count) { $errors.Add('data.js: crowd-control count is stale.') }
+        if ((@($runtime.combatClasses.classes.id) -join '|') -cne ($combatClassIds -join '|')) { $errors.Add('data.js: Combat Class runtime payload is stale.') }
     }
     foreach ($dataset in @(@('matchup-lanes.json','matchup-lanes.js','LOL_MATCHUP_LANES'),@('sheet-details.json','sheet-details.js','LOL_SHEET_DETAILS'),@('jungle-details.json','jungle-details.js','LOL_JUNGLE_DETAILS'))) {
         $source = [IO.File]::ReadAllText((Join-Path $root "src\data\$($dataset[0])"), [Text.Encoding]::UTF8) | ConvertFrom-Json

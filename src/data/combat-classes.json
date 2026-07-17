@@ -1,0 +1,174 @@
+{
+  "version": 1,
+  "source": "Custom combat-role inference from Champion sheet fields",
+  "classes": [
+    {
+      "id": "vanguard",
+      "groupEn": "Initiation and protection",
+      "groupVi": "Mở giao tranh và bảo vệ",
+      "en": "Vanguard",
+      "vi": "Tiên phong",
+      "descEn": "A durable frontline champion who starts the fight.",
+      "descVi": "Tướng tuyến trước đủ chống chịu để chủ động mở giao tranh.",
+      "ruleEn": "Toughness >= 2 + Frontline + Engage",
+      "ruleVi": "Chống chịu >= 2 + Tuyến trước + Lao vào"
+    },
+    {
+      "id": "warden",
+      "groupEn": "Initiation and protection",
+      "groupVi": "Mở giao tranh và bảo vệ",
+      "en": "Warden",
+      "vi": "Hộ vệ",
+      "descEn": "A durable protector who stops dives and resets fights.",
+      "descVi": "Tướng chống chịu bảo kê, chặn lao vào và đưa giao tranh về thế an toàn.",
+      "ruleEn": "Toughness >= 2 + Front/Midline + Disengage, Peel, Shield or Heal",
+      "ruleVi": "Chống chịu >= 2 + Tuyến trước/giữa + Phản lao vào, bảo kê, khiên hoặc hồi máu"
+    },
+    {
+      "id": "juggernaut",
+      "groupEn": "Melee pressure",
+      "groupVi": "Áp lực cận chiến",
+      "en": "Juggernaut",
+      "vi": "Đấu sĩ hạng nặng",
+      "descEn": "A slow melee threat with both damage and durability.",
+      "descVi": "Nguồn áp lực cận chiến vừa có sát thương vừa có chống chịu nhưng cơ động thấp.",
+      "ruleEn": "Melee + Damage >= 2 + Toughness >= 2 + Mobility <= 2",
+      "ruleVi": "Cận chiến + Sát thương >= 2 + Chống chịu >= 2 + Cơ động <= 2"
+    },
+    {
+      "id": "diver",
+      "groupEn": "Melee pressure",
+      "groupVi": "Áp lực cận chiến",
+      "en": "Diver",
+      "vi": "Tướng lao vào",
+      "descEn": "A mobile melee threat that reaches the enemy backline.",
+      "descVi": "Tướng cận chiến cơ động có thể lao vào gây áp lực lên tuyến sau.",
+      "ruleEn": "Melee + Mobility >= 2 + Engage/Dive + Frontline or Flank",
+      "ruleVi": "Cận chiến + Cơ động >= 2 + Lao vào + Tuyến trước hoặc đánh sườn"
+    },
+    {
+      "id": "burst",
+      "groupEn": "Spell damage",
+      "groupVi": "Sát thương kỹ năng",
+      "en": "Burst",
+      "vi": "Dồn sát thương",
+      "descEn": "A magic-damage champion whose profile is built around one burst window.",
+      "descVi": "Tướng sát thương phép có hồ sơ dồn sát thương trong một nhịp combo.",
+      "ruleEn": "Magic + Burst damage profile",
+      "ruleVi": "Sát thương phép + hồ sơ dồn sát thương"
+    },
+    {
+      "id": "battlemage",
+      "groupEn": "Spell damage",
+      "groupVi": "Sát thương kỹ năng",
+      "en": "Battlemage",
+      "vi": "Pháp sư giao tranh",
+      "descEn": "A durable magic DPS source for extended close or mid-range fights.",
+      "descVi": "Nguồn DPS phép có chống chịu cho giao tranh kéo dài ở cự ly gần hoặc trung bình.",
+      "ruleEn": "Magic + DPS profile + Toughness >= 2 + Front/Midline",
+      "ruleVi": "Sát thương phép + hồ sơ DPS + Chống chịu >= 2 + Tuyến trước/giữa"
+    },
+    {
+      "id": "artillery",
+      "groupEn": "Spell damage",
+      "groupVi": "Sát thương kỹ năng",
+      "en": "Artillery",
+      "vi": "Pháo kích",
+      "descEn": "A ranged magic or ability threat that wins space through poke.",
+      "descVi": "Nguồn kỹ năng tầm xa chiếm không gian bằng cấu rỉa.",
+      "ruleEn": "Ranged + Poke + Magic/ability damage",
+      "ruleVi": "Đánh xa + Cấu rỉa + sát thương phép/kỹ năng"
+    },
+    {
+      "id": "marksman",
+      "groupEn": "Carry damage",
+      "groupVi": "Sát thương chủ lực",
+      "en": "Marksman",
+      "vi": "Xạ thủ",
+      "descEn": "A ranged physical DPS source that is not promoted to Hard Carry.",
+      "descVi": "Nguồn DPS vật lý tầm xa chưa đạt điều kiện Siêu chủ lực.",
+      "ruleEn": "Ranged + Physical + DPS/Carry, excluding the Hard Carry rule",
+      "ruleVi": "Đánh xa + Vật lý + DPS/Carry, loại trừ rule Siêu chủ lực"
+    },
+    {
+      "id": "hard-carry",
+      "groupEn": "Carry damage",
+      "groupVi": "Sát thương chủ lực",
+      "en": "Hard Carry",
+      "vi": "Siêu chủ lực",
+      "descEn": "The protected damage core that can survive more than the lightest contact.",
+      "descVi": "Nguồn sát thương trung tâm cần được bảo vệ và chịu được hơn một nhịp chạm nhẹ.",
+      "ruleEn": "Hard Carry + Toughness > 1",
+      "ruleVi": "Siêu chủ lực + Chống chịu > 1",
+      "signature": true
+    },
+    {
+      "id": "assassin",
+      "groupEn": "Kill pressure",
+      "groupVi": "Áp lực hạ gục",
+      "en": "Assassin",
+      "vi": "Sát thủ",
+      "descEn": "A mobile burst threat that reaches isolated or backline targets.",
+      "descVi": "Mối đe dọa dồn sát thương cơ động, nhắm mục tiêu cô lập hoặc tuyến sau.",
+      "ruleEn": "Burst profile + Mobility >= 2 + Flank/Catch",
+      "ruleVi": "Hồ sơ dồn sát thương + Cơ động >= 2 + Đánh sườn/Bắt lẻ"
+    },
+    {
+      "id": "skirmisher",
+      "groupEn": "Kill pressure",
+      "groupVi": "Áp lực hạ gục",
+      "en": "Skirmisher",
+      "vi": "Đấu sĩ giao tranh nhỏ",
+      "descEn": "A mobile melee DPS threat for duels and extended skirmishes.",
+      "descVi": "Nguồn DPS cận chiến cơ động cho đấu tay đôi và giao tranh nhỏ kéo dài.",
+      "ruleEn": "Melee + DPS profile + Mobility >= 2 + Split/Engage",
+      "ruleVi": "Cận chiến + hồ sơ DPS + Cơ động >= 2 + Đẩy lẻ/Lao vào"
+    },
+    {
+      "id": "enchanter",
+      "groupEn": "Support control",
+      "groupVi": "Kiểm soát hỗ trợ",
+      "en": "Enchanter",
+      "vi": "Hỗ trợ cường hóa",
+      "descEn": "A support that increases ally output through heal, shield or buff effects.",
+      "descVi": "Hỗ trợ tăng hiệu quả đồng đội bằng hồi máu, khiên hoặc cường hóa.",
+      "ruleEn": "Support + Heal/Shield/Buff + Utility >= 2",
+      "ruleVi": "Hỗ trợ + Hồi máu/Khiên/Buff + Đa dụng >= 2"
+    },
+    {
+      "id": "poke-controller",
+      "groupEn": "Support control",
+      "groupVi": "Kiểm soát hỗ trợ",
+      "en": "Poke Catcher",
+      "vi": "Hỗ trợ cấu rỉa",
+      "descEn": "A support that chips health and creates a catch window from range.",
+      "descVi": "Hỗ trợ cấu máu từ xa để mở ra thời điểm bắt mục tiêu.",
+      "ruleEn": "Support + Poke + Ranged or Control >= 1",
+      "ruleVi": "Hỗ trợ + Cấu rỉa + Đánh xa hoặc Khống chế >= 1",
+      "signature": true
+    },
+    {
+      "id": "pick-catcher",
+      "groupEn": "Support control",
+      "groupVi": "Kiểm soát hỗ trợ",
+      "en": "Pick Catcher",
+      "vi": "Tướng bắt lẻ",
+      "descEn": "A catch-oriented hard-control source that converts one hit into a kill.",
+      "descVi": "Nguồn khống chế cứng thiên về bắt lẻ, biến một lần trúng chiêu thành điểm hạ gục.",
+      "ruleEn": "Catch/Pick/Hook + hard crowd control",
+      "ruleVi": "Bắt lẻ/Chọn mục tiêu/Kéo + khống chế cứng",
+      "signature": true
+    },
+    {
+      "id": "specialist",
+      "groupEn": "Special pattern",
+      "groupVi": "Cơ chế đặc biệt",
+      "en": "Specialist",
+      "vi": "Chuyên gia",
+      "descEn": "A champion whose combat record does not fit another Combat Class rule.",
+      "descVi": "Tướng có hồ sơ giao tranh không khớp các rule Combat Class còn lại.",
+      "ruleEn": "Fallback only when no other Combat Class matches",
+      "ruleVi": "Chỉ dùng khi không khớp Combat Class nào khác"
+    }
+  ]
+}
