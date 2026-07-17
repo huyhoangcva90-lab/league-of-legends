@@ -4577,3 +4577,100 @@ body[data-route="finder"] .check-filter-toggle.active .check-tag-icon{
 @media(prefers-reduced-motion:reduce){
   body[data-route="finder"] .check-slot-row>section>button{transition:none}
 }
+
+/* Team readability v6: one Combat Class, explicit Riot classes, separate skill tags. */
+body[data-route="team"] .team-sheet-lane{min-height:158px}
+body[data-route="team"] .team-sheet-side{grid-template-rows:118px 40px}
+body[data-route="team"] .team-sheet-side .team-sheet-pick,
+body[data-route="team"] .team-sheet-side .team-sheet-meta{grid-row:1}
+body[data-route="team"] .team-sheet-side .team-sheet-pick{padding:9px 10px}
+body[data-route="team"] .team-sheet-identity{gap:5px}
+body[data-route="team"] .team-sheet-identity>b{font-size:16px;line-height:1.05}
+.riot-class-line{
+  display:flex!important;
+  max-width:100%;
+  align-items:center;
+  gap:5px;
+  overflow:visible!important;
+  color:#304a5c!important;
+  white-space:normal!important;
+}
+.riot-class-line>span{display:grid;min-width:0;gap:1px}
+.riot-class-line small{color:#71828f;font-size:7px;font-weight:900;line-height:1}
+.riot-class-line b{overflow:hidden;color:#233d50;font-size:10px;line-height:1.1;text-overflow:ellipsis;white-space:nowrap}
+.riot-class-line>i{color:#9aa7b0;font-size:10px;font-style:normal}
+body[data-route="team"] .team-sheet-side.blue .riot-class-line{justify-content:flex-end;text-align:right}
+body[data-route="team"] .team-sheet-side.red .riot-class-line{justify-content:flex-start;text-align:left}
+body[data-route="team"] .team-identity-tags .tactical-tag{min-height:22px!important;padding:3px 6px!important;font-size:9px!important}
+body[data-route="team"] .team-identity-tags .tactical-tag svg{width:13px!important;height:13px!important;flex-basis:13px!important}
+body[data-route="team"] .team-combat-classes{
+  display:flex;
+  max-width:100%;
+  align-items:center;
+  gap:5px;
+  overflow:visible!important;
+  white-space:normal!important;
+}
+body[data-route="team"] .team-combat-classes>small{color:#6b7c88;font-size:8px;font-weight:900;white-space:nowrap}
+body[data-route="team"] .team-combat-class{min-height:24px;padding:2px 7px 2px 3px}
+body[data-route="team"] .team-combat-class .teamfight-archetype-icon{width:21px!important;height:21px!important;flex-basis:21px}
+body[data-route="team"] .team-combat-class b{font-size:9px}
+body[data-route="team"] .team-sheet-meta{gap:7px;padding:9px}
+body[data-route="team"] .team-sheet-meta .tactical-tag{min-height:23px;padding:3px 6px;font-size:9px}
+body[data-route="team"] .team-sheet-meta .tactical-tag svg{width:13px;height:13px;flex-basis:13px}
+body[data-route="team"] .team-position-tags{gap:5px}
+body[data-route="team"] .team-position-tags>span{min-width:28px;padding:3px 6px;font-size:10px;text-align:center}
+body[data-route="team"] .team-position-tags .position-placeholder{
+  border-style:dashed;
+  border-color:#aeb9c1;
+  background:#f3f5f6;
+  color:#667985;
+}
+body[data-route="team"] .team-sheet-skill-tags{
+  grid-column:1/-1;
+  grid-row:2;
+  display:grid;
+  grid-template-columns:72px minmax(0,1fr);
+  min-width:0;
+  align-items:center;
+  gap:6px;
+  border-top:1px solid #c6d0d7;
+  background:#f5f8fa;
+  padding:5px 8px;
+}
+body[data-route="team"] .team-sheet-side.blue .team-sheet-skill-tags{grid-template-columns:minmax(0,1fr) 72px;text-align:right}
+body[data-route="team"] .team-sheet-side.blue .team-sheet-skill-tags>small{grid-column:2;grid-row:1}
+body[data-route="team"] .team-sheet-side.blue .team-sheet-skill-tags>.skill-tag-line{grid-column:1;grid-row:1;justify-content:flex-end}
+body[data-route="team"] .team-sheet-skill-tags>small{color:#526b7c;font-size:9px;font-weight:900;white-space:nowrap}
+body[data-route="team"] .team-sheet-skill-tags>.skill-tag-line{
+  display:flex;
+  min-width:0;
+  flex-wrap:nowrap;
+  gap:4px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  scrollbar-width:thin;
+}
+body[data-route="team"] .team-sheet-skill-tags .tactical-tag{flex:0 0 auto;min-height:24px!important;padding:3px 6px!important;font-size:9px!important}
+body[data-route="team"] .team-sheet-skill-tags .tactical-tag svg{width:13px!important;height:13px!important;flex-basis:13px!important}
+body[data-route="team"] .team-lane-center>b{font-size:10px}
+body[data-route="team"] .team-lane-center>span{font-size:9px}
+body[data-route="team"] .team-lane-center>small{font-size:7px}
+body[data-route="team"] .team-sheet-title>b{font-size:14px}
+body[data-route="team"] .team-sheet-title>span{font-size:8px}
+body[data-route="team"] .team-sheet-ban>small{font-size:9px}
+body[data-route="team"] .team-strength-panel>.section-head h2{font-size:16px}
+body[data-route="team"] .team-strength-panel>.section-head small{font-size:8px}
+body[data-route="team"] .team-guide-id small{font-size:8px}
+body[data-route="team"] .team-guide-id b{font-size:11px}
+body[data-route="team"] .team-guide-copy small{font-size:8px}
+body[data-route="team"] .team-guide-copy p{font-size:10px;line-height:1.45;-webkit-line-clamp:3}
+body[data-route="team"] .team-matrix-row>span strong{font-size:10px}
+body[data-route="team"] .team-matrix-faces small{font-size:7px}
+.position-line{grid-template-columns:repeat(auto-fit,minmax(38px,1fr))}
+.position-line>span.placeholder>i{border:1px dashed #aeb9c1;background:#f3f5f6}
+.position-line>span.placeholder>b{color:#667985;font-size:9px}
+@media(max-width:720px){
+  body[data-route="team"] .team-sheet-lane{min-height:158px}
+  body[data-route="team"] .team-sheet-side{grid-template-rows:118px 40px}
+}
