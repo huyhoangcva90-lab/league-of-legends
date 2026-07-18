@@ -6294,3 +6294,62 @@ body[data-route="finder"] .check-selector>.check-output{
   height:0!important;
   overflow:hidden!important;
 }
+
+/* Builds page: champion -> items, runes, level-up. */
+.build-library-layout{align-items:start}
+.build-page{display:grid;gap:14px;min-width:0}
+.build-quick-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid #cbd9e4;border-radius:14px;background:linear-gradient(90deg,#102235,#173a5b);padding:10px 12px;color:#dcecff;box-shadow:0 14px 34px rgba(15,34,54,.14)}
+.build-quick-actions button{display:inline-flex;align-items:center;gap:9px;min-height:46px;border:1px solid rgba(214,182,101,.55);border-radius:12px;background:#fff;color:#102235;padding:7px 12px;font-weight:900;cursor:pointer}
+.build-quick-actions button:hover{transform:translateY(-1px);box-shadow:0 10px 18px rgba(0,0,0,.16)}
+.build-quick-actions .portrait{width:30px;height:30px}
+.build-quick-actions>span{font-size:12px;font-weight:800;letter-spacing:.02em}
+.build-section,.build-source{border:1px solid #bfd0dc;border-radius:16px;background:#fff;box-shadow:0 14px 34px rgba(21,45,68,.08);overflow:hidden}
+.build-section>.section-head{margin:0;border-bottom:1px solid #dbe5ec;background:linear-gradient(90deg,#eef7ff,#fff);padding:13px 15px}
+.build-section>.section-head h3{font-size:18px}
+.build-section>.section-head span{font-size:11px}
+.build-style-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;padding:14px}
+.build-style-card{display:grid;gap:12px;border:1px solid #d2dee7;border-radius:14px;background:#fbfdff;padding:13px}
+.build-style-card header{display:grid;grid-template-columns:40px minmax(0,1fr);gap:10px;align-items:center;border-bottom:1px solid #e1e9f0;padding-bottom:10px}
+.build-style-card header>span{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:#102235;color:#d6b665}
+.build-style-card header svg{width:25px;height:25px;stroke:#d6b665}
+.build-style-card header small{display:block;overflow:hidden;color:#607789;font-size:10px;font-weight:800;text-overflow:ellipsis;white-space:nowrap}
+.build-style-card header h3{margin:2px 0 0;color:#122334;font-size:18px}
+.build-row{display:grid;grid-template-columns:88px minmax(0,1fr);gap:10px;align-items:start}
+.build-row>b{padding-top:9px;color:#355065;font-size:11px;font-weight:900;letter-spacing:.04em;text-transform:uppercase}
+.build-row>p{display:flex;flex-wrap:wrap;gap:7px;margin:0}
+.build-row.core .build-item-chip{border-color:#d6b665;background:#fffaf0}
+.build-item-chip{position:relative;display:grid;grid-template-columns:38px minmax(82px,1fr);grid-template-rows:auto auto;gap:2px 8px;align-items:center;min-height:50px;max-width:190px;border:1px solid #cfdce6;border-radius:11px;background:#fff;padding:6px 8px 6px 6px}
+.build-item-chip img,.build-item-chip i{grid-row:1/3;width:38px;height:38px;border:1px solid #9fb0bd;border-radius:9px;object-fit:cover;background:#102235}
+.build-item-chip i{display:grid;place-items:center;color:#d6b665;font-style:normal;font-weight:900}
+.build-item-chip b{overflow:hidden;color:#16293a;font-size:11px;line-height:1.15;text-overflow:ellipsis;white-space:nowrap}
+.build-item-chip b em{display:inline-grid;place-items:center;min-width:18px;height:18px;margin-right:5px;border-radius:999px;background:#102235;color:#d6b665;font-style:normal;font-size:10px}
+.build-item-chip small{color:#657b8c;font-size:10px;font-weight:800}
+.build-bottom-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:14px}
+.rune-columns{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:14px}
+.rune-columns article{display:grid;gap:8px;border:1px solid #d2dee7;border-radius:14px;background:#fbfdff;padding:12px}
+.rune-columns article>b{color:#122334;font-size:16px}
+.rune-columns span{display:flex;align-items:center;gap:9px;min-height:38px;border:1px solid #dbe5ec;border-radius:10px;background:#fff;padding:7px 9px}
+.rune-columns span.keystone{border-color:#d6b665;background:#fff8df}
+.rune-columns svg{width:22px;height:22px;stroke:#1769aa}
+.rune-columns em{overflow:hidden;color:#22394e;font-style:normal;font-size:13px;font-weight:850;text-overflow:ellipsis;white-space:nowrap}
+.rune-columns small{border-top:1px solid #dde7ef;padding-top:8px;color:#607789;font-size:11px;font-weight:800}
+.rune-panel>p{margin:0 14px 14px;border-radius:10px;background:#f0f7ff;color:#2d4b64;padding:10px 12px;font-size:12px;line-height:1.45}
+.level-grid{display:grid;grid-template-columns:repeat(9,minmax(42px,1fr));gap:8px;padding:14px}
+.level-grid span{display:grid;place-items:center;gap:3px;border:1px solid #d1dee8;border-radius:10px;background:#fbfdff;padding:7px 4px}
+.level-grid small{color:#5f7486;font-size:9px;font-weight:900}
+.level-grid img,.level-grid i{width:32px;height:32px;border:1px solid #9fb0bd;border-radius:8px;object-fit:cover;background:#102235}
+.level-grid i{display:grid;place-items:center;color:#d6b665;font-style:normal;font-weight:900}
+.level-grid b{font-size:12px}
+.level-grid .slot-r{border-color:#d68b95;background:#fff1f3}
+.level-priority{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:0 14px 14px}
+.level-priority span{display:grid;grid-template-columns:32px minmax(0,1fr);gap:2px 8px;border:1px solid #d2dee7;border-radius:12px;background:#f8fbfd;padding:9px}
+.level-priority b{grid-row:1/3;display:grid;place-items:center;border-radius:10px;background:#102235;color:#d6b665}
+.level-priority em{color:#132536;font-size:13px;font-style:normal;font-weight:900}
+.level-priority small{overflow:hidden;color:#607789;font-size:11px;text-overflow:ellipsis;white-space:nowrap}
+.build-source{display:grid;gap:10px;padding:14px;background:linear-gradient(135deg,#fffaf0,#fff)}
+.build-source h3{margin:0;color:#132536;font-size:18px}
+.build-source p{margin:0;color:#405365;font-size:13px;line-height:1.55}
+.build-source div{display:flex;flex-wrap:wrap;gap:8px}
+.build-source span{border:1px solid #d6b665;border-radius:999px;background:#fff;color:#6b4d00;padding:6px 9px;font-size:11px;font-weight:900}
+@media(max-width:1100px){.build-style-grid,.build-bottom-grid{grid-template-columns:1fr}.build-row{grid-template-columns:74px minmax(0,1fr)}}
+@media(max-width:700px){.build-quick-actions{align-items:stretch;flex-direction:column}.rune-columns,.level-priority{grid-template-columns:1fr}.level-grid{grid-template-columns:repeat(6,minmax(42px,1fr))}.build-style-grid{padding:10px}.build-row{grid-template-columns:1fr}.build-row>b{padding-top:0}.build-item-chip{max-width:none}}

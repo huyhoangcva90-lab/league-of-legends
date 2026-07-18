@@ -36,7 +36,7 @@ $manualData = [IO.File]::ReadAllText((Join-Path $root 'src\data\manual-data.json
 $tierValues = @($manualData.champions.tier | Select-Object -Unique)
 Add-Contract 'Data' 'All champions use the sourced four-level meta tier contract' (@($manualData.champions).Count -eq 173 -and @($tierValues | Where-Object { $_ -notin @('S+','S','A+','A') }).Count -eq 0 -and @($manualData.champions | Where-Object { [string]$_.evidence.tier -notmatch '^lolalytics:' }).Count -eq 0 -and (Test-Path (Join-Path $root 'scripts\update-meta-tiers.ps1'))) 'LoLalytics Emerald+ global snapshot mapped to S+, S, A+, A'
 
-$renderers = @('renderTeamFull','renderDraftFull','renderFinderFull','renderMatchupsFull','renderTeamfightFull','renderCompareFull','renderMapFull','renderStrategyFull','renderChampionsFull','renderSkillsFull','renderRoutesFull','renderCcFull','renderSystemFull')
+$renderers = @('renderTeamFull','renderDraftFull','renderFinderFull','renderMatchupsFull','renderTeamfightFull','renderCompareFull','renderMapFull','renderStrategyFull','renderChampionsFull','renderSkillsFull','renderBuildsFull','renderRoutesFull','renderSystemFull')
 Add-Contract 'Navigation' 'All 13 application modules have renderers' (Has-All $app ($renderers | ForEach-Object { "function\s+$([regex]::Escape($_))\s*\(" })) ($renderers -join ', ')
 Add-Contract 'State' 'Versioned persisted-state migration' ($app -match 'STATE_SCHEMA_VERSION\s*=\s*6' -and $app -match 'function\s+mergeState') 'STATE_SCHEMA_VERSION=6 + mergeState'
 Add-Contract 'Session' 'Named save, history, share and JSON interchange' (Has-All $app @('function\s+saveNamedSession','function\s+restoreHistoryEntry','function\s+copySessionLink','function\s+downloadSession','data-session-import')) 'Session persistence and portable analysis contract'
@@ -62,7 +62,7 @@ Add-Contract 'Map' 'Map route types and visual legend' (Has-All $app @('function
 Add-Contract 'Map' 'Map legend is responsive' (Has-All $style @('\.map-legend','route-map span\.gank','route-map span\.objective','route-map span\.invade','@media\(max-width:480px\)')) 'Desktop, tablet and mobile styles'
 Add-Contract 'Strategy' 'Strategy depends on live team and Setting pools' (Has-All $app @('function\s+strategyWorkbookContract','function\s+strategyMatrix','function\s+strategyTierPanel')) 'Strategy DA1:EI125 contract'
 Add-Contract 'Route' 'Jungle champion compatibility and 9-step routes' (Has-All $app @('function\s+routeCompatibilityPanel','function\s+routeWorkbookTable','Array\.from\(\{length:9\}')) 'Jungle Route A1:W44 contract'
-Add-Contract 'CC' 'CC taxonomy, skill coverage and removal rules' (Has-All $app @('function\s+ccSkillCoverage','function\s+ccRemovalPanel','function\s+renderCcFull')) 'Official CC dictionary consumers'
+Add-Contract 'Builds' 'Champion build page exposes items, runes and level-up order' ((Has-All $app @('function\s+renderBuildsFull','function\s+buildRecommendation','function\s+runePanel','function\s+levelUpPanel','ITEM_DATA','ITEMS')) -and (Has-All $style @('\.build-style-grid','\.build-item-chip','\.rune-columns','\.level-grid'))) 'Item builds + rune baseline + skill level order'
 Add-Contract 'QA' 'Runtime integrity panel is exposed in the app' (Has-All $app @('function\s+runtimeContractChecks','function\s+runtimeContractPanel','function\s+qualityChecks')) 'System / Data Quality route'
 Add-Contract 'Recovery' 'Render failures preserve workspace and expose recovery' (Has-All $app @('function\s+renderFailure','Open Data Quality','Reset workspace')) 'renderFailure recovery mode'
 
