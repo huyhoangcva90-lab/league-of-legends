@@ -7037,3 +7037,83 @@ body.picker-open dialog#champion-picker{display:grid}
 @media(prefers-reduced-motion:reduce){
   #champion-picker .picker-list .picker-champion-card{transition:none}
 }
+
+/* Builds: explicit source contract and opponent-aware local adaptation. */
+.build-matchup-panel{
+  display:grid;
+  gap:12px;
+  border:1px solid #b8c8d5;
+  border-top:4px solid #c89b32;
+  border-radius:14px;
+  background:#fff;
+  padding:16px;
+  box-shadow:0 8px 24px rgba(17,39,57,.08);
+}
+.build-matchup-panel.empty-matchup{grid-template-columns:minmax(0,1fr) minmax(260px,340px);align-items:end}
+.build-matchup-panel h3{margin:3px 0 5px;color:#142638;font-size:20px}
+.build-matchup-panel p{margin:0;color:#546a7c;font-size:12px;line-height:1.5}
+.source-kicker{color:#956e12;font-size:9px;font-weight:950;letter-spacing:.1em;text-transform:uppercase}
+.build-matchup-panel label{display:grid;gap:5px;color:#43596b;font-size:10px;font-weight:900;text-transform:uppercase}
+.build-matchup-panel select{
+  min-height:46px;
+  border:1px solid #8fa4b5;
+  border-radius:10px;
+  background:#f8fbfd;
+  padding:9px 36px 9px 12px;
+  color:#142638;
+  font-size:14px;
+  font-weight:800;
+}
+.build-matchup-panel select:focus-visible{border-color:#1e5f92;outline:3px solid rgba(30,95,146,.18)}
+.build-matchup-panel>header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.build-matchup-panel>header>label{width:min(320px,36%)}
+.build-matchup-title{display:flex;min-width:0;align-items:center;gap:9px}
+.build-matchup-title>.portrait{width:48px;height:48px;border-radius:10px}
+.build-matchup-title>span{display:grid;min-width:76px}
+.build-matchup-title small{color:#718494;font-size:9px;text-transform:uppercase}
+.build-matchup-title b{overflow:hidden;color:#172a3b;font-size:15px;text-overflow:ellipsis;white-space:nowrap}
+.build-matchup-title>i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#172c3f;color:#e7c76d;font-size:10px;font-style:normal;font-weight:950}
+.matchup-threat-tags{display:flex;flex-wrap:wrap;gap:6px;border-top:1px solid #e0e7ed;padding-top:10px}
+.matchup-threat-tags span{border:1px solid #c5d1da;border-radius:999px;background:#eef3f7;padding:5px 8px;color:#344b5e;font-size:9px;font-weight:900}
+.matchup-threat-tags .threat-magic{border-color:#b8a4e5;background:#eee9fb;color:#60429a}
+.matchup-threat-tags .threat-physical{border-color:#e7aba4;background:#fcebe8;color:#963d32}
+.matchup-threat-tags .threat-mixed{border-color:#7cc9b8;background:#e2f6f1;color:#166b5a}
+.matchup-threat-tags .threat-burst{border-color:#e3b0b7;background:#fae9eb;color:#8a303c}
+.matchup-threat-tags .threat-tank{border-color:#9db3c3;background:#e8eff4;color:#2e526c}
+.matchup-build-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(240px,1fr);gap:12px}
+.matchup-build-grid>article{display:grid;gap:9px;border:1px solid #d5dfe7;border-radius:12px;background:#f8fafc;padding:11px}
+.matchup-build-grid>article>small{color:#425a6d;font-size:10px;font-weight:950;letter-spacing:.06em;text-transform:uppercase}
+.matchup-build-grid>article>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.matchup-build-grid>article>div>div{display:grid;gap:5px;align-content:start}
+.matchup-build-grid .build-item-chip{max-width:none}
+.matchup-build-grid p{display:flex;flex-wrap:wrap;gap:4px}
+.matchup-build-grid p span{border-radius:999px;background:#e9f1f7;padding:3px 6px;color:#31526b;font-size:8px;font-weight:850}
+.build-matchup-panel .matchup-disclaimer{border-left:3px solid #c89b32;background:#fff9ea;padding:8px 10px;color:#665523;font-size:10px}
+.build-source{gap:14px!important;padding:16px!important;background:linear-gradient(135deg,#fffaf0,#fff 58%,#f4f8fb)!important}
+.build-source .build-source-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.build-source .build-source-head>div{display:block}
+.build-source .source-patch{border:1px solid #d6b665;border-radius:999px;background:#fff;padding:6px 9px;color:#6b4d00;font-size:10px;font-weight:900;white-space:nowrap}
+.build-source .source-contract-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.build-source .source-contract-grid article{display:grid;align-content:start;gap:7px;border:1px solid #d4dee6;border-radius:11px;background:rgba(255,255,255,.86);padding:11px}
+.build-source .source-contract-grid b{color:#162a3b;font-size:13px}
+.build-source .source-contract-grid p{font-size:11px;line-height:1.45}
+.build-source .source-status{justify-self:start;border:1px solid #aac0cf!important;border-radius:999px!important;background:#edf4f8!important;padding:4px 7px!important;color:#36566d!important;font-size:8px!important;font-weight:950!important;text-transform:uppercase}
+.build-source .source-status.verified{border-color:#86c09c!important;background:#e9f7ee!important;color:#22613a!important}
+.build-source .source-status.live{border-color:#d6b665!important;background:#fff8df!important;color:#77570c!important}
+.build-source .build-source-links{display:flex;flex-wrap:wrap;gap:8px}
+.build-source-links a{display:inline-flex;min-height:42px;align-items:center;border:1px solid #244d6d;border-radius:9px;background:#17344b;padding:8px 11px;color:#fff;font-size:10px;font-weight:900;text-decoration:none}
+.build-source-links a:hover,.build-source-links a:focus-visible{border-color:#b98721;background:#244d6d;color:#ffe19a}
+@media(max-width:900px){
+  .build-matchup-panel.empty-matchup,.matchup-build-grid,.build-source .source-contract-grid{grid-template-columns:1fr}
+  .build-matchup-panel>header{align-items:stretch;flex-direction:column}
+  .build-matchup-panel>header>label{width:100%}
+}
+@media(max-width:560px){
+  .build-matchup-panel{padding:12px}
+  .build-matchup-title{display:grid;grid-template-columns:44px minmax(0,1fr)}
+  .build-matchup-title>.portrait{width:44px;height:44px}
+  .build-matchup-title>i{display:none}
+  .matchup-build-grid>article>div{grid-template-columns:1fr}
+  .build-source .build-source-head{align-items:flex-start;flex-direction:column}
+  .build-source-links a{width:100%;justify-content:center}
+}
