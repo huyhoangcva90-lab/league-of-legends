@@ -6296,7 +6296,10 @@ body[data-route="finder"] .check-selector>.check-output{
 }
 
 /* Builds page: champion -> items, runes, level-up. */
-.build-library-layout{align-items:start}
+.build-library-layout{grid-template-columns:360px minmax(0,1fr);align-items:start}
+body[data-route="builds"] .library-list{position:static;max-height:none;overflow:visible}
+body[data-route="builds"] .library-list>div{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+body[data-route="builds"] .library-list button{min-height:48px}
 .build-page{display:grid;gap:14px;min-width:0}
 .build-quick-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid #cbd9e4;border-radius:14px;background:linear-gradient(90deg,#102235,#173a5b);padding:10px 12px;color:#dcecff;box-shadow:0 14px 34px rgba(15,34,54,.14)}
 .build-quick-actions button{display:inline-flex;align-items:center;gap:9px;min-height:46px;border:1px solid rgba(214,182,101,.55);border-radius:12px;background:#fff;color:#102235;padding:7px 12px;font-weight:900;cursor:pointer}
@@ -6327,12 +6330,16 @@ body[data-route="finder"] .check-selector>.check-output{
 .build-bottom-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:14px}
 .rune-columns{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:14px}
 .rune-columns article{display:grid;gap:8px;border:1px solid #d2dee7;border-radius:14px;background:#fbfdff;padding:12px}
-.rune-columns article>b{color:#122334;font-size:16px}
-.rune-columns span{display:flex;align-items:center;gap:9px;min-height:38px;border:1px solid #dbe5ec;border-radius:10px;background:#fff;padding:7px 9px}
+.rune-columns article>header{display:grid;grid-template-columns:42px minmax(0,1fr);gap:2px 10px;align-items:center;border-bottom:1px solid #e1e9f0;padding-bottom:9px}
+.rune-columns article>header>b{color:#122334;font-size:16px}
+.rune-columns article>header>small{color:#607789;font-size:10px;font-weight:850}
+.rune-columns span{display:grid;grid-template-columns:34px minmax(0,1fr);align-items:center;gap:9px;min-height:42px;border:1px solid #dbe5ec;border-radius:10px;background:#fff;padding:6px 9px 6px 6px}
 .rune-columns span.keystone{border-color:#d6b665;background:#fff8df}
-.rune-columns svg{width:22px;height:22px;stroke:#1769aa}
+.rune-columns img.rune,.rune-columns i.rune{width:34px;height:34px;border:1px solid #aebdca;border-radius:50%;background:#102235;object-fit:cover}
+.rune-columns img.rune-style,.rune-columns i.rune-style{grid-row:1/3;width:42px;height:42px;border:1px solid #aebdca;border-radius:12px;background:#102235;object-fit:cover}
+.rune-columns i.rune,.rune-columns i.rune-style{display:grid;place-items:center;color:#d6b665;font-style:normal;font-weight:950}
 .rune-columns em{overflow:hidden;color:#22394e;font-style:normal;font-size:13px;font-weight:850;text-overflow:ellipsis;white-space:nowrap}
-.rune-columns small{border-top:1px solid #dde7ef;padding-top:8px;color:#607789;font-size:11px;font-weight:800}
+.rune-columns .rune-shards{border-top:1px solid #dde7ef;padding-top:8px;color:#607789;font-size:11px;font-weight:800}
 .rune-panel>p{margin:0 14px 14px;border-radius:10px;background:#f0f7ff;color:#2d4b64;padding:10px 12px;font-size:12px;line-height:1.45}
 .level-grid{display:grid;grid-template-columns:repeat(9,minmax(42px,1fr));gap:8px;padding:14px}
 .level-grid span{display:grid;place-items:center;gap:3px;border:1px solid #d1dee8;border-radius:10px;background:#fbfdff;padding:7px 4px}
@@ -6342,8 +6349,10 @@ body[data-route="finder"] .check-selector>.check-output{
 .level-grid b{font-size:12px}
 .level-grid .slot-r{border-color:#d68b95;background:#fff1f3}
 .level-priority{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:0 14px 14px}
-.level-priority span{display:grid;grid-template-columns:32px minmax(0,1fr);gap:2px 8px;border:1px solid #d2dee7;border-radius:12px;background:#f8fbfd;padding:9px}
-.level-priority b{grid-row:1/3;display:grid;place-items:center;border-radius:10px;background:#102235;color:#d6b665}
+.level-priority span{display:grid;grid-template-columns:32px 42px minmax(0,1fr);gap:2px 8px;align-items:center;border:1px solid #d2dee7;border-radius:12px;background:#f8fbfd;padding:8px}
+.level-priority b{grid-row:1/3;display:grid;place-items:center;min-height:42px;border-radius:10px;background:#102235;color:#d6b665}
+.level-priority img,.level-priority i{grid-row:1/3;width:42px;height:42px;border:1px solid #9fb0bd;border-radius:10px;background:#102235;object-fit:cover}
+.level-priority i{display:grid;place-items:center;color:#d6b665;font-style:normal;font-weight:950}
 .level-priority em{color:#132536;font-size:13px;font-style:normal;font-weight:900}
 .level-priority small{overflow:hidden;color:#607789;font-size:11px;text-overflow:ellipsis;white-space:nowrap}
 .build-source{display:grid;gap:10px;padding:14px;background:linear-gradient(135deg,#fffaf0,#fff)}
@@ -6352,7 +6361,8 @@ body[data-route="finder"] .check-selector>.check-output{
 .build-source div{display:flex;flex-wrap:wrap;gap:8px}
 .build-source span{border:1px solid #d6b665;border-radius:999px;background:#fff;color:#6b4d00;padding:6px 9px;font-size:11px;font-weight:900}
 @media(max-width:1100px){.build-style-grid,.build-bottom-grid{grid-template-columns:1fr}.build-row{grid-template-columns:74px minmax(0,1fr)}}
-@media(max-width:700px){.build-quick-actions{align-items:stretch;flex-direction:column}.rune-columns,.level-priority{grid-template-columns:1fr}.level-grid{grid-template-columns:repeat(6,minmax(42px,1fr))}.build-style-grid{padding:10px}.build-row{grid-template-columns:1fr}.build-row>b{padding-top:0}.build-item-chip{max-width:none}}
+@media(max-width:900px){.build-library-layout{grid-template-columns:1fr}body[data-route="builds"] .library-list>div{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.build-quick-actions{align-items:stretch;flex-direction:column}body[data-route="builds"] .library-list>div,.rune-columns,.level-priority{grid-template-columns:1fr}.level-grid{grid-template-columns:repeat(6,minmax(42px,1fr))}.build-style-grid{padding:10px}.build-row{grid-template-columns:1fr}.build-row>b{padding-top:0}.build-item-chip{max-width:none}}
 
 /* Draft support board: lower ban-pick assistant, pool import and master pool. */
 body[data-route="draft"] .draft-support-deck{
