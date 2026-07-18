@@ -1,5 +1,5 @@
 Patch: 16.14.1
-Champions updated: 175
+Champions updated: 173
 Skills updated: 940
 Matchups updated: 10115
 Warnings: 0

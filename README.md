@@ -269,6 +269,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\build-data.ps1
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\update-riot-data.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\update-item-data.ps1
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\update-meta-tiers.ps1
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\build-data.ps1
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\sync-team-data.ps1

@@ -3,6 +3,7 @@ param([switch]$Quiet, [switch]$CheckGenerated)
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
 $riot = [IO.File]::ReadAllText((Join-Path $root 'src\data\riot-data.json'), [Text.Encoding]::UTF8) | ConvertFrom-Json
+$items = [IO.File]::ReadAllText((Join-Path $root 'src\data\items.json'), [Text.Encoding]::UTF8) | ConvertFrom-Json
 $manual = [IO.File]::ReadAllText((Join-Path $root 'src\data\manual-data.json'), [Text.Encoding]::UTF8) | ConvertFrom-Json
 $combatClasses = [IO.File]::ReadAllText((Join-Path $root 'src\data\combat-classes.json'), [Text.Encoding]::UTF8) | ConvertFrom-Json
 $errors = New-Object Collections.Generic.List[string]
@@ -15,6 +16,17 @@ if (Test-Path -LiteralPath $settingPath) {
 } else { $errors.Add('setting-data.js: required Setting contract is missing.') }
 
 if ([string]::IsNullOrWhiteSpace($riot.patch)) { $errors.Add('riot-data.json: patch is required.') }
+if ([string]$items.patch -ne [string]$riot.patch) { $errors.Add("items.json: patch '$($items.patch)' does not match Riot data patch '$($riot.patch)'.") }
+if ([int]$items.map.id -ne 11) { $errors.Add("items.json: map id must be 11 for Summoner's Rift.") }
+$itemRows = @($items.items)
+if ($itemRows.Count -eq 0 -or [int]$items.count -ne $itemRows.Count) { $errors.Add("items.json: count '$($items.count)' does not match $($itemRows.Count) item records.") }
+$itemIds = @($itemRows | ForEach-Object { [string]$_.id })
+foreach ($id in $itemIds | Group-Object | Where-Object Count -gt 1) { $errors.Add("items.json: duplicate item id '$($id.Name)'.") }
+foreach ($item in $itemRows) {
+    if ([string]::IsNullOrWhiteSpace([string]$item.id) -or [string]::IsNullOrWhiteSpace([string]$item.name)) { $errors.Add('items.json: every item requires id and name.'); continue }
+    if ([string]$item.image -notmatch '^https://ddragon\.leagueoflegends\.com/') { $errors.Add("items.json: '$($item.id)' requires an official HTTPS image URL.") }
+    if ($null -eq $item.gold -or $null -eq $item.tags -or $null -eq $item.stats -or $null -eq $item.from -or $null -eq $item.into) { $errors.Add("items.json: '$($item.id)' is missing gold, tags, stats, from or into data.") }
+}
 $riotIds = @($riot.champions | ForEach-Object { $_.id })
 $manualIds = @($manual.champions | ForEach-Object { $_.id })
 $manualById = @{}; foreach ($champion in $manual.champions) { $manualById[$champion.id] = $champion }
@@ -130,7 +142,7 @@ if ($CheckGenerated) {
         if (@($runtime.crowdControl).Count -ne @($manual.crowdControl).Count) { $errors.Add('data.js: crowd-control count is stale.') }
         if ((@($runtime.combatClasses.classes.id) -join '|') -cne ($combatClassIds -join '|')) { $errors.Add('data.js: Combat Class runtime payload is stale.') }
     }
-    foreach ($dataset in @(@('matchup-lanes.json','matchup-lanes.js','LOL_MATCHUP_LANES'),@('sheet-details.json','sheet-details.js','LOL_SHEET_DETAILS'),@('jungle-details.json','jungle-details.js','LOL_JUNGLE_DETAILS'))) {
+    foreach ($dataset in @(@('items.json','items.js','LOL_ITEMS'),@('matchup-lanes.json','matchup-lanes.js','LOL_MATCHUP_LANES'),@('sheet-details.json','sheet-details.js','LOL_SHEET_DETAILS'),@('jungle-details.json','jungle-details.js','LOL_JUNGLE_DETAILS'))) {
         $source = [IO.File]::ReadAllText((Join-Path $root "src\data\$($dataset[0])"), [Text.Encoding]::UTF8) | ConvertFrom-Json
         $generated = Read-GeneratedPayload $dataset[1] $dataset[2]
         if ($null -ne $generated) {
@@ -163,4 +175,4 @@ if ($null -ne $setting) {
     }
 }
 if ($errors.Count) { throw ($errors -join "`n") }
-if (-not $Quiet) { Write-Host "Validated $($riot.champions.Count) champions for patch $($riot.patch), including the Setting range contract$(if($CheckGenerated){' and generated runtime parity'})." }
+if (-not $Quiet) { Write-Host "Validated $($riot.champions.Count) champions and $($itemRows.Count) Summoner's Rift items for patch $($riot.patch), including the Setting range contract$(if($CheckGenerated){' and generated runtime parity'})." }

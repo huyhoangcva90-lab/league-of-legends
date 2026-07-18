@@ -23,6 +23,7 @@ $json = $runtime | ConvertTo-Json -Depth 100 -Compress
 [IO.File]::WriteAllText((Join-Path $root 'data.js'), "/* Generated from src/data. Do not edit directly. */`nconst LOL_APP_DATA=$json;`n", $utf8)
 
 $datasets = @(
+    @('items.json','items.js','LOL_ITEMS'),
     @('matchup-lanes.json','matchup-lanes.js','LOL_MATCHUP_LANES'),
     @('sheet-details.json','sheet-details.js','LOL_SHEET_DETAILS'),
     @('jungle-details.json','jungle-details.js','LOL_JUNGLE_DETAILS')

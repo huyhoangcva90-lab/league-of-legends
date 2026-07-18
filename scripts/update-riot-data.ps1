@@ -40,11 +40,63 @@ function Get-InferredAbilityTags([string]$text) {
         'Cleanse'='cleanse|removes? (?:all )?crowd control'
         'Disengage'='knock(?:s|ed)? back|pushes? away'
         'Poke'='long range|from range'
-        'Aoe'='nearby enemies|all enemies|area|around (?:him|her|them)|in a cone'
+        'AoE'='nearby enemies|all enemies|area|around (?:him|her|them)|in a cone'
     }
     $tags = @()
     foreach ($rule in $rules.GetEnumerator()) { if ($text -match $rule.Value) { $tags += $rule.Key } }
     return $tags
+}
+
+function ConvertTo-PlainAbilityText([string]$text) {
+    if ([string]::IsNullOrWhiteSpace($text)) { return '' }
+    $plain = [regex]::Replace($text, '<br\s*/?>', ' ', 'IgnoreCase')
+    $plain = [regex]::Replace($plain, '<[^>]+>', '')
+    $plain = [regex]::Replace($plain, '\{\{[^}]+\}\}', '')
+    $plain = [System.Net.WebUtility]::HtmlDecode($plain)
+    $plain = [regex]::Replace($plain, '\s+', ' ').Trim()
+    return $plain
+}
+
+function Get-ArrayBurn($value) {
+    if ($null -eq $value) { return @() }
+    return @($value | Where-Object { $null -ne $_ -and -not [string]::IsNullOrWhiteSpace([string]$_) } | ForEach-Object { [string]$_ })
+}
+
+function New-PassiveDetails($passive) {
+    return [pscustomobject][ordered]@{
+        summary = ConvertTo-PlainAbilityText $passive.description
+        tooltip = ConvertTo-PlainAbilityText $passive.description
+        source = 'riot-datadragon'
+    }
+}
+
+function New-SpellDetails($spell) {
+    $levelTips = @()
+    if ($spell.leveltip -and $spell.leveltip.label) {
+        for ($i = 0; $i -lt @($spell.leveltip.label).Count; $i++) {
+            $label = [string]@($spell.leveltip.label)[$i]
+            $effect = if ($i -lt @($spell.leveltip.effect).Count) { [string]@($spell.leveltip.effect)[$i] } else { '' }
+            if (-not [string]::IsNullOrWhiteSpace($label) -or -not [string]::IsNullOrWhiteSpace($effect)) {
+                $levelTips += [pscustomobject][ordered]@{
+                    label = ConvertTo-PlainAbilityText $label
+                    effect = ConvertTo-PlainAbilityText $effect
+                }
+            }
+        }
+    }
+    return [pscustomobject][ordered]@{
+        summary = ConvertTo-PlainAbilityText $spell.description
+        tooltip = ConvertTo-PlainAbilityText $spell.tooltip
+        cost = [string]$spell.costBurn
+        costType = [string]$spell.costType
+        resource = ConvertTo-PlainAbilityText $spell.resource
+        cooldown = [string]$spell.cooldownBurn
+        range = [string]$spell.rangeBurn
+        maxRank = [int]$spell.maxrank
+        effectBurn = Get-ArrayBurn $spell.effectBurn
+        levelTips = @($levelTips)
+        source = 'riot-datadragon'
+    }
 }
 
 function New-ManualChampion($entry, $detail, [string]$id, $abilities) {
@@ -115,32 +167,47 @@ foreach($entry in $catalog.data.PSObject.Properties.Value | Sort-Object name) {
     $old = $oldById[$id]
     $passiveTags = @(@($old.abilities | Where-Object slot -eq 'Passive' | Select-Object -First 1).tags + @(Get-InferredAbilityTags "$($d.passive.description) $($d.passive.name)") | Where-Object { $_ } | Select-Object -Unique)
     $abilities = @()
-    $abilities += [pscustomobject][ordered]@{id='passive';slot='Passive';name=$d.passive.name;cooldown='';tags=$passiveTags;images=@("https://ddragon.leagueoflegends.com/cdn/$Patch/img/passive/$($d.passive.image.full)");form='base';source='riot'}
+    $abilities += [pscustomobject][ordered]@{id='passive';slot='Passive';name=$d.passive.name;cooldown='';tags=$passiveTags;images=@("https://ddragon.leagueoflegends.com/cdn/$Patch/img/passive/$($d.passive.image.full)");form='base';source='riot';details=(New-PassiveDetails $d.passive)}
     $slots=@('Q','W','E','R')
     for($i=0;$i -lt $d.spells.Count;$i++) {
         $spell=$d.spells[$i]
         $previous=@($old.abilities | Where-Object slot -eq $slots[$i] | Select-Object -First 1)
         $tags=@(@($previous.tags)+@(Get-InferredAbilityTags "$($spell.description) $($spell.name)")|Where-Object {$_}|Select-Object -Unique)
-        $abilities += [pscustomobject][ordered]@{id=$slots[$i].ToLowerInvariant();slot=$slots[$i];name=$spell.name;cooldown=($spell.cooldownBurn -join ' / ');tags=$tags;images=@("https://ddragon.leagueoflegends.com/cdn/$Patch/img/spell/$($spell.image.full)");form='base';source='riot'}
+        $abilities += [pscustomobject][ordered]@{id=$slots[$i].ToLowerInvariant();slot=$slots[$i];name=$spell.name;cooldown=($spell.cooldownBurn -join ' / ');tags=$tags;images=@("https://ddragon.leagueoflegends.com/cdn/$Patch/img/spell/$($spell.image.full)");form='base';source='riot';details=(New-SpellDetails $spell)}
     }
     if($old){foreach($alternate in @($old.abilities|Where-Object form -eq 'alternate')){$abilities += $alternate}}
+    if($id -eq 'kled' -and $oldById.ContainsKey('kledskaarl')){
+        foreach($alternate in @($oldById['kledskaarl'].abilities)){
+            $copy = $alternate.PSObject.Copy()
+            $copy.id = 'kledskaarl-' + ([string]$copy.id)
+            $copy.slot = if([string]$copy.slot -eq 'Passive'){'Variant Passive'}else{'Variant ' + [string]$copy.slot}
+            $copy.form = 'alternate'
+            $copy.formLabel = 'Dismounted'
+            $copy.variantOf = 'kled'
+            $abilities += $copy
+        }
+    }
+    if($id -eq 'gnar' -and $oldById.ContainsKey('megagnar')){
+        foreach($alternate in @($oldById['megagnar'].abilities)){
+            $copy = $alternate.PSObject.Copy()
+            $copy.id = 'megagnar-' + ([string]$copy.id)
+            $copy.slot = if([string]$copy.slot -eq 'Passive'){'Variant Passive'}else{'Variant ' + [string]$copy.slot}
+            $copy.form = 'alternate'
+            $copy.formLabel = 'Mega'
+            $copy.variantOf = 'gnar'
+            $abilities += $copy
+        }
+    }
     $s=$d.stats
     $displayName = if($id -eq 'nunu'){'Nunu'}else{$d.name}
     $champions += [pscustomobject][ordered]@{id=$id;name=$displayName;baseStats=[ordered]@{hp=$s.hp;hp18=($s.hp+17*$s.hpperlevel);ad=$s.attackdamage;ad18=($s.attackdamage+17*$s.attackdamageperlevel);as=$s.attackspeed;ar=$s.armor;ar18=($s.armor+17*$s.armorperlevel);mr=$s.spellblock;mr18=($s.spellblock+17*$s.spellblockperlevel);ms=$s.movespeed;range=$s.attackrange;hpGrowth=$s.hpperlevel;adGrowth=$s.attackdamageperlevel;arGrowth=$s.armorperlevel;mrGrowth=$s.spellblockperlevel;mp=$s.mp;mp18=($s.mp+17*$s.mpperlevel);mpGrowth=$s.mpperlevel;hpRegen=$s.hpregen;hpRegenGrowth=$s.hpregenperlevel;mpRegen=$s.mpregen;mpRegenGrowth=$s.mpregenperlevel;asGrowth=$s.attackspeedperlevel};abilities=@($abilities)}
     if(-not $manualById.ContainsKey($id)){$newManual += New-ManualChampion $entry $d $id @($abilities)}
 }
 
-# Preserve workbook-only form records while updating their image URLs to the live patch.
-foreach($customId in @('kledskaarl','megagnar')) {
-    if(-not $oldById.ContainsKey($customId)){continue}
-    $custom=$oldById[$customId]
-    foreach($ability in @($custom.abilities)){for($i=0;$i -lt @($ability.images).Count;$i++){$ability.images[$i]=[regex]::Replace([string]$ability.images[$i],'/cdn/[^/]+/','/cdn/'+$Patch+'/')}}
-    $champions += $custom
-}
-
 if($newManual.Count){$manual.champions=@(@($manual.champions)+@($newManual)|Sort-Object id)}
 $output=[ordered]@{patch=$Patch;locale=$Locale;updatedAt=(Get-Date).ToUniversalTime().ToString('o');champions=@($champions|Sort-Object name)}
 [IO.File]::WriteAllText($riotPath,(($output|ConvertTo-Json -Depth 100 -Compress)+"`n"),$utf8)
 [IO.File]::WriteAllText($manualPath,(($manual|ConvertTo-Json -Depth 100 -Compress)+"`n"),$utf8)
+& (Join-Path $PSScriptRoot 'update-item-data.ps1') -Patch $Patch -Locale $Locale
 Write-Host "Updated Riot data to $Patch ($Locale): $($champions.Count) records, $($newManual.Count) new manual baselines."
 Write-Host 'Run validate-data.ps1, build-data.ps1, then sync-team-data.ps1.'

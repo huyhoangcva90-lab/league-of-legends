@@ -2,9 +2,9 @@
     "dataVersion":  1,
     "patch":  "16.14.1",
     "locale":  "en_US",
-    "championCount":  175,
+    "championCount":  173,
     "teamFormulaNodes":  1266,
-    "updatedAt":  "2026-07-15T15:40:23.6889089Z",
+    "updatedAt":  "2026-07-17T13:54:55.8810952Z",
     "sources":  [
                     "riot-data.json",
                     "manual-data.json",

@@ -5,6 +5,7 @@ Files in this directory are the editable source of truth for LoL Analyst.
 | File | Ownership | Purpose |
 | --- | --- | --- |
 | `riot-data.json` | Riot / Data Dragon | Patch, champion names, base stats, skills and official image URLs |
+| `items.json` | Riot / Data Dragon | Current patch items flagged for Summoner's Rift (map 11) |
 | `manual-data.json` | Maintained in this project | Roles, ratings, guides, strategy fields, CC and routes |
 | `matchup-lanes.json` | Manually reviewed / imported | Lane bans, counters, favorable lanes and synergies |
 | `sheet-details.json` | Manually reviewed / imported | Workbook flags, release metadata and strong skills |
@@ -22,6 +23,12 @@ Use `update-riot-data.ps1` to fetch a new Data Dragon patch. It preserves manual
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\update-riot-data.ps1
+```
+
+The same command refreshes `items.json`. To update only the Summoner's Rift item catalog:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\update-item-data.ps1
 ```
 
 Edit manual JSON here, then validate and build browser files from the repository root:
