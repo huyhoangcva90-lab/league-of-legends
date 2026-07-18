@@ -7117,3 +7117,24 @@ body.picker-open dialog#champion-picker{display:grid}
   .build-source .build-source-head{align-items:flex-start;flex-direction:column}
   .build-source-links a{width:100%;justify-content:center}
 }
+
+/* Builds: summoner spell recommendation with official Riot imagery. */
+.summoner-panel{overflow:hidden}
+.summoner-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:12px;padding:14px}
+.summoner-layout>article{display:grid;align-content:start;gap:10px;border:1px solid #d3dee7;border-radius:12px;background:#f8fbfd;padding:12px}
+.summoner-layout>article>header{display:flex;align-items:baseline;justify-content:space-between;gap:10px;border-bottom:1px solid #dfe7ed;padding-bottom:8px}
+.summoner-layout>article>header span{color:#40596c;font-size:10px;font-weight:950;letter-spacing:.06em;text-transform:uppercase}
+.summoner-layout>article>header b{color:#17344b;font-size:14px}
+.summoner-layout>article>header small{color:#6d8191;font-size:9px;font-weight:800}
+.summoner-layout>article>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.summoner-spell-card{display:grid;grid-template-columns:48px minmax(0,1fr);align-items:center;gap:9px;min-height:66px;border:1px solid #cbd8e1;border-radius:11px;background:#fff;padding:8px}
+.summoner-spell-card img{width:48px;height:48px;border:1px solid #8da0ae;border-radius:10px;background:#102235;object-fit:cover;box-shadow:0 3px 8px rgba(12,31,46,.18)}
+.summoner-spell-card>span{display:grid;min-width:0;gap:2px}
+.summoner-spell-card small{color:#8b6b1d;font-size:8px;font-weight:950;text-transform:uppercase}
+.summoner-spell-card b{color:#162a3b;font-size:13px}
+.summoner-spell-card em{color:#667b8b;font-size:9px;font-style:normal;line-height:1.35}
+.summoner-primary>p{margin:0;border-left:3px solid #c89b32;background:#fff8e5;padding:8px 10px;color:#604f20;font-size:10px;line-height:1.45}
+.summoner-alternatives>div{grid-template-columns:1fr}
+.summoner-alternatives .summoner-spell-card{min-height:60px}
+@media(max-width:900px){.summoner-layout{grid-template-columns:1fr}.summoner-alternatives>div{grid-template-columns:repeat(3,minmax(0,1fr))}.summoner-alternatives .summoner-spell-card{grid-template-columns:42px minmax(0,1fr)}.summoner-alternatives .summoner-spell-card img{width:42px;height:42px}}
+@media(max-width:620px){.summoner-layout{padding:10px}.summoner-layout>article>div,.summoner-alternatives>div{grid-template-columns:1fr}.summoner-layout>article>header{align-items:flex-start;flex-direction:column;gap:3px}}
