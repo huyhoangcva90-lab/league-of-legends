@@ -6560,6 +6560,12 @@ body.picker-open dialog#champion-picker{display:grid}
 }
 #champion-picker .filter-option>b{font-size:10px}
 #champion-picker .filter-option>small{font-size:9px;font-variant-numeric:tabular-nums}
+#champion-picker [data-picker-group="className"] .filter-option{border-color:#9bc2e2;background:#e5f2fc;color:#165d91}
+#champion-picker [data-picker-group="damageProfile"] .filter-option{border-color:#dfc887;background:#fff5d7;color:#75580c}
+#champion-picker [data-picker-group="damage"] .filter-option.tag-physical{border-color:#e7aba4;background:#fcebe8;color:#963d32}
+#champion-picker [data-picker-group="damage"] .filter-option.tag-magic{border-color:#b8a4e5;background:#eee9fb;color:#60429a}
+#champion-picker [data-picker-group="damage"] .filter-option.tag-hybrid{border-color:#7cc9b8;background:#e2f6f1;color:#166b5a}
+#champion-picker [data-picker-group="damage"] .filter-option.tag-true{border-color:#9eaab5;background:#e9edf1;color:#263b4d}
 #champion-picker .filter-option.selected{border-color:#1769a5;background:#dceeff;color:#0d4c79;box-shadow:inset 0 0 0 1px #1769a5}
 #champion-picker .picker-summary{border-bottom:1px solid #cfd8e0;padding:9px 18px;background:#fff;font-size:11px}
 #champion-picker .picker-list{
