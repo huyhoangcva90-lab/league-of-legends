@@ -976,7 +976,6 @@ body[data-route="finder"] .check-selected-preview .portrait{
 }
 
 /* Team sheet opening: final override matching the provided Google Sheet reference. */
-body[data-route="team"] .topbar-actions [data-action="swap-sides"]{display:none!important}
 body[data-route="team"] #app-main{background:#fff}
 body[data-route="team"] .page-intro{margin-bottom:12px;border:1px solid #d9dde3;border-radius:0;background:#fff;box-shadow:none}
 body[data-route="team"] .page-intro h2{font-size:18px}

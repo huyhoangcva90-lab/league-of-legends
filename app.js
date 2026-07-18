@@ -857,20 +857,19 @@ function runtimeContractPanel(){const dataChecks=qualityChecks(),contracts=runti
 function renderSystemFull(){return afterPageIntro(renderSystem(),runtimeContractPanel()+settingContractPanel())+settingsDictionaryPanel()+systemCoveragePanel()}
 function pickerElements(){return {dialog:document.getElementById('champion-picker'),context:document.getElementById('picker-context'),search:document.getElementById('picker-search'),filters:document.getElementById('picker-filters'),summary:document.getElementById('picker-summary'),list:document.getElementById('picker-list')}}
 function closePicker(){const {dialog}=pickerElements();if(!dialog)return;try{if(dialog.open&&dialog.close)dialog.close()}catch{}dialog.removeAttribute('open');document.body.classList.remove('picker-open')}
-const SHEET_ICON_ROOT='assets/sheet-setting-icons/';
+const SHEET_ICON_ROOT='assets/map-objective-icons/';
 const SHEET_ICON_MAP={
-  redbrambleback:'01_F4_engage.png',
-  redbuff:'01_F4_engage.png',
-  raptors:'02_F5_disengage.png',
-  krugs:'03_F6_poke.png',
-  bluesentinel:'04_F7_bluesentinel.png',
-  bluebuff:'04_F7_bluesentinel.png',
-  gromp:'05_F8_gromp.png',
-  murkwolves:'06_F9_murkwolves.png',
-  wolves:'06_F9_murkwolves.png',
-  riftscuttler:'07_F10_riftscuttler.png',
-  scuttle:'07_F10_riftscuttler.png',
-  gank:'08_F11_gank.png'
+  redbrambleback:'red-brambleback.webp',
+  redbuff:'red-brambleback.webp',
+  raptors:'crimson-raptor.webp',
+  krugs:'ancient-krug.webp',
+  bluesentinel:'blue-sentinel.webp',
+  bluebuff:'blue-sentinel.webp',
+  gromp:'gromp.webp',
+  murkwolves:'greater-murk-wolf.webp',
+  wolves:'greater-murk-wolf.webp',
+  riftscuttler:'rift-scuttler.webp',
+  scuttle:'rift-scuttler.webp'
 };
 function sheetIconSrc(value){const key=slug(value),direct=SHEET_ICON_MAP[key];if(direct)return SHEET_ICON_ROOT+direct;const found=Object.entries(SHEET_ICON_MAP).find(([needle])=>key.includes(needle)||needle.includes(key));return found?SHEET_ICON_ROOT+found[1]:''}
 function sheetIcon(value,extra=''){const src=sheetIconSrc(value);return src?`<img class="sheet-icon ${extra}" src="${esc(src)}" alt="${esc(value)}" width="24" height="24" loading="lazy" decoding="async">`:''}
