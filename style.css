@@ -6255,3 +6255,42 @@ body[data-route="team"] .team-lane-percent{place-self:center!important}
 @media(max-width:1180px){.final-champion-hero{grid-template-columns:110px minmax(0,1fr)}.final-champion-hero aside{grid-column:1/-1;grid-template-columns:repeat(4,1fr)}.final-rating-grid,.final-tag-taxonomy>div:not(.section-head),.final-facts>div{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:900px){.final-library-layout{grid-template-columns:1fr}.final-main-skills,.final-strengths,.final-phase-notes{grid-template-columns:1fr}.final-kit-strip{grid-template-columns:repeat(5,140px);overflow:auto}.final-skill-card header{grid-template-columns:36px 56px minmax(0,1fr)}.final-skill-slot{width:36px;height:36px}.final-skill-card header img,.final-skill-card header i{width:56px;height:56px}.final-skill-card .final-strong-badge{grid-column:1/-1;justify-self:start}}
 @media(max-width:620px){.final-champion-hero{grid-template-columns:1fr}.final-splash{max-width:160px}.final-champion-hero aside,.final-rating-grid,.final-tag-taxonomy>div:not(.section-head),.final-facts>div,.final-skill-meta,.final-difficulty{grid-template-columns:1fr}.final-hero-copy h2{font-size:28px}}
+
+/* Check final pin: Counter / Matchup phải nằm đầu thanh phải và bám theo khi cuộn. */
+body[data-route="finder"] .check-filter-console{
+  position:relative!important;
+  overflow:auto!important;
+  align-content:start!important;
+  scrollbar-width:thin;
+}
+body[data-route="finder"] .check-filter-console>.check-side-relations:first-child{
+  position:sticky!important;
+  top:0!important;
+  z-index:80!important;
+  margin:0 0 5px!important;
+  border:1px solid #7f91a0!important;
+  background:#fff!important;
+  box-shadow:0 2px 0 #d2dde6,0 8px 18px rgba(20,43,62,.16)!important;
+}
+body[data-route="finder"] .check-filter-console>.check-side-relations:first-child::before{
+  content:"COUNTER / MATCHUP";
+  display:block;
+  margin:0 0 3px;
+  border-bottom:1px solid #d7e0e7;
+  color:#1e3448;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-align:center;
+}
+body[data-route="finder"] .check-filter-console>.check-side-relations:first-child~.check-side-relations{
+  display:none!important;
+}
+body[data-route="finder"] .check-output,
+body[data-route="finder"] footer.check-output,
+body[data-route="finder"] .check-selector>.check-output{
+  display:none!important;
+  width:0!important;
+  height:0!important;
+  overflow:hidden!important;
+}
