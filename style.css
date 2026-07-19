@@ -7834,6 +7834,16 @@ body[data-route="builds"] .build-style-card header>span svg,body[data-route="bui
 #champion-picker .filter-option-icon{color:currentColor!important}
 #champion-picker .picker-icon-signal{background:transparent!important;border:0!important;color:#49677e!important}
 
+/* Jungle route library: own jungle vs enemy-camp invade clarity. */
+.route-card.invade-route,.recommended-route.invade-route,.map-route-sheet.invade-route{border-color:#e6b8af!important;background:linear-gradient(135deg,#fff5f2,#fff)!important}
+.route-card.own-route,.recommended-route.own-route,.map-route-sheet.own-route{border-color:#b7d7bf!important;background:linear-gradient(135deg,#f4fbf5,#fff)!important}
+.route-card.invade-route footer span:last-child,.recommended-route.invade-route footer .pill,.route-ranking .invade-route small{color:#8a2d1d!important}
+.route-card.own-route footer span:last-child,.route-ranking .own-route small{color:#246b38!important}
+.route-note{margin:0 14px 12px;border-left:3px solid #d6b665;background:#fffaf0;color:#5d4b13;padding:8px 10px;font-size:11px;line-height:1.45}
+.route-workbook-table tr.invade-route td{background:#fff7f4}
+.route-workbook-table tr.own-route td{background:#f6fbf6}
+.map-route-node.invade b,.route-google-cells .invade,.route-monsters .invade{outline:2px solid rgba(220,38,38,.28);outline-offset:1px}
+
 /* Team guide mirror: imported strengths first, then derived counter guidance. */
 body[data-route="team"] .team-strength-lane{min-height:176px}
 body[data-route="team"] .team-guide-card{grid-template-rows:1fr auto}
@@ -8207,4 +8217,177 @@ dialog#champion-picker{
   .team-sync-panel>.section-head{display:block}
   .team-sync-panel>.section-head a{margin-top:8px;width:100%}
   .team-sync-numbers{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Map overlay clarity: route arrows above monster art, lane % moved into hover detail. */
+.map-main-canvas .map-static-layer{z-index:2}
+.map-main-canvas .map-static-node{
+  transform:translate(-50%,-50%) scale(.78);
+  opacity:.88;
+  filter:drop-shadow(0 4px 8px rgba(0,0,0,.45));
+}
+.map-main-canvas .map-static-node.objective{transform:translate(-50%,-50%) scale(.9)}
+.map-main-canvas .map-static-node small{display:none}
+.map-main-canvas .main-route-polyline{
+  z-index:6;
+  pointer-events:none;
+  mix-blend-mode:screen;
+}
+.map-main-canvas .main-route-lines line{
+  stroke-width:1.75;
+  stroke-linecap:round;
+  opacity:.92;
+  filter:drop-shadow(0 0 3px rgba(255,255,255,.24)) drop-shadow(0 5px 7px rgba(0,0,0,.55));
+}
+.map-main-canvas .route-marker-layer{z-index:7}
+.map-main-canvas .main-route-node{
+  transform:translate(-50%,-50%) scale(.82);
+  filter:drop-shadow(0 0 8px rgba(0,0,0,.8));
+}
+.map-main-canvas .map-lane-state-layer{z-index:8}
+.map-main-canvas .map-lane-state{
+  width:96px;
+  min-height:52px;
+  padding:5px;
+  border-radius:10px;
+  background:linear-gradient(135deg,rgba(5,12,24,.88),rgba(11,18,32,.72));
+  box-shadow:0 8px 18px rgba(0,0,0,.34);
+  cursor:help;
+}
+.map-main-canvas .map-lane-state header{
+  display:grid;
+  grid-template-columns:16px 1fr auto;
+  gap:4px;
+  align-items:center;
+  min-height:16px;
+}
+.map-main-canvas .map-lane-state header .official-role-icon{width:16px;height:16px}
+.map-main-canvas .map-lane-state header b{font-size:8px}
+.map-main-canvas .map-lane-state header strong{font-size:10px}
+.map-main-canvas .map-lane-state>div{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  gap:3px;
+  align-items:center;
+}
+.map-main-canvas .map-lane-state>div span{
+  display:grid;
+  place-items:center;
+  gap:1px;
+}
+.map-main-canvas .map-lane-state .portrait{
+  width:22px;
+  height:22px;
+  object-fit:cover;
+  image-rendering:auto;
+}
+.map-main-canvas .map-lane-state>div small{
+  color:#c9d6e8;
+  font-size:6px;
+  line-height:1;
+}
+.map-main-canvas .map-lane-state>div em{
+  color:#f1d98e;
+  font-size:8px;
+  font-style:normal;
+  text-transform:uppercase;
+}
+.map-main-canvas .map-lane-state footer{
+  margin-top:2px;
+  text-align:center;
+}
+.map-main-canvas .map-lane-state footer b{
+  color:#9fb5c8;
+  font-size:7px;
+  font-weight:700;
+}
+.phase-carry .portrait,
+.team-sync-slot.phase-carry .portrait{
+  border-color:#ffe46b!important;
+  box-shadow:0 0 0 2px rgba(255,215,85,.45),0 0 18px rgba(255,199,66,.46);
+}
+.team-sync-slot.phase-carry{
+  border-color:rgba(255,218,91,.72);
+  background:linear-gradient(135deg,rgba(255,207,70,.16),rgba(18,24,36,.92));
+}
+.phase-carry-badge{
+  border-color:rgba(255,218,91,.8)!important;
+  background:rgba(255,216,83,.18)!important;
+  color:#ffe66d!important;
+}
+.team-phase-carry{
+  border-color:rgba(255,218,91,.42)!important;
+  background:rgba(255,218,91,.08)!important;
+}
+.global-hover-layer[data-kind="map-lane"]{
+  width:min(390px,calc(100vw - 24px));
+}
+.map-lane-hover,
+.map-hover-duel,
+.map-hover-stats,
+.map-hover-side{
+  display:grid;
+  gap:8px;
+}
+.map-hover-title{
+  display:grid;
+  grid-template-columns:22px 1fr auto;
+  gap:8px;
+  align-items:center;
+}
+.map-hover-title b{color:#fff}
+.map-hover-title strong{color:#ffe29a;font-size:18px}
+.map-hover-duel{
+  grid-template-columns:1fr 1fr;
+}
+.map-hover-side{
+  grid-template-columns:42px 1fr;
+  align-items:center;
+  padding:8px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:12px;
+  background:rgba(255,255,255,.045);
+}
+.map-hover-side.blue{border-color:rgba(73,159,255,.38)}
+.map-hover-side.red{border-color:rgba(255,94,116,.36)}
+.map-hover-side .portrait{
+  width:38px;
+  height:38px;
+}
+.map-hover-side small,
+.map-hover-side em{
+  color:#9eb2c7;
+  font-size:10px;
+  font-style:normal;
+}
+.map-hover-side b{
+  color:#fff;
+  font-size:14px;
+}
+.map-hover-side strong{
+  width:max-content;
+  margin-top:4px;
+  padding:2px 6px;
+  border-radius:999px;
+  background:rgba(255,219,82,.16);
+  color:#ffe06d;
+  font-size:9px;
+}
+.map-hover-stats{
+  grid-template-columns:repeat(3,1fr);
+}
+.map-hover-stats i{
+  padding:7px;
+  border-radius:10px;
+  background:rgba(255,255,255,.05);
+  font-style:normal;
+}
+.map-hover-stats small,
+.map-hover-stats b{display:block}
+.map-hover-stats small{color:#8fa6bb;font-size:9px}
+.map-hover-stats b{color:#fff;font-size:11px}
+#champion-picker .picker-filter-group[data-picker-group="skillClasses"],
+#champion-picker .picker-filter-group[data-picker-group="skillEffects"]{
+  border-color:rgba(93,205,255,.26);
+  background:linear-gradient(180deg,rgba(38,138,199,.12),rgba(255,255,255,.035));
 }
