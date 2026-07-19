@@ -7766,48 +7766,6 @@ body[data-route="builds"] .summoner-primary p{margin:9px 0 0;color:#40586d;font-
 #champion-picker .compact-icons .filter-option>small{position:absolute;right:3px;bottom:2px;font-size:7px}
 #champion-picker .picker-list .picker-champion-card{min-height:124px;align-items:start}
 #champion-picker .picker-card-copy{align-content:start;gap:6px}
-#champion-picker .picker-card-signals{display:flex;min-width:0;flex-wrap:wrap;gap:4px;padding-top:2px}
-#champion-picker .picker-icon-signal{
-  position:relative;
-  display:grid;
-  flex:0 0 25px;
-  width:25px;
-  height:25px;
-  place-items:center;
-  border:1px solid #c2cdd6;
-  border-radius:5px;
-  background:#f5f8fa;
-  color:#2b485c;
-  font-style:normal;
-  cursor:help;
-}
-#champion-picker .picker-icon-signal .ui-icon{width:21px;height:21px;object-fit:contain}
-#champion-picker .picker-icon-signal svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-#champion-picker .picker-icon-signal::after{
-  content:attr(data-tooltip);
-  position:absolute;
-  left:50%;
-  bottom:calc(100% + 7px);
-  z-index:30;
-  width:max-content;
-  max-width:210px;
-  transform:translate(-50%,4px);
-  border:1px solid #52687a;
-  border-radius:4px;
-  background:#122536;
-  padding:5px 7px;
-  color:#fff;
-  font-size:9px;
-  font-weight:700;
-  line-height:1.3;
-  opacity:0;
-  pointer-events:none;
-  transition:opacity .12s ease,transform .12s ease;
-}
-#champion-picker .picker-icon-signal:hover::after,
-#champion-picker .picker-icon-signal:focus-visible::after{transform:translate(-50%,0);opacity:1}
-#champion-picker .picker-icon-signal:focus-visible{outline:2px solid #1769a5;outline-offset:1px}
-
 /* Global icon + text normalization: transparent glyphs, text-sized, no bulky black badges. */
 :root{--inline-icon-size:1.15em;--inline-icon-gap:.38em}
 :where(.term-icon,.pill-icon,.tactical-icon,.class-icon,.official-role-icon,.role-symbol,.filter-option-icon,.check-filter-icon,.check-lane-icon,.picker-class-icon,.picker-icon-signal,.riot-class-icon,.final-hero-tags .term-icon,.final-tag-taxonomy article>b>svg,.feature-badge>i,.final-rating-grid i,.final-difficulty>span>svg,.build-style-card header>span,.build-style-selector-panel .style-head>span:first-child,.team-lane-center .official-role-icon,.team-focus-role .official-role-icon,.team-strength-axis .official-role-icon,.team-lane-role>.official-role-icon){background:transparent!important;border-color:transparent!important;box-shadow:none!important;color:currentColor}
@@ -8624,3 +8582,32 @@ dialog#champion-picker{
 #champion-picker .picker-filter-disclosure[open]>summary i::before{content:"−"}
 #champion-picker .picker-filter-disclosure[open]>summary{border-bottom:1px solid #d4dde4;padding-bottom:7px}
 #champion-picker .picker-filter-disclosure>div{max-height:300px;overflow-y:auto;padding-top:8px;scrollbar-gutter:stable}
+
+/* Picker cards expose only class, damage type and tier. */
+#champion-picker .picker-list .picker-champion-card{min-height:84px;align-items:center}
+#champion-picker .picker-card-copy{align-content:center;gap:7px}
+#champion-picker .picker-card-meta{align-items:center;gap:9px}
+#champion-picker .picker-card-meta .picker-class-icon{
+  --inline-icon-size:40px;
+  display:inline-grid!important;
+  width:40px!important;
+  height:40px!important;
+  min-width:40px!important;
+  flex:0 0 40px!important;
+  place-items:center;
+  overflow:hidden;
+  border:2px solid #d5b65f!important;
+  border-radius:50%!important;
+  background:#102536!important;
+  padding:5px;
+  color:#efd883!important;
+  box-shadow:0 0 0 2px #fff,0 2px 7px rgba(16,37,54,.24)!important;
+}
+#champion-picker .picker-card-meta .picker-class-icon :where(.ui-icon,svg){
+  width:28px!important;
+  height:28px!important;
+  max-width:28px!important;
+  max-height:28px!important;
+  object-fit:contain!important;
+}
+#champion-picker .picker-damage-label{font-size:10px}
