@@ -8607,3 +8607,40 @@ dialog#champion-picker{
   object-fit:contain!important;
 }
 #champion-picker .picker-damage-label{font-size:10px}
+
+/* Team ownership marker replaces the aggregate score in each team title. */
+body[data-route="team"] .team-sheet-title>b{gap:10px}
+body[data-route="team"] .team-sheet-title>b>span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+body[data-route="team"] .my-team-check{
+  position:relative;
+  display:inline-flex;
+  flex:0 0 auto;
+  align-items:center;
+  gap:5px;
+  min-height:26px;
+  border:1px solid rgba(255,255,255,.48);
+  border-radius:4px;
+  background:rgba(0,0,0,.16);
+  padding:3px 6px;
+  color:#fff;
+  cursor:pointer;
+}
+body[data-route="team"] .my-team-check input{position:absolute;width:1px;height:1px;opacity:0}
+body[data-route="team"] .my-team-check i{
+  display:grid;
+  width:17px;
+  height:17px;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.8);
+  border-radius:3px;
+  background:#fff;
+  color:transparent;
+  font-size:12px;
+  font-style:normal;
+  font-weight:950;
+  line-height:1;
+}
+body[data-route="team"] .my-team-check small{color:#fff;font-size:7px;font-weight:900;letter-spacing:.04em;white-space:nowrap}
+body[data-route="team"] .my-team-check input:checked+i{border-color:#f6d878;background:#f6d878;color:#102536;box-shadow:0 0 0 2px rgba(246,216,120,.25)}
+body[data-route="team"] .my-team-check:has(input:checked){border-color:#f6d878;background:rgba(16,37,54,.42)}
+body[data-route="team"] .my-team-check:focus-within{outline:2px solid #fff;outline-offset:2px}
