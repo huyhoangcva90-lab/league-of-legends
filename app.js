@@ -46,9 +46,9 @@ const ROLE_PHASE_WEIGHTS = {
 };
 const SETTING_ROLE_KEYS = ['teamBlueTopOptions','teamBlueJungleOptions','teamBlueMidOptions','teamBlueAdOptions','teamBlueSupportOptions'];
 const NAVIGATION = [
-  {group:'Workspace',items:[['team','Team Analyzer'],['draft','Draft Room'],['finder','Check']]},
-  {group:'Analysis',items:[['teamfight','Teamfight'],['compare','Compare'],['map','Map Plan'],['strategy','Strategy']]},
-  {group:'Data library',items:[['champions','Champions + Skills'],['builds','Builds'],['routes','Jungle Routes']]},
+  {group:'Workspace',items:[['draft','Draft Room'],['team','Team Analyzer'],['finder','Check']]},
+  {group:'Tactical Analysis',items:[['strategy','Strategy'],['map','Map Plan'],['teamfight','Teamfight'],['compare','Compare']]},
+  {group:'Knowledge Base',items:[['champions','Champions'],['skills','Skills'],['builds','Builds'],['routes','Jungle Routes']]},
   {group:'System',items:[['system','Data Quality & Settings']]}
 ];
 const LANGUAGE_ROWS = [
@@ -91,6 +91,7 @@ const LANGUAGE_ROWS = [
   ['Workspace đã được đặt lại','Workspace has been reset'],['Đã đổi Blue và Red','Blue and Red swapped'],['Không có kết quả','No results']
 ];
 LANGUAGE_ROWS.push(
+  ['Phan tich chien thuat','Tactical Analysis'],['Kho kien thuc','Knowledge Base'],
   ['Kiểm tra','Check'],['Kiểm tra bể tướng','Check champion pool'],
   ['Toàn bộ tướng luôn nằm ở vị trí cố định. Tướng đạt đủ điều kiện sẽ sáng; tướng thiếu bất kỳ điều kiện nào sẽ mờ.','All champions remain in fixed positions. Matching records are active; records missing any selected requirement are dimmed.'],
   ['Xóa tất cả','Clear all'],['Năm','Year'],['Đường','Lane'],['Đang phù hợp','available'],['Không có kết quả','No match'],
@@ -431,7 +432,8 @@ function updateShell(){
   document.body.classList.toggle('sidebar-collapsed',state.sidebarCollapsed);
   const collapse=document.querySelector('[data-action="toggle-sidebar"]');if(collapse){const label=state.sidebarCollapsed?(state.lang==='vi'?'Mở rộng điều hướng':'Expand navigation'):(state.lang==='vi'?'Thu gọn điều hướng':'Collapse navigation');collapse.setAttribute('aria-expanded',String(!state.sidebarCollapsed));collapse.setAttribute('aria-label',label);collapse.title=label}
 }
-function renderNav(){document.getElementById('app-nav').innerHTML=NAVIGATION.map(group=>`<section><h2>${esc(group.group)}</h2>${group.items.map(([id,label])=>`<button type="button" data-route="${id}" title="${esc(label)}" ${id===state.route?'aria-current="page"':''}><span aria-hidden="true">${esc(label[0])}</span><b>${esc(label)}</b></button>`).join('')}</section>`).join('')}
+function navIcon(id){const path={draft:'M4 6h16v12H4z M8 6v12 M16 6v12 M4 10h16 M4 14h16',team:'M8 7a3 3 0 1 0 0 .1M16 7a3 3 0 1 0 0 .1M5 19c.4-3 2-5 5-5s4.6 2 5 5M12 19c.3-2.2 1.6-3.8 4-3.8 2.1 0 3.4 1.3 4 3.8',finder:'M10.5 17a6.5 6.5 0 1 1 0-13 6.5 6.5 0 0 1 0 13ZM15.5 15.5 20 20M8 10.5l1.8 1.8L13.5 8',strategy:'M5 18V6l5 3 4-3 5 3v12l-5-3-4 3z M10 9v12 M14 6v12',map:'M4 18V6l5-2 6 2 5-2v14l-5 2-6-2z M9 4v14 M15 6v14',teamfight:'M7 7l10 10M17 7 7 17M5 19l4-1 9-9-3-3-9 9z M19 5l-3 3',compare:'M6 7h11M6 12h8M6 17h12M18 7l-2-2m2 2-2 2M15 17l2-2m-2 2 2 2',champions:'M12 3 19 7v6c0 4-3 7-7 8-4-1-7-4-7-8V7z M9 12h6M12 9v6',skills:'M12 3l2.2 5.1 5.6.5-4.2 3.7 1.3 5.5L12 15l-4.9 2.8 1.3-5.5-4.2-3.7 5.6-.5z',builds:'M7 4h10l2 5-7 11L5 9z M5 9h14M9 4l3 16M15 4l-3 16',routes:'M5 17a2 2 0 1 0 0 .1M19 7a2 2 0 1 0 0 .1M7 17c5 0 2-10 10-10M12 12h4v4',system:'M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM12 2v3M12 19v3M4.9 4.9 7 7M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1'}[id]||'M5 5h14v14H5z';return `<span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="${path}"/></svg></span>`}
+function renderNav(){document.getElementById('app-nav').innerHTML=NAVIGATION.map(group=>`<section><h2>${esc(group.group)}</h2>${group.items.map(([id,label])=>`<button type="button" data-route="${id}" title="${esc(label)}" aria-label="${esc(label)}" ${id===state.route?'aria-current="page"':''}>${navIcon(id)}<b>${esc(label)}</b></button>`).join('')}</section>`).join('')}
 function syncRouteUrl(mode='replaceState'){const url=new URL(location.href);url.searchParams.set('route',state.route);url.searchParams.set('lang',state.lang);history[mode]({route:state.route},'',url)}
 function routeTo(route,{historyMode='pushState',focus=true}={}){if(!NAVIGATION.some(group=>group.items.some(([id])=>id===route)))return;const changed=state.route!==route;state.route=route;save();render();if(changed)syncRouteUrl(historyMode);document.body.classList.remove('nav-open');document.querySelector('[data-action="toggle-nav"]')?.setAttribute('aria-expanded','false');if(focus)document.getElementById('app-main').focus()}
 function enhanceAccessibility(){const main=document.getElementById('app-main');main.querySelectorAll('.segmented button,[data-library-focus]').forEach(button=>button.setAttribute('aria-pressed',String(button.classList.contains('active'))));main.querySelectorAll('input,select').forEach((control,index)=>{if(!control.name)control.name=control.id||Object.keys(control.dataset)[0]||`${state.route}-control-${index+1}`;if(control.tagName==='INPUT'&&!control.hasAttribute('autocomplete'))control.setAttribute('autocomplete','off');if(control.placeholder?.endsWith('...'))control.placeholder=`${control.placeholder.slice(0,-3)}…`});main.querySelectorAll('img').forEach(image=>{if(!image.hasAttribute('width')){image.width=32;image.height=32}image.loading='lazy';image.decoding='async';const hideBrokenImage=()=>{image.hidden=true};image.addEventListener('error',hideBrokenImage,{once:true});if(image.complete&&image.naturalWidth===0)hideBrokenImage()});main.querySelectorAll('[data-picker][aria-label]').forEach(button=>{if(button.querySelector('[data-clear]'))button.setAttribute('aria-keyshortcuts','Delete Backspace')})}

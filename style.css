@@ -10026,3 +10026,16 @@ body[data-route="team"] .riot-class-line b{font-size:11px!important;font-weight:
 .map-main-canvas .map-champion-token.red{border-color:#fca5a5}
 .map-main-canvas .map-champion-token .portrait,.map-main-canvas .map-champion-token img{width:26px!important;height:26px!important;border:0!important;border-radius:50%;object-fit:cover}
 .map-main-canvas .map-lane-state.champion-only:hover .map-champion-token,.map-main-canvas .map-lane-state.champion-only:focus-visible .map-champion-token{transform:translateY(-1px);box-shadow:0 0 0 3px rgba(250,204,21,.32),0 10px 22px rgba(0,0,0,.48)}
+
+/* Dashboard navigation: vector icons instead of first-letter badges. */
+.brand>.brand-mark{border-color:#d6b665!important;background:radial-gradient(circle at 35% 20%,#315d82,#102334 58%,#07111f)!important;color:#f8d46a!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 8px 20px rgba(0,0,0,.22)}
+.brand>.brand-mark svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sidebar nav button .nav-icon{display:grid!important;place-items:center!important;flex:0 0 28px!important;width:28px!important;height:28px!important;border:1px solid rgba(142,208,255,.18)!important;border-radius:8px!important;background:rgba(255,255,255,.045)!important;color:#9fc3dc!important;font-size:0!important;line-height:0!important;transition:background-color .18s ease,border-color .18s ease,color .18s ease,transform .18s ease!important}
+.sidebar nav button .nav-icon svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.85;stroke-linecap:round;stroke-linejoin:round}
+.sidebar nav button:hover .nav-icon{border-color:#8ed0ff!important;background:rgba(142,208,255,.12)!important;color:#e5f6ff!important}
+.sidebar nav button.active .nav-icon,.sidebar nav button[aria-current="page"] .nav-icon{border-color:#8ed0ff!important;background:linear-gradient(135deg,#24506f,#102334)!important;color:#8ed0ff!important;box-shadow:0 0 0 3px rgba(142,208,255,.1);transform:none!important}
+.sidebar nav button b{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media(min-width:981px){
+  body.sidebar-collapsed .sidebar nav button .nav-icon{width:36px!important;height:34px!important;flex-basis:36px!important}
+  body.sidebar-collapsed .sidebar nav button .nav-icon svg{width:19px;height:19px}
+}
