@@ -114,14 +114,13 @@ foreach ($champion in $manual.champions) {
 }
 $rulesPath = Join-Path $root 'src\data\team-rules.json'
 $rules = [IO.File]::ReadAllText($rulesPath, [Text.Encoding]::UTF8) | ConvertFrom-Json
-foreach ($metric in @('damage','toughness','control','mobility','utility')) {
-    if ([double]$rules.strategyMetricCeilings.$metric -le 0) { $errors.Add("team-rules.json: strategyMetricCeilings.$metric must be positive.") }
-    if (@($rules.strategyRoleWeights.$metric).Count -ne 5) { $errors.Add("team-rules.json: strategyRoleWeights.$metric must contain Top/Jungle/Mid/AD/Support weights.") }
-}
 foreach ($phase in @('early','mid','late')) {
-    $sum = 0.0
-    foreach ($metric in @('damage','toughness','control','mobility','utility')) { $sum += [double]$rules.strategyPhaseMetricWeights.$phase.$metric }
-    if ([math]::Abs($sum - 1.0) -gt 0.001) { $errors.Add("team-rules.json: strategyPhaseMetricWeights.$phase must sum to 1.0; found $sum.") }
+    foreach ($power in @('Weak','Average','Strong')) {
+        if (@($rules.sheetPhaseRoleScores.$phase.$power).Count -ne 5) { $errors.Add("team-rules.json: sheetPhaseRoleScores.$phase.$power must contain Top/Jungle/Mid/AD/Support values.") }
+    }
+}
+foreach ($score in 0..8) {
+    if (-not [string]$rules.sheetWinConditionLabels.$score) { $errors.Add("team-rules.json: sheetWinConditionLabels.$score is required.") }
 }
 $laneSource = [IO.File]::ReadAllText((Join-Path $root 'src\data\matchup-lanes.json'), [Text.Encoding]::UTF8) | ConvertFrom-Json
 foreach ($championProperty in $laneSource.champions.PSObject.Properties) {

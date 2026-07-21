@@ -1720,7 +1720,7 @@ body[data-route="teamfight"] .teamfight-source-legend span:last-child i{
 }
 body[data-route="teamfight"] .teamfight-derived-grid{
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-template-columns:repeat(4,minmax(0,1fr));
   border-bottom:1px solid #aeb9c1;
 }
 body[data-route="teamfight"] .teamfight-derived-role{
