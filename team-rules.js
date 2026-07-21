@@ -34,5 +34,33 @@ const LOL_TEAM_RULES={
     "early": {"damage": 0.28, "toughness": 0.16, "control": 0.18, "mobility": 0.25, "utility": 0.13},
     "mid": {"damage": 0.22, "toughness": 0.18, "control": 0.24, "mobility": 0.18, "utility": 0.18},
     "late": {"damage": 0.26, "toughness": 0.22, "control": 0.2, "mobility": 0.12, "utility": 0.2}
+  },
+  "sheetPhaseRoleScores": {
+    "early": {
+      "Average": [3.25, 4, 3.75, 3.3, 3.5],
+      "Weak": [1.75, 2.5, 2, 1.75, 2],
+      "Strong": [4.25, 5, 4.75, 4.3, 4.25]
+    },
+    "mid": {
+      "Average": [5.25, 5.75, 6, 5.5, 5.25],
+      "Weak": [4.75, 4.5, 4.75, 5, 4.75],
+      "Strong": [6, 6.5, 7, 6.25, 6]
+    },
+    "late": {
+      "Average": [6.25, 6.5, 7, 7.5, 6],
+      "Weak": [5.25, 5.5, 6, 6.5, 5.5],
+      "Strong": [7, 7.25, 8, 8.5, 7]
+    }
+  },
+  "sheetWinConditionLabels": {
+    "0": "Turbo",
+    "1": "Argo",
+    "2": "Catch",
+    "3": "Teamfight",
+    "4": "Control",
+    "5": "Marco",
+    "6": "Split",
+    "7": "Scaling",
+    "8": "Turtle"
   }
 };
