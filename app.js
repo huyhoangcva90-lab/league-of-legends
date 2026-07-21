@@ -614,8 +614,8 @@ function teamfightPhaseQuality(side,phase){
 function teamMacroPhaseQuality(side,phase){const list=team(side);return list.length?list.reduce((sum,c)=>sum+(phaseRating(c,'clearwave',phase)+phaseRating(c,'tower',phase))/2,0)/list.length:0}
 function teamStrategyPhaseDetail(side,phase){
   if(!team(side).length)return {base:0,teamfight:0,macro:0,teamfightAdjustment:0,macroAdjustment:0,total:0};
-  const base=sheetPhaseBaseScore(side,phase),teamfight=teamfightPhaseQuality(side,phase),macro=teamMacroPhaseQuality(side,phase),fightWeight=Number(TEAM_RULES.sheetTeamfightPhaseWeights?.[phase])||0,macroWeight=Number(TEAM_RULES.sheetMacroPhaseWeights?.[phase])||0,teamfightAdjustment=(teamfight-50)*fightWeight/5,macroAdjustment=(macro-50)*macroWeight/10,total=Math.max(0,base+teamfightAdjustment+macroAdjustment);
-  return {base,teamfight,macro,teamfightAdjustment,macroAdjustment,total};
+  const enemy=otherSide(side),base=sheetPhaseBaseScore(side,phase),teamfight=teamfightPhaseQuality(side,phase),enemyTeamfight=teamfightPhaseQuality(enemy,phase),macro=teamMacroPhaseQuality(side,phase),enemyMacro=teamMacroPhaseQuality(enemy,phase),fightWeight=Number(TEAM_RULES.sheetTeamfightPhaseWeights?.[phase])||0,macroWeight=Number(TEAM_RULES.sheetMacroPhaseWeights?.[phase])||0,teamfightAdjustment=(teamfight-enemyTeamfight)*fightWeight/3,macroAdjustment=(macro-enemyMacro)*macroWeight/5,total=Math.max(0,base+teamfightAdjustment+macroAdjustment);
+  return {base,teamfight,enemyTeamfight,macro,enemyMacro,teamfightAdjustment,macroAdjustment,total};
 }
 teamStrategyPhaseScore=function(side,phase){return teamStrategyPhaseDetail(side,phase).total};
 function sheetNumber(value){const number=Number(value)||0;return Number.isInteger(number)?String(number):number.toFixed(2).replace(/0+$/,'').replace(/\.$/,'')}
