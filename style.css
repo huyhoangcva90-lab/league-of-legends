@@ -3225,7 +3225,69 @@ body[data-route="finder"] .empty-slot{display:grid;place-items:center;min-height
 }
 .route-map.route-map-icons .map-lane-icon{display:grid;place-items:center;width:100%;height:100%;border-radius:7px;background:#0f172a;color:#fff}
 .route-map.route-map-icons .map-lane-icon svg{width:20px;height:20px;stroke:currentColor}
+.map-token-img.gank-camp-icon{
+  background:#0b1220;
+  object-fit:contain!important;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,.52));
+}
+.route-map.route-map-icons .map-token-img.gank-camp-icon,
+.map-main-canvas .map-token-img.gank-camp-icon{
+  border-color:#f6c76d!important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),0 0 12px rgba(245,158,11,.42);
+}
+.route-monsters .gank .map-token-img.gank-camp-icon,
+.route-steps-icons .gank .map-token-img.gank-camp-icon,
+.route-nine .gank .map-token-img.gank-camp-icon{
+  border-color:#f0c46f!important;
+}
 .map-route-sheet.red .route-map.route-map-icons span>b>i{background:#b31d2c}
+.route-map.route-map-icons.blue .map-route-node>b>i,
+.route-map.route-map-icons .map-route-node.blue>b>i,
+.map-main-canvas .main-route-node.blue>b>i{
+  border-color:#dff6ff!important;
+  background:#1d9bf0!important;
+  color:#fff!important;
+  box-shadow:0 0 0 1px rgba(29,155,240,.4),0 0 10px rgba(29,155,240,.55)!important;
+}
+.route-map.route-map-icons.red .map-route-node>b>i,
+.route-map.route-map-icons .map-route-node.red>b>i,
+.map-main-canvas .main-route-node.red>b>i{
+  border-color:#ffe4ea!important;
+  background:#ff375f!important;
+  color:#fff!important;
+  box-shadow:0 0 0 1px rgba(255,55,95,.4),0 0 10px rgba(255,55,95,.52)!important;
+}
+.map-route-sheet.blue .route-monsters>span>small,
+.map-route-card.blue .route-steps-icons>span>small,
+.map-battle-roster-side.blue .map-jungle-sequence>span>small,
+.route-google-row.blue .route-google-cells span[role="cell"] small{
+  border-color:#dff6ff!important;
+  background:#1d9bf0!important;
+  color:#fff!important;
+}
+.map-route-sheet.red .route-monsters>span>small,
+.map-route-card.red .route-steps-icons>span>small,
+.map-battle-roster-side.red .map-jungle-sequence>span>small,
+.route-google-row.red .route-google-cells span[role="cell"] small{
+  border-color:#ffe4ea!important;
+  background:#ff375f!important;
+  color:#fff!important;
+}
+.route-monsters>span>small,
+.map-jungle-sequence>span>small,
+.route-nine>span>small,
+.route-steps-icons>span>small{
+  display:grid!important;
+  min-width:16px;
+  height:16px;
+  place-items:center;
+  border:2px solid #fff;
+  border-radius:999px;
+  font-size:8px!important;
+  font-weight:950!important;
+  line-height:1!important;
+  box-shadow:0 2px 8px rgba(0,0,0,.28);
+}
 .route-map.route-map-icons span.gank>b{box-shadow:0 5px 12px rgba(0,0,0,.55),0 0 0 3px rgba(245,158,11,.5)}
 .route-map.route-map-icons span.objective>b{box-shadow:0 5px 12px rgba(0,0,0,.55),0 0 0 3px rgba(139,92,246,.5)}
 .route-map.route-map-icons span.invade>b{box-shadow:0 5px 12px rgba(0,0,0,.55),0 0 0 3px rgba(17,24,39,.6)}
@@ -8053,6 +8115,55 @@ body[data-route="finder"] .check-one-screen .check-relation-card{
   min-height:42px!important;
 }
 
+/* Check phase-free polish: remove Early/Mid/Late from Check and give the atlas more breathing room. */
+body[data-route="finder"] .check-phase-row,
+body[data-route="finder"] .check-one-screen .phase-ring-strip,
+body[data-route="finder"] .check-one-screen .phase-strip{
+  display:none!important;
+}
+body[data-route="finder"] .check-one-screen .check-topbar-compact{
+  grid-template-columns:92px minmax(430px,1fr) 138px minmax(280px,.9fr)!important;
+  gap:12px!important;
+  min-height:68px!important;
+  padding:10px 12px!important;
+  margin-bottom:10px!important;
+}
+body[data-route="finder"] .check-selector.check-one-screen{
+  grid-template-rows:82px auto!important;
+}
+body[data-route="finder"] .check-one-screen .check-body{
+  grid-template-columns:210px minmax(760px,1fr) 306px!important;
+  gap:12px!important;
+  min-height:calc(100dvh - var(--topbar-h,64px) - 136px)!important;
+}
+body[data-route="finder"] .check-one-screen .check-champion-grid{
+  gap:4px!important;
+  height:calc(100dvh - var(--topbar-h,64px) - 154px)!important;
+  min-height:430px!important;
+  padding:4px!important;
+}
+body[data-route="finder"] .check-one-screen .check-name-rail,
+body[data-route="finder"] .check-one-screen .check-filter-console{
+  top:12px!important;
+  height:calc(100dvh - var(--topbar-h,64px) - 124px)!important;
+  max-height:calc(100dvh - var(--topbar-h,64px) - 124px)!important;
+}
+body[data-route="finder"] .check-one-screen .check-filter-console{
+  padding:10px!important;
+}
+body[data-route="finder"] .check-one-screen .check-selected-preview{
+  margin-bottom:10px!important;
+}
+body[data-route="finder"] .check-one-screen .check-dropdown-grid,
+body[data-route="finder"] .check-one-screen .check-multi-filter,
+body[data-route="finder"] .check-one-screen .check-icon-row,
+body[data-route="finder"] .check-one-screen .check-grade{
+  margin-bottom:10px!important;
+}
+body[data-route="finder"] .check-one-screen .check-selected-relations.check-relation-cards{
+  margin-top:22px!important;
+}
+
 /* Champion picker v3: fast four-column grid with a compact right filter drawer. */
 dialog#champion-picker{
   position:fixed;
@@ -8855,6 +8966,81 @@ body[data-route="team"] .my-team-check input:checked+i{border-color:#f6d878;back
 body[data-route="team"] .my-team-check:has(input:checked){border-color:#f6d878;background:rgba(16,37,54,.42)}
 body[data-route="team"] .my-team-check:focus-within{outline:2px solid #fff;outline-offset:2px}
 
+/* Map route awareness: nearby numbers, overlapping numbers, and lane push priority. */
+.map-main-legend .route-alert{
+  border-color:#f59e0b!important;
+  background:#fff7ed!important;
+  color:#9a3412!important;
+}
+.map-main-legend .route-alert.stack{
+  border-color:#ef4444!important;
+  background:#fee2e2!important;
+  color:#991b1b!important;
+}
+.map-main-legend .route-alert.clear{
+  border-color:#94a3b8!important;
+  background:#f8fafc!important;
+  color:#475569!important;
+}
+.map-route-node.route-near>b,
+.map-route-node.route-stack>b{
+  animation:route-alert-pulse 1.6s ease-in-out infinite;
+}
+.map-route-node.route-near>b{
+  box-shadow:0 5px 12px rgba(0,0,0,.55),0 0 0 3px rgba(245,158,11,.75),0 0 18px rgba(245,158,11,.5)!important;
+}
+.map-route-node.route-stack>b{
+  box-shadow:0 5px 12px rgba(0,0,0,.55),0 0 0 3px rgba(239,68,68,.86),0 0 22px rgba(239,68,68,.62)!important;
+}
+.route-conflict-badge{
+  position:absolute;
+  left:-8px;
+  bottom:-8px;
+  z-index:6;
+  display:grid;
+  min-width:17px;
+  height:17px;
+  place-items:center;
+  border:2px solid #fff;
+  border-radius:999px;
+  background:#f59e0b;
+  color:#111827;
+  font-size:8px;
+  font-style:normal;
+  font-weight:950;
+  line-height:1;
+  box-shadow:0 3px 10px rgba(0,0,0,.45);
+}
+.route-conflict-badge.stack{
+  min-width:20px;
+  background:#ef4444;
+  color:#fff;
+}
+.map-lane-state.push-blue{border-bottom:3px solid #38bdf8}
+.map-lane-state.push-red{border-bottom:3px solid #fb7185}
+.map-lane-state.push-tie{border-bottom:3px solid #cbd5e1}
+.lane-push-badge{
+  display:inline-grid;
+  min-height:17px;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:999px;
+  padding:2px 6px;
+  font-size:7px!important;
+  font-weight:950!important;
+  letter-spacing:.04em;
+}
+.lane-push-badge.blue,
+.map-hover-stats .push-blue b{background:#0ea5e9!important;color:#fff!important}
+.lane-push-badge.red,
+.map-hover-stats .push-red b{background:#ef4444!important;color:#fff!important}
+.lane-push-badge.tie,
+.map-hover-stats .push-tie b{background:#64748b!important;color:#fff!important}
+@keyframes route-alert-pulse{
+  0%,100%{filter:brightness(1)}
+  50%{filter:brightness(1.18)}
+}
+
 /* Phase power rings: Strong = green, Average = gold, Weak = red.
    Rings use outline/box-shadow only, so portrait/icon dimensions never change. */
 :where(.phase-strip>span,.phase-micro>span,.slot-phase>span,.compact-hover-phase i).strong{
@@ -8868,6 +9054,65 @@ body[data-route="team"] .my-team-check:focus-within{outline:2px solid #fff;outli
 :where(.phase-strip>span,.phase-micro>span,.slot-phase>span,.compact-hover-phase i).weak{
   border-color:#ef4444!important;
   box-shadow:0 0 0 2px rgba(239,68,68,.44),inset 0 0 0 1px rgba(255,255,255,.16)!important;
+}
+
+/* Phase macro ratings: derived clearwave / tower pressure for Early-Mid-Late. */
+.phase-macro-strip{
+  display:grid;
+  gap:5px;
+  margin-top:8px;
+}
+.phase-macro-strip.compact{
+  margin-top:6px;
+}
+.phase-macro-row{
+  display:grid;
+  grid-template-columns:48px repeat(3,minmax(0,1fr));
+  gap:4px;
+  align-items:center;
+}
+.phase-macro-row>b{
+  color:#d6b665;
+  font-size:8px;
+  text-transform:uppercase;
+}
+.phase-macro-row>i{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:4px;
+  align-items:center;
+  min-width:0;
+  border:1px solid #31485c;
+  border-radius:6px;
+  background:rgba(20,37,54,.72);
+  padding:4px 5px;
+  color:#dfeaf2;
+  font-style:normal;
+}
+.phase-macro-row small{
+  color:#96aabd;
+  font-size:7px;
+  font-weight:900;
+}
+.phase-macro-row em{
+  justify-self:end;
+  color:#fff;
+  font-size:9px;
+  font-style:normal;
+  font-weight:900;
+  font-variant-numeric:tabular-nums;
+}
+.phase-macro-row.clearwave>i{border-color:rgba(56,189,248,.45)}
+.phase-macro-row.tower>i{border-color:rgba(250,204,21,.48)}
+.profile-section .phase-macro-strip{
+  grid-template-columns:1fr;
+  max-width:520px;
+}
+.source-note{
+  margin:8px 0 0;
+  color:#607789;
+  font-size:10px;
+  line-height:1.45;
 }
 .portrait.phase-power-strong{
   border-color:#22c55e!important;
@@ -8888,6 +9133,95 @@ body[data-route="team"] .my-team-check:focus-within{outline:2px solid #fff;outli
   outline:2px solid color-mix(in srgb,var(--phase-ring) 58%,transparent);
   outline-offset:-2px;
 }
+
+/* App-wide compact phase rings for Champion / Skill / Check views. */
+.phase-ring-strip{
+  display:inline-grid;
+  grid-template-columns:repeat(3,13px);
+  gap:3px;
+  align-items:center;
+  justify-content:center;
+}
+.phase-ring-strip i{
+  display:grid;
+  width:13px;
+  height:13px;
+  place-items:center;
+  border:2px solid #94a3b8;
+  border-radius:50%;
+  background:rgba(15,23,42,.72);
+  color:#fff;
+  box-shadow:0 0 0 1px rgba(255,255,255,.42);
+  font-style:normal;
+}
+.phase-ring-strip i small{
+  color:inherit!important;
+  font-size:6px!important;
+  font-weight:950!important;
+  line-height:1!important;
+}
+.phase-ring-strip i.strong{border-color:#22c55e;box-shadow:0 0 0 1px rgba(255,255,255,.5),0 0 9px rgba(34,197,94,.48)}
+.phase-ring-strip i.average{border-color:#facc15;box-shadow:0 0 0 1px rgba(255,255,255,.5),0 0 9px rgba(250,204,21,.48)}
+.phase-ring-strip i.weak{border-color:#ef4444;box-shadow:0 0 0 1px rgba(255,255,255,.5),0 0 9px rgba(239,68,68,.46)}
+.library-list button{
+  grid-template-columns:30px minmax(0,1fr) auto!important;
+}
+.library-list button .phase-ring-strip{
+  justify-self:end;
+}
+body[data-route="finder"] .check-name-rail button{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:5px;
+  align-items:center;
+}
+body[data-route="finder"] .check-name-rail .phase-ring-strip{justify-self:end}
+body[data-route="finder"] .check-champion-grid>button{
+  position:relative!important;
+}
+body[data-route="finder"] .check-champion-grid>button>.phase-ring-strip{
+  position:absolute;
+  right:3px;
+  bottom:3px;
+  z-index:4;
+  grid-template-columns:repeat(3,10px);
+  gap:2px;
+  pointer-events:none!important;
+}
+body[data-route="finder"] .check-champion-grid>button>.phase-ring-strip i{
+  width:10px;
+  height:10px;
+  border-width:1.5px;
+}
+body[data-route="finder"] .check-champion-grid>button>.phase-ring-strip i small{
+  font-size:5px!important;
+}
+body[data-route="finder"] .check-selected-preview .phase-strip{
+  grid-column:1/-1;
+  margin-top:6px;
+}
+.skill-hero .phase-strip{
+  max-width:360px;
+  margin-top:8px;
+}
+:where(.plan-grid article,.final-phase-notes article).strong{
+  border-color:#22c55e!important;
+  box-shadow:0 0 0 2px rgba(34,197,94,.2)!important;
+}
+:where(.plan-grid article,.final-phase-notes article).average{
+  border-color:#facc15!important;
+  box-shadow:0 0 0 2px rgba(250,204,21,.22)!important;
+}
+:where(.plan-grid article,.final-phase-notes article).weak{
+  border-color:#ef4444!important;
+  box-shadow:0 0 0 2px rgba(239,68,68,.2)!important;
+}
+:where(.plan-grid article,.final-phase-notes article).strong>b,
+:where(.plan-grid article,.final-phase-notes article).strong header span{color:#15803d!important}
+:where(.plan-grid article,.final-phase-notes article).average>b,
+:where(.plan-grid article,.final-phase-notes article).average header span{color:#a16207!important}
+:where(.plan-grid article,.final-phase-notes article).weak>b,
+:where(.plan-grid article,.final-phase-notes article).weak header span{color:#b91c1c!important}
 
 /* Champion guidance tabs keep matchup advice separate and enemy-only. */
 body[data-route="team"] .team-guide-tabs{

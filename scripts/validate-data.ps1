@@ -86,6 +86,15 @@ foreach ($champion in $manual.champions) {
         elseif ($rating.Name -in @('clearwave','tower') -and ($number -lt 0 -or $number -gt 100)) { $errors.Add("manual-data.json: '$($champion.id).ratings.$($rating.Name)' must be between 0 and 100.") }
         elseif ($rating.Name -notin @('clearwave','tower') -and ($number -lt 0 -or $number -gt 5)) { $errors.Add("manual-data.json: '$($champion.id).ratings.$($rating.Name)' must be between 0 and 5.") }
     }
+    foreach ($metric in @('clearwave','tower')) {
+        foreach ($phase in @('early','mid','late')) {
+            $phaseNumber = 0.0
+            $phaseValue = $champion.phaseRatings.$metric.$phase
+            if ($null -eq $phaseValue -or -not [double]::TryParse([string]$phaseValue, [ref]$phaseNumber)) { $errors.Add("manual-data.json: '$($champion.id).phaseRatings.$metric.$phase' must be numeric.") }
+            elseif ($phaseNumber -lt 0 -or $phaseNumber -gt 100) { $errors.Add("manual-data.json: '$($champion.id).phaseRatings.$metric.$phase' must be between 0 and 100.") }
+        }
+    }
+    if ([string]::IsNullOrWhiteSpace([string]$champion.evidence.phaseRatings)) { $errors.Add("manual-data.json: '$($champion.id).evidence.phaseRatings' must identify the phase rating source.") }
     if ($champion.id -notin @('kledskaarl','megagnar')) {
         foreach ($phase in @('early','mid','late')) {
             if ([string]::IsNullOrWhiteSpace([string]$champion.guide.gamePlan.$phase)) { $errors.Add("manual-data.json: '$($champion.id).guide.gamePlan.$phase' is required.") }
