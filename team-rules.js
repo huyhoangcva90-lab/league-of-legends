@@ -35,6 +35,8 @@ const LOL_TEAM_RULES={
     "mid": {"damage": 0.22, "toughness": 0.18, "control": 0.24, "mobility": 0.18, "utility": 0.18},
     "late": {"damage": 0.26, "toughness": 0.22, "control": 0.2, "mobility": 0.12, "utility": 0.2}
   },
+  "sheetTeamfightPhaseWeights": {"early": 0.12, "mid": 0.2, "late": 0.28},
+  "sheetMacroPhaseWeights": {"early": 0.06, "mid": 0.1, "late": 0.08},
   "sheetPhaseRoleScores": {
     "early": {
       "Average": [3.25, 4, 3.75, 3.3, 3.5],
