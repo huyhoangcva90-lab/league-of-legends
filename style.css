@@ -8945,3 +8945,97 @@ body[data-route="team"] .team-guide-card.enemy-only.empty>button{grid-column:1/-
   body[data-route="team"] .team-guide-tabs{width:100%}
   body[data-route="team"] .team-guide-tabs button{flex:1;white-space:normal}
 }
+
+/* Map: keep the full 5v5 roster and both jungle paths visible at a glance. */
+.map-battle-roster{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:#fff;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.map-battle-roster>.section-head{margin:0;border-bottom:1px solid var(--line);padding:10px 12px}
+.map-battle-roster>.section-head>b{color:#64748b;font-size:9px;letter-spacing:.08em}
+.map-battle-roster>div:last-child{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+.map-battle-roster-side{min-width:0;background:#fff;padding:10px;transition:opacity .18s ease,background .18s ease}
+.map-battle-roster-side.blue{background:linear-gradient(145deg,rgba(37,99,235,.09),#fff 42%)}
+.map-battle-roster-side.red{background:linear-gradient(215deg,rgba(220,38,38,.09),#fff 42%)}
+.map-battle-roster-side.route-muted{opacity:.82}
+.map-battle-roster-side>header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.map-battle-roster-side>header small,.map-battle-roster-side>header b{display:block}
+.map-battle-roster-side>header small{color:var(--muted);font-size:8px;font-weight:950;letter-spacing:.1em}
+.map-battle-roster-side>header b{font-size:11px}
+.map-battle-roster-side>header strong{border:1px solid currentColor;border-radius:999px;padding:4px 7px;font-size:8px;text-transform:uppercase}
+.map-battle-roster-side.blue>header strong{color:var(--blue)}
+.map-battle-roster-side.red>header strong{color:var(--red)}
+.map-battle-five{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}
+.map-battle-five button{display:grid;grid-template-columns:32px minmax(0,1fr);grid-template-rows:auto auto;gap:0 5px;align-items:center;min-width:0;min-height:48px;border:1px solid var(--line);border-radius:7px;background:rgba(255,255,255,.86);padding:5px;text-align:left}
+.map-battle-five button:hover,.map-battle-five button:focus-visible{border-color:var(--line-strong);box-shadow:0 0 0 2px rgba(37,99,235,.12)}
+.map-battle-five button .portrait,.map-battle-five button>i{grid-row:1/-1;width:32px;height:32px;border-radius:50%}
+.map-battle-five button>i{display:grid;place-items:center;border:1px dashed var(--line-strong);color:var(--muted);font-style:normal}
+.map-battle-five button span,.map-battle-five button small,.map-battle-five button b{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.map-battle-five button small{color:var(--muted);font-size:7px;text-transform:uppercase}
+.map-battle-five button b{font-size:9px}
+.map-battle-five button em{grid-column:2;color:#475569;font-size:7px;font-style:normal;font-weight:900;text-transform:uppercase}
+.map-jungle-read{margin-top:8px;border:1px solid var(--line);border-radius:8px;background:rgba(248,250,252,.94);overflow:hidden}
+.map-jungle-title{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:7px;align-items:center;padding:7px 8px}
+.map-jungle-title>.portrait,.map-jungle-title>.map-token-img{width:34px;height:34px;border-radius:50%;object-fit:cover}
+.map-jungle-title span small,.map-jungle-title span b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.map-jungle-title span small{color:var(--muted);font-size:7px;text-transform:uppercase}
+.map-jungle-title span b{font-size:9px}
+.map-jungle-title>strong{border-radius:4px;background:#0f172a;color:#fff;padding:4px 6px;font-size:7px;letter-spacing:.06em}
+.map-jungle-sequence{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));border-block:1px solid var(--line)}
+.map-jungle-sequence>span{position:relative;display:grid;min-width:0;min-height:56px;place-items:center;gap:1px;border-right:1px solid var(--line);background:#fff;padding:4px 2px}
+.map-jungle-sequence>span:last-child{border-right:0}
+.map-jungle-sequence>span>small{position:absolute;top:2px;left:3px;color:#64748b;font-size:7px;font-weight:950}
+.map-jungle-sequence .map-token-img{width:28px!important;height:28px!important;object-fit:contain}
+.map-jungle-sequence>span>b{max-width:100%;overflow:hidden;color:#334155;font-size:7px;text-overflow:ellipsis;white-space:nowrap}
+.map-jungle-read>footer{display:grid;grid-template-columns:.6fr 1fr .85fr;gap:1px;background:var(--line)}
+.map-jungle-read>footer>span{min-width:0;background:#fff;padding:5px 7px}
+.map-jungle-read>footer small,.map-jungle-read>footer b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.map-jungle-read>footer small{color:var(--muted);font-size:7px;text-transform:uppercase}
+.map-jungle-read>footer b{font-size:8px}
+@media(max-width:1100px){
+  .map-battle-roster>div:last-child{grid-template-columns:1fr}
+  .map-battle-roster-side.route-muted{opacity:1}
+}
+@media(max-width:680px){
+  .map-battle-five{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .map-battle-five button:last-child{grid-column:1/-1}
+  .map-jungle-sequence{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .map-jungle-sequence>span{border-bottom:1px solid var(--line)}
+  .map-jungle-read>footer{grid-template-columns:1fr}
+}
+
+.map-battlefield{border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);overflow:hidden}
+.map-battlefield>.section-head{margin:0;border-bottom:1px solid var(--line);padding:10px 12px}
+.map-battlefield>.section-head>b{color:#64748b;font-size:9px;letter-spacing:.1em}
+.map-battle-stage{display:grid;grid-template-columns:minmax(220px,.72fr) minmax(500px,1.65fr) minmax(220px,.72fr);gap:1px;align-items:stretch;background:var(--line)}
+.map-battle-stage>.map-battle-roster-side{display:flex;flex-direction:column;background:#fff;padding:9px}
+.map-battle-stage>.map-battle-roster-side.blue{border-top:4px solid var(--blue)}
+.map-battle-stage>.map-battle-roster-side.red{border-top:4px solid var(--red)}
+.map-battle-stage .map-battle-five{grid-template-columns:1fr;gap:5px}
+.map-battle-stage .map-battle-five button{grid-template-columns:38px minmax(0,1fr) auto;grid-template-rows:1fr;min-height:54px}
+.map-battle-stage .map-battle-five button .portrait,.map-battle-stage .map-battle-five button>i{grid-row:1;width:38px;height:38px}
+.map-battle-stage .map-battle-five button em{grid-column:3;grid-row:1}
+.map-battle-stage .map-jungle-read{margin-top:auto}
+.map-battle-stage .map-jungle-title{grid-template-columns:32px minmax(0,1fr)}
+.map-battle-stage .map-jungle-title>strong{grid-column:1/-1;text-align:center}
+.map-battle-stage .map-jungle-sequence{grid-template-columns:repeat(3,minmax(0,1fr))}
+.map-battle-stage .map-jungle-sequence>span{border-bottom:1px solid var(--line)}
+.map-battle-stage .map-jungle-read>footer{grid-template-columns:1fr}
+.map-battle-map{min-width:0;background:#f8fafc;padding:10px}
+.map-battle-map>.map-main-panel{height:100%;margin:0;box-shadow:none}
+.map-battle-map .map-main-canvas{width:min(100%,760px);margin-inline:auto}
+@media(max-width:1180px){
+  .map-battle-stage{grid-template-columns:minmax(190px,.62fr) minmax(420px,1.5fr) minmax(190px,.62fr)}
+  .map-battle-stage .map-battle-five button{grid-template-columns:34px minmax(0,1fr);min-height:48px}
+  .map-battle-stage .map-battle-five button .portrait,.map-battle-stage .map-battle-five button>i{width:34px;height:34px}
+  .map-battle-stage .map-battle-five button em{display:none}
+}
+@media(max-width:860px){
+  .map-battle-stage{grid-template-columns:1fr}
+  .map-battle-stage .map-battle-five{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .map-battle-stage .map-battle-five button:last-child{grid-column:1/-1}
+  .map-battle-map{grid-row:2}
+}
