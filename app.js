@@ -628,44 +628,40 @@ function sheetWinConditionSignature(side){
   const second=4+delta('early',-1,1)+delta('late',1,-1)+delta('mid',-1,1),third=second+delta('late',1,-1),labels=TEAM_RULES.sheetWinConditionLabels||{};
   return [tempo,labels[String(second)]||'Control',labels[String(third)]||'Control'];
 }
+function sheetTacticalCounts(side){
+  const list=team(side),count=tag=>list.filter(c=>tacticalTags(c).some(value=>slug(value)===slug(tag))).length;
+  return {engage:count('Engage'),disengage:count('Disengage'),poke:count('Poke'),split:count('Split'),catch:count('Catch')};
+}
 function teamTacticalFacts(side){
-  const list=team(side),count=test=>list.filter(test).length,abilityCount=tag=>list.reduce((sum,c)=>sum+(c.abilities||[]).filter(a=>(a.tags||[]).some(value=>semanticTagMatch(value,tag))).length,0);
-  return {list,hard:count(championHasHardCc),aoe:abilityCount('AoE'),strongUlt:count(c=>hasTeamTag(c,'Strong Ult')),assassin:count(c=>/assassin|slayer/i.test(`${c.classification?.primary} ${c.classification?.secondary}`)),tank:count(c=>c.damage?.profile==='Tank'),buff:count(c=>c.damage?.profile==='Buff'),carry:count(c=>c.profiles?.carry||c.profiles?.hyperCarry||c.classification?.primary==='Marksman'),dive:count(c=>hasTeamTag(c,'Dive|Dash')),flank:count(c=>(c.combat?.positioning||[]).includes('Flank'))};
+  const list=team(side),count=test=>list.filter(test).length,abilityCount=tag=>list.reduce((sum,c)=>sum+(c.abilities||[]).filter(a=>(a.tags||[]).some(value=>semanticTagMatch(value,tag))).length,0),championAbilityCount=tag=>count(c=>(c.abilities||[]).some(a=>(a.tags||[]).some(value=>semanticTagMatch(value,tag))));
+  const burst=count(c=>/^burst/i.test(c.damage?.profile||'')),top=byId(state[side][0]),mid=byId(state[side][2]);
+  return {list,hard:count(championHasHardCc),aoe:abilityCount('AoE'),aoeChampions:championAbilityCount('AoE'),strongUlt:championAbilityCount('Strong Ult'),assassin:count(c=>/assassin/i.test(`${c.classification?.primary} ${c.classification?.secondary}`)),tank:count(c=>c.damage?.profile==='Tank'),semiTank:count(c=>/^Semi Tank/i.test(c.damage?.profile||'')),buff:count(c=>c.damage?.profile==='Buff'),dpsCarry:count(c=>/^Dps/i.test(c.damage?.profile||'')),burst,dive:count(c=>hasTeamTag(c,'Dive|Dash')),flank:count(c=>(c.combat?.positioning||[]).includes('Flank')),pick:count(c=>hasTeamTag(c,'Pick|Catch')),globalSplit:count(c=>tacticalTags(c).includes('Split')&&hasTeamTag(c,'Global')),vision:count(c=>hasTeamTag(c,'Vision|Sight')),topSplit:Boolean(top&&tacticalTags(top).includes('Split')),midSplit:Boolean(mid&&tacticalTags(mid).includes('Split'))};
 }
-function sheetDetailedTeamType(side,tactic){
-  const m=teamMetrics(side),f=teamTacticalFacts(side),local=(en,vi)=>teamText(en,vi);
-  if(tactic==='Split')return m.split>=2?local('Split Push 1-3-1','Đẩy lẻ 1-3-1'):local('Split Push 4-1','Đẩy lẻ 4-1');
-  if(tactic==='Catch'){
-    if(m.catch>=4&&f.assassin>=3)return local('Single Target Focus','Dồn một mục tiêu');
-    if(m.catch>=4&&f.assassin>=2)return local('Burst Damage','Dồn sát thương');
-    if(m.catch>=3)return local('Skirmishing','Giao tranh nhỏ');
-    const tools=[m.catch?local('Pick','Bắt lẻ'):'',f.flank?local('Flank','Đánh sườn'):'',f.dive?local('Dive','Lao vào'):''].filter(Boolean);
-    return tools.join(' & ')||local('Catch','Bắt lẻ');
-  }
-  if(tactic==='Engage'){
-    if(m.engage>=4&&f.aoe>=8)return local('Engage & AoE Teamfight','Mở giao tranh & AoE');
-    if(m.engage>=3&&f.hard+f.strongUlt>=4)return local('Wombo combo','Wombo combo');
-    if(m.engage>=5)return local('All Engage','Toàn đội mở giao tranh');
-    return local('Engage','Mở giao tranh');
-  }
-  if(tactic==='Disengage'){
-    if(m.disengage>=3&&f.carry>=1&&f.buff>=2)return local('Juggermaw','Bảo kê siêu chủ lực');
-    if(m.disengage>=3&&f.buff>=1)return local('Protective','Bảo kê');
-    if(m.disengage>=3&&f.tank>=2)return local('Defensive','Phòng thủ');
-    if(m.disengage>=4)return local('Counter Engage','Phản giao tranh');
-    return local('Disengage','Thoát giao tranh');
-  }
-  if(m.poke>=3&&f.buff>=1)return local('Poke & Protective','Cấu rỉa & bảo kê');
-  if(m.poke>=3&&f.tank>=2)return local('Poke & Defensive','Cấu rỉa & phòng thủ');
-  if(m.poke>=3&&m.disengage>=2)return local('Poke & Disengage','Cấu rỉa & thoát giao tranh');
-  return m.poke>=3?local('Poke & Kite','Cấu rỉa & thả diều'):local('Poke','Cấu rỉa');
+function sheetDetailedRuleResults(side){
+  const m=sheetTacticalCounts(side),f=teamTacticalFacts(side),local=(en,vi)=>teamText(en,vi),rule=(en,vi,matched)=>({label:local(en,vi),matched:Boolean(matched)});
+  const globalSplit=f.globalSplit>0,oneThreeOne=!globalSplit&&f.topSplit&&f.midSplit,fourOne=!globalSplit&&!oneThreeOne&&m.split>0;
+  const categories=[
+    {category:'Split',rules:[rule('Global Split Push','Đẩy lẻ toàn bản đồ',globalSplit),rule('Split Push 1-3-1','Đẩy lẻ 1-3-1',oneThreeOne),rule('Split Push 4-1','Đẩy lẻ 4-1',fourOne)],support:(globalSplit?2:0)+(oneThreeOne?1:0)+(fourOne?2:0)},
+    {category:'Catch',rules:[rule('Single Target Focus','Dồn một mục tiêu',m.catch>=4&&f.assassin>=3),rule('Burst Damage','Dồn sát thương',m.catch>=4&&f.assassin>=2),rule('Skirmishing','Giao tranh nhỏ',m.catch>=3),rule('Pick / Flank / Dive','Bắt lẻ / đánh sườn / lao vào',m.catch>0&&m.catch<3&&(f.pick+f.flank+f.dive)>0)],support:m.catch+f.assassin},
+    {category:'Engage',rules:[rule('Engage & AoE Teamfight','Mở giao tranh & AoE',m.engage>=4&&f.hard>=5&&f.aoeChampions>=5&&f.aoe>=15),rule('Wombo combo','Wombo combo',m.engage>=3&&f.hard>=3&&f.strongUlt>=4),rule('All Engage','Toàn đội mở giao tranh',m.engage>=5),rule('Engage','Mở giao tranh',m.engage>=3)],support:f.strongUlt>=4?3:m.engage>=3?1:0},
+    {category:'Disengage',rules:[rule('Juggermaw','Bảo kê siêu chủ lực',m.disengage>=3&&f.dpsCarry>=1&&f.buff>=1&&(f.tank+f.semiTank)>=2),rule('Funnel','Dồn tài nguyên chủ lực',m.disengage>=3&&f.buff>=1&&f.dpsCarry===1&&(f.tank+f.semiTank)>=2),rule('Protective','Bảo kê',m.disengage>=3&&f.buff>=1),rule('Defensive','Phòng thủ',m.disengage>=3&&f.tank>=2),rule('Counter Engage','Phản giao tranh',m.disengage>=4),rule('Disengage','Thoát giao tranh',m.disengage>=2)],support:m.disengage+f.tank+f.semiTank+f.buff},
+    {category:'Poke',rules:[rule('Poke & Protective','Cấu rỉa & bảo kê',m.poke>=3&&f.buff>=1),rule('Poke & Defensive','Cấu rỉa & phòng thủ',m.poke>=3&&f.tank>=2),rule('Poke & Disengage','Cấu rỉa & thoát giao tranh',m.poke>=3&&m.disengage>=2),rule('Poke & Kite','Cấu rỉa & thả diều',m.poke>=3),rule('Poke','Cấu rỉa',m.poke>=2)],support:m.poke+f.vision}
+  ];
+  const fallbackVi={Split:'Đẩy lẻ',Catch:'Bắt lẻ',Engage:'Mở giao tranh',Disengage:'Thoát giao tranh',Poke:'Cấu rỉa'};
+  return categories.map((entry,index)=>{const matches=entry.rules.filter(item=>item.matched);return {...entry,index,count:matches.length,type:matches[0]?.label||local(entry.category,fallbackVi[entry.category])}});
 }
-teamCombatShape=function(side){const m=teamMetrics(side),primary=sheetCombatPrimary(m),type=sheetDetailedTeamType(side,primary);return [slug(type),type,m[slug(primary)]||0]};
+function sheetRankedTeamTypes(side){
+  const ranked=sheetDetailedRuleResults(side).sort((a,b)=>b.count-a.count||b.support-a.support||a.index-b.index),empty=!team(side).length;
+  const primary=ranked[0],secondary=ranked[1];
+  return {primaryCategory:empty?'':primary.category,secondaryCategory:empty?'':secondary.category,primaryType:empty?'—':primary.type,secondaryType:empty?'—':secondary.type,ranked};
+}
+function sheetDetailedTeamType(side,tactic){return sheetDetailedRuleResults(side).find(entry=>entry.category===tactic)?.type||tactic}
+teamCombatShape=function(side){const ranked=sheetRankedTeamTypes(side),m=sheetTacticalCounts(side);return [slug(ranked.primaryType),ranked.primaryType,m[slug(ranked.primaryCategory)]||0]};
 teamStrategySignature=function(side){
-  const phaseScores=Object.fromEntries(PHASES.map(phase=>[phase,teamStrategyPhaseScore(side,phase)])),metrics=teamStrategyMetricScores(side),m=teamMetrics(side);
-  if(!team(side).length)return {phaseScores,metrics,shape:['empty',teamText('Waiting for picks','Chờ chọn tướng'),0],label:teamText('Waiting for picks','Chờ chọn tướng'),primary:'Poke',secondary:'Disengage',macro:'Split',teamType:'—'};
-  const primary=sheetCombatPrimary(m),secondary=sheetCombatSecondary(m,primary),macro=sheetMacroType(m),win=sheetWinConditionSignature(side),teamType=sheetDetailedTeamType(side,secondary),shape=[slug(teamType),teamType,m[slug(secondary)]||0];
-  return {phaseScores,metrics,shape,primary,secondary,macro,win,teamType,label:win.map(sheetWinLabel).join(' · ')};
+  const phaseScores=Object.fromEntries(PHASES.map(phase=>[phase,teamStrategyPhaseScore(side,phase)])),metrics=teamStrategyMetricScores(side),m=sheetTacticalCounts(side),types=sheetRankedTeamTypes(side);
+  if(!team(side).length)return {phaseScores,metrics,shape:['empty',teamText('Waiting for picks','Chờ chọn tướng'),0],label:teamText('Waiting for picks','Chờ chọn tướng'),primary:'Poke',secondary:'Disengage',macro:'Split',teamType:'—',teamTypePrimary:'—',teamTypeSecondary:'—',teamTypeCategory:'',teamTypeSecondaryCategory:''};
+  const primary=sheetCombatPrimary(m),secondary=sheetCombatSecondary(m,primary),macro=sheetMacroType(m),win=sheetWinConditionSignature(side),shape=[slug(types.primaryType),types.primaryType,m[slug(types.primaryCategory)]||0];
+  return {phaseScores,metrics,shape,primary,secondary,macro,win,teamType:types.primaryType,teamTypePrimary:types.primaryType,teamTypeSecondary:types.secondaryType,teamTypeCategory:types.primaryCategory,teamTypeSecondaryCategory:types.secondaryCategory,teamTypeRanking:types.ranked,label:win.map(sheetWinLabel).join(' · ')};
 };
 teamStrategyDeployment=function(side){
   if(!team(side).length)return [teamText('Choose all five roles to calculate the setup.','Chọn đủ năm vị trí để tính cách thiết lập.'),teamText('Primary and secondary combat styles follow Team row 41.','Chiến thuật combat chính và phụ bám theo hàng 41 của Team.'),teamText('The macro plan appears after Split and Catch are counted.','Kế hoạch macro hiện sau khi đếm Split và Catch.')];
@@ -676,8 +672,8 @@ teamStrategyDeployment=function(side){
   return [setup,execute,convert];
 };
 teamStrategySide=function(side){
-  const signature=teamStrategySignature(side),m=teamMetrics(side),steps=teamStrategyDeployment(side),styles=[['Engage',m.engage],['Disengage',m.disengage],['Poke',m.poke],['Split',m.split],['Catch',m.catch]],combatLabel=value=>teamText(value,value==='Engage'?'Mở giao tranh':value==='Disengage'?'Thoát giao tranh':'Cấu rỉa'),macroLabel=value=>teamText(value,value==='Split'?'Đẩy lẻ':value==='Catch'?'Bắt lẻ':'Linh hoạt');
-  return `<article class="team-strategy-side ${side}"><header><span>${side==='blue'?teamText('BLUE TEAM','ĐỘI XANH'):teamText('RED TEAM','ĐỘI ĐỎ')}</span><small>${team(side).length}/5</small></header><strong class="team-strategy-signature">${esc(signature.label)}</strong><div class="team-strategy-classification"><span><small>${teamText('PRIMARY COMBAT','COMBAT CHÍNH')}</small><b>${esc(combatLabel(signature.primary))}</b><em>${side==='blue'?'Team!K41':'Team!S41'}</em></span><span><small>${teamText('SECONDARY COMBAT','COMBAT PHỤ')}</small><b>${esc(combatLabel(signature.secondary))}</b><em>${side==='blue'?'Team!J41':'Team!T41'}</em></span><span><small>MACRO</small><b>${esc(macroLabel(signature.macro))}</b><em>${side==='blue'?'Team!I41':'Team!U41'}</em></span><span><small>${teamText('TEAM TYPE','LOẠI TEAM')}</small><b>${esc(signature.teamType)}</b><em>${side==='blue'?'Setting!O32':'Setting!P32'}</em></span></div><section><small>${teamText('SHEET COUNTS','SỐ LƯỢNG THEO SHEET')}</small><div>${styles.map(([label,value])=>`<span class="${slug(label)}">${termIcon(label,'matrix-icon')||filterIcon('combat',label)}<b>${esc(label)}</b><em>${value}</em></span>`).join('')}</div></section><ol>${steps.map((step,index)=>`<li><b>${index+1}</b><span>${esc(step)}</span></li>`).join('')}</ol></article>`;
+  const signature=teamStrategySignature(side),m=sheetTacticalCounts(side),steps=teamStrategyDeployment(side),styles=[['Engage',m.engage],['Disengage',m.disengage],['Poke',m.poke],['Split',m.split],['Catch',m.catch]],combatLabel=value=>teamText(value,value==='Engage'?'Mở giao tranh':value==='Disengage'?'Thoát giao tranh':'Cấu rỉa'),macroLabel=value=>teamText(value,value==='Split'?'Đẩy lẻ':value==='Catch'?'Bắt lẻ':'Linh hoạt'),cells=side==='blue'?{combat:'Team!K41 / J41',macro:'Team!I41',type:'Setting!O31 / O32'}:{combat:'Team!S41 / T41',macro:'Team!U41',type:'Setting!P31 / P32'};
+  return `<article class="team-strategy-side ${side}"><header><span>${side==='blue'?teamText('BLUE TEAM','ĐỘI XANH'):teamText('RED TEAM','ĐỘI ĐỎ')}</span><small>${team(side).length}/5</small></header><strong class="team-strategy-signature">${esc(signature.label)}</strong><div class="team-strategy-classification"><span class="strategy-pair" title="${cells.combat}"><small>${teamText('COMBAT STRATEGY','CHIẾN THUẬT COMBAT')}</small><span class="strategy-primary">${filterIcon('combat',signature.primary)}<b>${esc(combatLabel(signature.primary))}</b></span><em><strong>${teamText('Secondary','Phụ')}</strong>${esc(combatLabel(signature.secondary))}</em></span><span class="strategy-macro" title="${cells.macro}"><small>MACRO</small><b>${esc(macroLabel(signature.macro))}</b><em>${teamText('Split + 2 compared with Catch','So sánh Split + 2 với Catch')}</em></span><span class="strategy-pair" title="${cells.type}"><small>${teamText('TEAM TYPE','LOẠI ĐỘI HÌNH')}</small><span class="strategy-primary">${filterIcon('combat',signature.teamTypeCategory)}<b>${esc(signature.teamTypePrimary)}</b></span><em><strong>${teamText('Secondary','Phụ')}</strong>${esc(signature.teamTypeSecondary)}</em></span></div><section><small>${teamText('SHEET COUNTS','SỐ LƯỢNG THEO SHEET')}</small><div>${styles.map(([label,value])=>`<span class="${slug(label)}">${termIcon(label,'matrix-icon')||filterIcon('combat',label)}<b>${esc(label)}</b><em>${value}</em></span>`).join('')}</div></section><ol>${steps.map((step,index)=>`<li><b>${index+1}</b><span>${esc(step)}</span></li>`).join('')}</ol></article>`;
 };
 teamStrategyMatrix=function(){
   const phase=state.teamStrategyPhase,blue=teamStrategyMetricScores('blue'),red=teamStrategyMetricScores('red'),metricLabels={damage:teamText('Damage','Sát thương'),toughness:teamText('Toughness','Chống chịu'),control:teamText('Control','Khống chế'),mobility:teamText('Mobility','Cơ động'),utility:teamText('Utility','Đa dụng')};

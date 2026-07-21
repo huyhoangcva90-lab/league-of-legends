@@ -9803,9 +9803,9 @@ body[data-route="team"] .team-strategy-sides{display:grid;grid-template-columns:
 body[data-route="team"] .team-strategy-side{overflow:hidden;border:1px solid #aebcc6;border-top:4px solid #17669d;border-radius:5px;background:#fff}
 body[data-route="team"] .team-strategy-side.red{border-top-color:#af1822}
 body[data-route="team"] .team-strategy-side>header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d1dae0;padding:7px 10px}
-body[data-route="team"] .team-strategy-side>header span{font-size:8px;font-weight:950}
-body[data-route="team"] .team-strategy-side>header small{color:#637987;font-size:8px;font-weight:900}
-body[data-route="team"] .team-strategy-signature{display:block;background:#edf5fa;padding:9px 10px;color:#124d75;font-size:12px}
+body[data-route="team"] .team-strategy-side>header span{font-size:10px;font-weight:950}
+body[data-route="team"] .team-strategy-side>header small{color:#526b7a;font-size:10px;font-weight:900}
+body[data-route="team"] .team-strategy-signature{display:block;background:#edf5fa;padding:10px 12px;color:#124d75;font-size:14px;line-height:1.35}
 body[data-route="team"] .team-strategy-side.red .team-strategy-signature{background:#faeeee;color:#8d1d26}
 body[data-route="team"] .team-strategy-classification{
   display:grid;
@@ -9821,21 +9821,25 @@ body[data-route="team"] .team-strategy-classification>span{
   padding:8px 9px;
 }
 body[data-route="team"] .team-strategy-classification>span:first-child{border-left:0}
-body[data-route="team"] .team-strategy-classification small{color:#687d8a;font-size:7px;font-weight:950}
-body[data-route="team"] .team-strategy-classification b{overflow-wrap:anywhere;font-size:10px}
-body[data-route="team"] .team-strategy-classification em{color:#406071;font-size:8px;font-style:normal;font-weight:750;line-height:1.3}
+body[data-route="team"] .team-strategy-classification small{color:#526b7a;font-size:9px;font-weight:950;line-height:1.25}
+body[data-route="team"] .team-strategy-classification b{overflow-wrap:anywhere;font-size:12px;line-height:1.3}
+body[data-route="team"] .team-strategy-classification em{display:flex;align-items:baseline;gap:5px;color:#304f61;font-size:10px;font-style:normal;font-weight:750;line-height:1.4}
+body[data-route="team"] .team-strategy-classification em strong{color:#6a7c88;font-size:8px;text-transform:uppercase}
+body[data-route="team"] .strategy-primary{display:grid;grid-template-columns:24px minmax(0,1fr);align-items:center;gap:7px;min-width:0}
+body[data-route="team"] .strategy-primary>:where(svg,img){width:22px;height:22px;color:#b08a25;stroke-width:1.9;object-fit:contain}
+body[data-route="team"] .strategy-macro>b{font-size:13px}
 body[data-route="team"] .team-strategy-side>section{padding:9px 10px}
-body[data-route="team"] .team-strategy-side>section>small{color:#607482;font-size:7px;font-weight:950}
+body[data-route="team"] .team-strategy-side>section>small{color:#526b7a;font-size:9px;font-weight:950}
 body[data-route="team"] .team-strategy-side>section>h3{margin:2px 0 8px;font-size:13px}
 body[data-route="team"] .team-strategy-side>section>div{display:flex;flex-wrap:wrap;gap:4px}
-body[data-route="team"] .team-strategy-side>section>div>span{display:inline-flex;align-items:center;gap:4px;border:1px solid #c9d3da;border-radius:3px;background:#f7f9fa;padding:4px 6px;font-size:8px}
-body[data-route="team"] .team-strategy-side>section>div>span b{font-size:8px}
-body[data-route="team"] .team-strategy-side>section>div>span em{min-width:15px;border-radius:2px;background:#243f52;color:#fff;font-size:8px;font-style:normal;text-align:center}
+body[data-route="team"] .team-strategy-side>section>div>span{display:inline-flex;align-items:center;gap:5px;border:1px solid #c9d3da;border-radius:3px;background:#f7f9fa;padding:5px 7px;font-size:9px}
+body[data-route="team"] .team-strategy-side>section>div>span b{font-size:9px}
+body[data-route="team"] .team-strategy-side>section>div>span em{min-width:17px;border-radius:2px;background:#243f52;color:#fff;font-size:9px;font-style:normal;text-align:center}
 body[data-route="team"] .team-strategy-side>ol{display:grid;gap:0;margin:0;border-top:1px solid #d1dae0;padding:0;list-style:none}
 body[data-route="team"] .team-strategy-side>ol li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:8px;align-items:start;border-top:1px dotted #ccd5db;padding:8px 10px}
 body[data-route="team"] .team-strategy-side>ol li:first-child{border-top:0}
 body[data-route="team"] .team-strategy-side>ol li>b{display:grid;width:22px;height:22px;place-items:center;border-radius:3px;background:#203c50;color:#fff;font-size:9px}
-body[data-route="team"] .team-strategy-side>ol li>span{color:#314b5d;font-size:9px;font-weight:650;line-height:1.45}
+body[data-route="team"] .team-strategy-side>ol li>span{color:#233f51;font-size:11px;font-weight:650;line-height:1.5}
 
 /* Main and secondary class icons need to read before the compact labels. */
 body[data-route="team"] .riot-class-line>span{grid-template-columns:36px minmax(0,1fr)!important;grid-template-rows:12px 16px!important;column-gap:6px!important}
