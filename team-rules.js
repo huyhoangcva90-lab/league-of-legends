@@ -10,5 +10,29 @@ const LOL_TEAM_RULES={
   "hybridAttackMaxShare": 0.66,
   "minimumFrontline": 1,
   "minimumHardCc": 1,
-  "minimumStableDps": 1
+  "minimumStableDps": 1,
+  "strategyMetricCeilings": {
+    "damage": 4,
+    "toughness": 3,
+    "control": 3,
+    "mobility": 3,
+    "utility": 3
+  },
+  "strategyRoleWeights": {
+    "damage": [0.95, 1, 1.1, 1.35, 0.65],
+    "toughness": [1.2, 1.1, 0.85, 0.65, 1.2],
+    "control": [0.9, 1.15, 1, 0.7, 1.35],
+    "mobility": [1, 1.2, 1.05, 0.95, 0.8],
+    "utility": [0.75, 1.05, 0.9, 0.7, 1.5]
+  },
+  "strategyPhaseMultipliers": {
+    "Weak": 0.86,
+    "Average": 1,
+    "Strong": 1.14
+  },
+  "strategyPhaseMetricWeights": {
+    "early": {"damage": 0.28, "toughness": 0.16, "control": 0.18, "mobility": 0.25, "utility": 0.13},
+    "mid": {"damage": 0.22, "toughness": 0.18, "control": 0.24, "mobility": 0.18, "utility": 0.18},
+    "late": {"damage": 0.26, "toughness": 0.22, "control": 0.2, "mobility": 0.12, "utility": 0.2}
+  }
 };

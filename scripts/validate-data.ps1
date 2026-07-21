@@ -86,6 +86,10 @@ foreach ($champion in $manual.champions) {
         elseif ($rating.Name -in @('clearwave','tower') -and ($number -lt 0 -or $number -gt 100)) { $errors.Add("manual-data.json: '$($champion.id).ratings.$($rating.Name)' must be between 0 and 100.") }
         elseif ($rating.Name -notin @('clearwave','tower') -and ($number -lt 0 -or $number -gt 5)) { $errors.Add("manual-data.json: '$($champion.id).ratings.$($rating.Name)' must be between 0 and 5.") }
     }
+    if ($champion.combat.tags -isnot [System.Array] -or @($champion.combat.tags).Count -eq 0) { $errors.Add("manual-data.json: '$($champion.id).combat.tags' must be a non-empty array.") }
+    if (@($champion.combat.tags) -contains 'Flex' -or [string]$champion.combat.primary -eq 'Flex' -or [string]$champion.combat.secondary -eq 'Flex' -or [string]$champion.combat.macro -eq 'Flex') { $errors.Add("manual-data.json: '$($champion.id)' still contains legacy combat Flex; use Split + Catch.") }
+    if ([string]$champion.evidence.combatTags -match 'Flex expands' -and (-not (@($champion.combat.tags) -contains 'Split') -or -not (@($champion.combat.tags) -contains 'Catch'))) { $errors.Add("manual-data.json: '$($champion.id)' must expand legacy Flex to both Split and Catch.") }
+    if ([string]::IsNullOrWhiteSpace([string]$champion.evidence.combatTags)) { $errors.Add("manual-data.json: '$($champion.id).evidence.combatTags' is required.") }
     foreach ($metric in @('clearwave','tower')) {
         foreach ($phase in @('early','mid','late')) {
             $phaseNumber = 0.0
@@ -107,6 +111,17 @@ foreach ($champion in $manual.champions) {
             if ($key -and -not $knownNames.ContainsKey($key)) { $errors.Add("manual-data.json: '$($champion.id).matchups.$group' references unknown champion '$name'.") }
         }
     }
+}
+$rulesPath = Join-Path $root 'src\data\team-rules.json'
+$rules = [IO.File]::ReadAllText($rulesPath, [Text.Encoding]::UTF8) | ConvertFrom-Json
+foreach ($metric in @('damage','toughness','control','mobility','utility')) {
+    if ([double]$rules.strategyMetricCeilings.$metric -le 0) { $errors.Add("team-rules.json: strategyMetricCeilings.$metric must be positive.") }
+    if (@($rules.strategyRoleWeights.$metric).Count -ne 5) { $errors.Add("team-rules.json: strategyRoleWeights.$metric must contain Top/Jungle/Mid/AD/Support weights.") }
+}
+foreach ($phase in @('early','mid','late')) {
+    $sum = 0.0
+    foreach ($metric in @('damage','toughness','control','mobility','utility')) { $sum += [double]$rules.strategyPhaseMetricWeights.$phase.$metric }
+    if ([math]::Abs($sum - 1.0) -gt 0.001) { $errors.Add("team-rules.json: strategyPhaseMetricWeights.$phase must sum to 1.0; found $sum.") }
 }
 $laneSource = [IO.File]::ReadAllText((Join-Path $root 'src\data\matchup-lanes.json'), [Text.Encoding]::UTF8) | ConvertFrom-Json
 foreach ($championProperty in $laneSource.champions.PSObject.Properties) {
