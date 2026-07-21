@@ -10464,3 +10464,98 @@ body[data-route="team"] .riot-class-line b{font-size:11px!important;font-weight:
 body[data-route="skills"] .final-notes,body[data-route="skills"] .final-facts{display:none}
 @media(max-width:1050px){.final-pentagon-layout{grid-template-columns:1fr}.final-pentagon-chart{min-height:280px}.final-rating-list span{grid-template-columns:100px 42px minmax(0,1fr)}}
 @media(max-width:620px){.final-mechanic-summary{grid-template-columns:1fr}.final-wiki-skill-card header{grid-template-columns:36px 58px minmax(0,1fr)}.final-wiki-skill-card header img{width:58px;height:58px}.final-pentagon-chart{min-height:250px}.pentagon-label{min-width:66px;font-size:11px}.pentagon-label.label-1{right:0}.pentagon-label.label-4{left:0}}
+
+/* Team lane matchup: one large value for My Team, with Sheet metrics behind VS. */
+body[data-route="team"] .team-lane-center{
+  position:relative;
+  grid-template-rows:46px 43px 14px!important;
+  gap:4px!important;
+  overflow:visible;
+}
+body[data-route="team"] .team-lane-read{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  width:100%;
+  min-width:0;
+}
+body[data-route="team"] .team-lane-center.my-red .team-lane-read{flex-direction:row-reverse}
+body[data-route="team"] .team-lane-read>span{display:grid;min-width:54px;justify-items:center;line-height:1}
+body[data-route="team"] .team-lane-read>span strong{
+  color:#165b91;
+  font-size:21px;
+  font-weight:1000;
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+body[data-route="team"] .team-lane-center.my-red .team-lane-read>span strong{color:#b00008}
+body[data-route="team"] .team-lane-center.tone-ahead .team-lane-read>span strong{filter:saturate(1.2)}
+body[data-route="team"] .team-lane-center.tone-behind .team-lane-read>span strong{opacity:.72}
+body[data-route="team"] .team-lane-read>span small{
+  max-width:70px;
+  margin-top:3px;
+  overflow:hidden;
+  color:#526b7b;
+  font-size:6px;
+  font-weight:950;
+  line-height:1;
+  text-align:center;
+  text-overflow:ellipsis;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+body[data-route="team"] .team-lane-metric-picker{position:relative;z-index:12}
+body[data-route="team"] .team-lane-metric-picker[open]{z-index:80}
+body[data-route="team"] .team-lane-metric-picker>summary{
+  display:grid;
+  width:27px;
+  height:27px;
+  place-items:center;
+  border:1px solid #9aaab5;
+  border-radius:50%;
+  background:#132432;
+  color:#f0d47e;
+  cursor:pointer;
+  font-size:8px;
+  font-weight:1000;
+  list-style:none;
+  box-shadow:0 2px 5px rgba(19,36,50,.18);
+}
+body[data-route="team"] .team-lane-metric-picker>summary::-webkit-details-marker{display:none}
+body[data-route="team"] .team-lane-metric-picker>div{
+  position:absolute;
+  top:32px;
+  left:50%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  width:226px;
+  gap:5px;
+  border:1px solid #9fb0bc;
+  border-radius:6px;
+  background:#fff;
+  padding:8px;
+  box-shadow:0 14px 30px rgba(18,39,55,.25);
+  transform:translateX(-50%);
+}
+body[data-route="team"] .team-lane-metric-picker>div>small,
+body[data-route="team"] .team-lane-metric-picker>div>p{grid-column:1/-1}
+body[data-route="team"] .team-lane-metric-picker>div>small{color:#2d4b5e;font-size:7px;font-weight:1000;letter-spacing:.05em}
+body[data-route="team"] .team-lane-metric-picker button{
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:5px;
+  min-height:30px;
+  border:1px solid #c5d0d8;
+  border-radius:4px;
+  background:#f5f8fa;
+  color:#294456;
+  padding:5px 7px;
+  text-align:left;
+}
+body[data-route="team"] .team-lane-metric-picker button b{font-size:9px}
+body[data-route="team"] .team-lane-metric-picker button em{color:#71828e;font-size:8px;font-style:normal;font-weight:900}
+body[data-route="team"] .team-lane-metric-picker button.active{border-color:#b5912f;background:#fff6d9;color:#172d3c;box-shadow:inset 0 0 0 1px #dbc36f}
+body[data-route="team"] .team-lane-metric-picker>div>p{margin:1px 0 0;color:#6a7c89;font-size:7px;line-height:1.35}
+body[data-route="team"] .team-lane-center>small{font-size:7px!important;line-height:14px!important}
