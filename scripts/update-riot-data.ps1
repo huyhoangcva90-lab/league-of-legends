@@ -167,13 +167,35 @@ foreach($entry in $catalog.data.PSObject.Properties.Value | Sort-Object name) {
     $old = $oldById[$id]
     $passiveTags = @(@($old.abilities | Where-Object slot -eq 'Passive' | Select-Object -First 1).tags + @(Get-InferredAbilityTags "$($d.passive.description) $($d.passive.name)") | Where-Object { $_ } | Select-Object -Unique)
     $abilities = @()
-    $abilities += [pscustomobject][ordered]@{id='passive';slot='Passive';name=$d.passive.name;cooldown='';tags=$passiveTags;images=@("https://ddragon.leagueoflegends.com/cdn/$Patch/img/passive/$($d.passive.image.full)");form='base';source='riot';details=(New-PassiveDetails $d.passive)}
+    $passiveRecord = [pscustomobject][ordered]@{
+        id='passive'
+        slot='Passive'
+        name=$d.passive.name
+        cooldown=''
+        tags=$passiveTags
+        images=@("https://ddragon.leagueoflegends.com/cdn/$Patch/img/passive/$($d.passive.image.full)")
+        form='base'
+        source='riot'
+        details=(New-PassiveDetails $d.passive)
+    }
+    $abilities += $passiveRecord
     $slots=@('Q','W','E','R')
     for($i=0;$i -lt $d.spells.Count;$i++) {
         $spell=$d.spells[$i]
         $previous=@($old.abilities | Where-Object slot -eq $slots[$i] | Select-Object -First 1)
         $tags=@(@($previous.tags)+@(Get-InferredAbilityTags "$($spell.description) $($spell.name)")|Where-Object {$_}|Select-Object -Unique)
-        $abilities += [pscustomobject][ordered]@{id=$slots[$i].ToLowerInvariant();slot=$slots[$i];name=$spell.name;cooldown=($spell.cooldownBurn -join ' / ');tags=$tags;images=@("https://ddragon.leagueoflegends.com/cdn/$Patch/img/spell/$($spell.image.full)");form='base';source='riot';details=(New-SpellDetails $spell)}
+        $spellRecord = [pscustomobject][ordered]@{
+            id=$slots[$i].ToLowerInvariant()
+            slot=$slots[$i]
+            name=$spell.name
+            cooldown=($spell.cooldownBurn -join ' / ')
+            tags=$tags
+            images=@("https://ddragon.leagueoflegends.com/cdn/$Patch/img/spell/$($spell.image.full)")
+            form='base'
+            source='riot'
+            details=(New-SpellDetails $spell)
+        }
+        $abilities += $spellRecord
     }
     if($old){foreach($alternate in @($old.abilities|Where-Object form -eq 'alternate')){$abilities += $alternate}}
     if($id -eq 'kled' -and $oldById.ContainsKey('kledskaarl')){

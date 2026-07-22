@@ -10673,6 +10673,43 @@ body[data-route="team"] .team-matrix-row{
 .map-jungle-champion .portrait{width:28px!important;height:28px!important;border:0!important;border-radius:50%}
 .map-jungle-champion>b{position:absolute;right:-5px;bottom:-5px;display:grid;width:16px;height:16px;place-items:center;border:1px solid #fff;border-radius:50%;background:#111827;color:#facc15;font-size:8px}
 .map-check-clean .check-route-line,.map-check-clean .check-route-layer,.map-check-clean .map-scuttle-read{display:none!important}
+.map-monster-position-layer{position:absolute;inset:0;z-index:5;pointer-events:none}
+.map-monster-node{
+  position:absolute;
+  display:grid;
+  width:18px;
+  height:18px;
+  place-items:center;
+  transform:translate(-50%,-50%);
+  border:3px solid #ff2d3d;
+  border-radius:50%;
+  background:rgba(15,23,42,.22);
+  box-shadow:0 0 0 2px rgba(255,255,255,.22),0 0 14px rgba(255,45,61,.5);
+  pointer-events:auto;
+}
+.map-monster-node>b{display:block;width:5px;height:5px;border-radius:50%;background:#fff;color:transparent;font-size:0}
+.map-monster-node.scuttle{border-color:#22d3ee;box-shadow:0 0 0 2px rgba(255,255,255,.22),0 0 14px rgba(34,211,238,.5)}
+.map-monster-node.objective{width:22px;height:22px;border-color:#f59e0b;border-radius:9px;box-shadow:0 0 0 2px rgba(255,255,255,.22),0 0 16px rgba(245,158,11,.58)}
+.map-monster-node.blue{border-color:#38bdf8}.map-monster-node.red{border-color:#fb7185}
+.map-monster-node small{
+  position:absolute;
+  left:18px;
+  top:-8px;
+  display:none;
+  min-width:86px;
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:6px;
+  background:rgba(15,23,42,.88);
+  color:#fff;
+  padding:3px 5px;
+  font-size:8px;
+  font-weight:900;
+  line-height:1.1;
+  white-space:nowrap;
+}
+.map-monster-node:hover{z-index:16;transform:translate(-50%,-50%) scale(1.18)}
+.map-monster-node:hover small{display:block}
+.map-check-clean .map-monster-position-layer{display:none!important}
 .map-check-active .check-route-line{opacity:.78}.map-check-active .check-route-line .blue line{stroke:#38bdf8!important}.map-check-active .check-route-line .red line{stroke:#fb7185!important}
 .map-check-node{position:absolute;z-index:9;display:grid;grid-template-columns:20px auto;align-items:center;gap:2px;transform:translate(-50%,-50%);border:1px solid rgba(255,255,255,.78);border-radius:999px;background:rgba(15,23,42,.78);color:#fff;padding:2px 5px 2px 2px;box-shadow:0 8px 18px rgba(0,0,0,.38);pointer-events:auto}
 .map-check-node>b{display:grid;width:20px;height:20px;place-items:center;border-radius:50%;background:#334155;color:#fff;font-size:10px}.map-check-node.blue>b{background:#0284c7}.map-check-node.red>b{background:#dc2626}
@@ -10919,6 +10956,8 @@ body[data-route="draft"] .draft-pick-copy>.draft-lane-name{
 body[data-route="draft"] .draft-pick-copy>b{font-size:15px!important;letter-spacing:.025em}
 body[data-route="draft"] .broadcast-pick[draggable="true"]{cursor:grab}
 body[data-route="draft"] .broadcast-pick.dragging{cursor:grabbing;opacity:.48;transform:scale(.985)}
+body[data-route="draft"] .recommend-list [data-draft-drag-champion]{cursor:grab}
+body[data-route="draft"] .recommend-list [data-draft-drag-champion].dragging{cursor:grabbing;opacity:.48}
 body[data-route="draft"] .broadcast-pick.drag-over{
   border-color:#f4d982!important;
   outline:3px solid rgba(244,217,130,.72)!important;
