@@ -8796,6 +8796,149 @@ body[data-route="finder"] .check-relation-compact-overlay .relation-full-copy sm
 body[data-route="finder"] .check-relation-compact-overlay .relation-full-taxonomy strong{font-size:10.5px!important}
 body[data-route="finder"] .check-relation-compact-overlay footer{font-size:10px!important}
 
+/* Check fit pass: right filters stay compact; relation preview is clean, hover shows full list. */
+body[data-route="finder"] .check-filter-v2 .check-body{
+  grid-template-columns:190px minmax(680px,1fr) 348px!important;
+  gap:10px!important;
+}
+body[data-route="finder"] .check-filter-v2 .check-filter-console{
+  height:calc(100dvh - var(--topbar-h,64px) - 118px)!important;
+  max-height:calc(100dvh - var(--topbar-h,64px) - 118px)!important;
+  padding:8px!important;
+  gap:7px!important;
+  overflow:auto!important;
+}
+body[data-route="finder"] .check-filter-v2 .check-selected-preview{
+  grid-template-columns:46px minmax(0,1fr)!important;
+  min-height:66px!important;
+  margin-bottom:6px!important;
+  padding:7px!important;
+}
+body[data-route="finder"] .check-filter-v2 .check-selected-preview .portrait{
+  width:46px!important;
+  height:46px!important;
+}
+body[data-route="finder"] .check-filter-v2 .check-selected-preview h3{
+  font-size:15px!important;
+  margin:0!important;
+}
+body[data-route="finder"] .check-filter-v2 .check-selected-preview p,
+body[data-route="finder"] .check-filter-v2 .check-selected-preview small{
+  font-size:9px!important;
+  line-height:1.15!important;
+}
+body[data-route="finder"] .check-filter-v2 .check-selected-preview .pill{
+  font-size:8px!important;
+  padding:2px 5px!important;
+}
+body[data-route="finder"] .check-filter-v2 .check-dropdown-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:5px!important;
+  margin-bottom:6px!important;
+}
+body[data-route="finder"] .check-filter-v2 .check-select-control select,
+body[data-route="finder"] .check-filter-v2 .check-year select,
+body[data-route="finder"] .check-filter-v2 .check-search input{
+  min-height:32px!important;
+  height:32px!important;
+  font-size:10px!important;
+  padding:4px 6px!important;
+}
+body[data-route="finder"] .check-filter-v2 .check-select-control span,
+body[data-route="finder"] .check-filter-v2 .check-multi-filter summary span,
+body[data-route="finder"] .check-filter-v2 .check-icon-row header span,
+body[data-route="finder"] .check-filter-v2 .check-grade>span{
+  font-size:10px!important;
+}
+body[data-route="finder"] .check-filter-v2 .check-multi-filter,
+body[data-route="finder"] .check-filter-v2 .check-icon-row,
+body[data-route="finder"] .check-filter-v2 .check-grade{
+  margin-bottom:6px!important;
+  padding:6px!important;
+}
+body[data-route="finder"] .check-filter-v2 .check-multi-filter summary{
+  min-height:26px!important;
+}
+body[data-route="finder"] .check-filter-v2 .check-filter-toggle>span,
+body[data-route="finder"] .check-filter-v2 .check-class-single button{
+  min-height:32px!important;
+  padding:4px 6px!important;
+  gap:5px!important;
+}
+body[data-route="finder"] .check-filter-v2 .check-filter-toggle small,
+body[data-route="finder"] .check-filter-v2 .check-class-single button small{
+  font-size:9.5px!important;
+  line-height:1.05!important;
+}
+body[data-route="finder"] .check-filter-v2 .check-filter-icon,
+body[data-route="finder"] .check-filter-v2 .check-lane-icon{
+  width:18px!important;
+  height:18px!important;
+  min-width:18px!important;
+}
+body[data-route="finder"] .check-filter-v2 .check-multi-filter>div{
+  gap:4px!important;
+}
+body[data-route="finder"] .check-filter-v2 .check-skill-effect-and>div:last-child,
+body[data-route="finder"] .check-filter-v2 .check-multi-filter:has(summary span:nth-child(1))>div{
+  max-height:138px;
+  overflow:auto;
+  scrollbar-width:thin;
+}
+body[data-route="finder"] .check-filter-v2 .check-selected-chips{
+  max-height:58px;
+  overflow:auto;
+  margin-bottom:5px!important;
+}
+body[data-route="finder"] .check-filter-v2 .check-selected-chips button{
+  min-height:24px!important;
+  padding:3px 7px!important;
+  font-size:9px!important;
+}
+body[data-route="finder"] .check-filter-v2 .check-class-single>div,
+body[data-route="finder"] .check-filter-v2 .check-attack-style>div,
+body[data-route="finder"] .check-filter-v2 .check-positive-row>div{
+  gap:5px!important;
+}
+body[data-route="finder"] .check-relation-compact-overlay article>footer{
+  display:none!important;
+}
+body[data-route="finder"] .check-relation-compact-overlay article>div{
+  gap:5px!important;
+}
+body[data-route="finder"] .check-relation-card.group-mini{
+  min-height:42px!important;
+  grid-template-columns:30px minmax(0,1fr) 26px!important;
+  padding:5px!important;
+}
+body[data-route="finder"] .check-relation-card.group-mini .portrait{
+  width:30px!important;
+  height:30px!important;
+}
+body[data-route="finder"] .check-relation-card.group-mini span b{
+  font-size:10.5px!important;
+  white-space:nowrap!important;
+}
+body[data-route="finder"] .check-relation-card.group-mini span small{
+  font-size:8.5px!important;
+}
+body[data-route="finder"] .check-relation-compact-overlay .check-relation-group-overlay{
+  width:min(920px,calc(100vw - 96px))!important;
+  max-height:min(650px,calc(100dvh - 88px))!important;
+}
+body[data-route="finder"] .check-relation-compact-overlay .check-relation-group-overlay>div{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  max-height:570px!important;
+}
+@media(max-width:1320px){
+  body[data-route="finder"] .check-filter-v2 .check-body{
+    grid-template-columns:170px minmax(560px,1fr) 320px!important;
+  }
+  body[data-route="finder"] .check-relation-compact-overlay .check-relation-group-overlay>div{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+}
+
 /* Check readable labels: hide shorthand letters and show full option names. */
 body[data-route="finder"] .check-one-screen{
   font-size:13px!important;
@@ -10213,6 +10356,160 @@ body[data-route="team"] .riot-class-line b{font-size:11px!important;font-weight:
   body[data-route="team"] .team-pentagon-body{grid-template-columns:1fr}
   body[data-route="team"] .team-pentagon-legend{grid-template-columns:repeat(2,minmax(0,1fr));width:100%}
 }
+
+/* Composition matrices: compact workbook hierarchy with one comparison surface. */
+body[data-route="team"] .team-workbook-matrices{
+  border-color:#aebdc7;
+  border-radius:5px;
+  background:#eef3f6;
+  box-shadow:0 4px 16px rgba(25,49,65,.08);
+}
+body[data-route="team"] .team-workbook-matrices>.section-head{
+  min-height:62px;
+  margin:0;
+  border-bottom:1px solid #c5d0d7;
+  background:#fff;
+  padding:11px 13px 11px 16px;
+}
+body[data-route="team"] .team-workbook-matrices>.section-head h2{
+  color:#18394f;
+  font-size:17px;
+  line-height:1.2;
+}
+body[data-route="team"] .team-workbook-matrices>.section-head span{
+  color:#657b89;
+  font-size:9px;
+  font-weight:750;
+}
+body[data-route="team"] .team-matrix-tabs{
+  gap:0;
+  border-color:#9eafb9;
+  border-radius:4px;
+  padding:2px;
+}
+body[data-route="team"] .team-matrix-tabs>button{
+  width:96px;
+  min-height:32px;
+  border-radius:2px;
+  font-size:9px;
+}
+body[data-route="team"] .team-strategy-matrix{
+  grid-template-columns:minmax(0,1fr);
+  gap:9px;
+  padding:9px;
+  background:#eef3f6;
+}
+body[data-route="team"] .team-strategy-source{
+  grid-template-columns:auto auto minmax(0,1fr);
+  width:100%;
+  min-height:40px;
+  border-color:#b2c0c9;
+  border-left-width:5px;
+  padding:7px 11px;
+}
+body[data-route="team"] .team-strategy-source>small{text-align:right}
+body[data-route="team"] .team-strategy-overview{
+  display:grid;
+  grid-template-columns:minmax(360px,.86fr) minmax(570px,1.14fr);
+  gap:9px;
+  align-items:stretch;
+}
+body[data-route="team"] .team-strategy-overview>.team-strategy-pentagon,
+body[data-route="team"] .team-strategy-overview>.team-strategy-scoreboard{
+  min-width:0;
+  margin:0;
+  border-radius:4px;
+  box-shadow:none;
+}
+body[data-route="team"] .team-strategy-overview>.team-strategy-pentagon{
+  grid-template-columns:1fr;
+  grid-template-rows:auto 1fr;
+  gap:5px;
+  padding:10px 12px;
+}
+body[data-route="team"] .team-strategy-overview .team-strategy-pentagon>header{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+  padding:0;
+}
+body[data-route="team"] .team-strategy-overview .team-strategy-pentagon>header h3{
+  margin:2px 0 0;
+  font-size:13px;
+}
+body[data-route="team"] .team-strategy-overview .team-pentagon-body{
+  grid-template-columns:minmax(160px,205px) minmax(135px,1fr);
+  gap:8px;
+}
+body[data-route="team"] .team-strategy-overview .team-pentagon-body svg{max-width:205px}
+body[data-route="team"] .team-strategy-overview .team-pentagon-legend{gap:1px}
+body[data-route="team"] .team-strategy-overview .team-pentagon-legend>span{
+  grid-template-columns:7px minmax(64px,1fr) 23px 7px 23px;
+  gap:4px;
+  min-height:26px;
+  padding:2px 0;
+}
+body[data-route="team"] .team-strategy-overview .team-pentagon-legend>span b{font-size:10px}
+body[data-route="team"] .team-strategy-scoreboard>header{
+  grid-template-columns:minmax(90px,1fr) 154px minmax(90px,1fr);
+}
+body[data-route="team"] .team-strategy-compare-row{
+  grid-template-columns:102px minmax(0,1fr) 26px minmax(0,1fr);
+  min-height:34px;
+}
+body[data-route="team"] .team-strategy-compare-row.phase-detail{min-height:47px}
+body[data-route="team"] .team-strategy-sides{
+  gap:1px;
+  overflow:hidden;
+  border:1px solid #aebcc6;
+  border-radius:4px;
+  background:#aebcc6;
+}
+body[data-route="team"] .team-strategy-side{
+  border:0;
+  border-top:4px solid #17669d;
+  border-radius:0;
+}
+body[data-route="team"] .team-strategy-side.red{border-top-color:#af1822}
+body[data-route="team"] .team-matrix-grid{
+  gap:9px;
+  align-items:start;
+  background:#eef3f6;
+  padding:9px;
+}
+body[data-route="team"] .team-matrix-group{
+  overflow:hidden;
+  border:1px solid #afbdc7;
+  border-radius:4px;
+  background:#fff;
+  box-shadow:none;
+}
+body[data-route="team"] .team-matrix-group>header{
+  min-height:52px;
+  border-bottom-color:#cbd5db;
+  background:#f7f9fa;
+  padding:9px 11px;
+}
+body[data-route="team"] .team-matrix-row{
+  min-height:48px;
+  border-top-color:#d7dfe4;
+}
+@media(max-width:1120px){
+  body[data-route="team"] .team-strategy-overview{grid-template-columns:1fr}
+  body[data-route="team"] .team-strategy-source{grid-template-columns:auto minmax(0,1fr)}
+  body[data-route="team"] .team-strategy-source>small{grid-column:1/-1;text-align:left}
+  body[data-route="team"] .team-strategy-overview>.team-strategy-pentagon{grid-template-columns:1fr}
+  body[data-route="team"] .team-strategy-overview .team-pentagon-body{grid-template-columns:minmax(190px,230px) minmax(220px,1fr)}
+}
+@media(max-width:760px){
+  body[data-route="team"] .team-workbook-matrices>.section-head{padding:11px}
+  body[data-route="team"] .team-matrix-tabs>button{width:auto}
+  body[data-route="team"] .team-strategy-matrix,
+  body[data-route="team"] .team-matrix-grid{padding:7px}
+  body[data-route="team"] .team-strategy-source{grid-template-columns:1fr}
+  body[data-route="team"] .team-strategy-overview .team-pentagon-body{grid-template-columns:1fr}
+}
 .map-battle-roster>.section-head{margin:0;border-bottom:1px solid var(--line);padding:10px 12px}
 .map-battle-roster>.section-head>b{color:#64748b;font-size:9px;letter-spacing:.08em}
 .map-battle-roster>div:last-child{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
@@ -10462,6 +10759,38 @@ body[data-route="team"] .riot-class-line b{font-size:11px!important;font-weight:
 .final-compact-taxonomy article>b{font-size:13px}
 .final-compact-taxonomy article p{max-height:112px;overflow:auto}
 body[data-route="skills"] .final-notes,body[data-route="skills"] .final-facts{display:none}
+.online-kit-source{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:7px;
+  margin:0 14px 12px;
+  border:1px solid rgba(21,151,255,.22);
+  border-radius:10px;
+  background:linear-gradient(90deg,rgba(21,151,255,.08),rgba(244,217,130,.08));
+  padding:9px 10px;
+}
+.online-kit-source b{
+  color:#12344f;
+  font-size:11px;
+  font-weight:950;
+  text-transform:uppercase;
+}
+.online-kit-source span{
+  flex:1 1 280px;
+  color:#405365;
+  font-size:11px;
+}
+.online-kit-source a{
+  border:1px solid rgba(18,52,79,.18);
+  border-radius:999px;
+  background:#fff;
+  color:#165b91;
+  padding:5px 8px;
+  font-size:10px;
+  font-weight:900;
+  text-decoration:none;
+}
 @media(max-width:1050px){.final-pentagon-layout{grid-template-columns:1fr}.final-pentagon-chart{min-height:280px}.final-rating-list span{grid-template-columns:100px 42px minmax(0,1fr)}}
 @media(max-width:620px){.final-mechanic-summary{grid-template-columns:1fr}.final-wiki-skill-card header{grid-template-columns:36px 58px minmax(0,1fr)}.final-wiki-skill-card header img{width:58px;height:58px}.final-pentagon-chart{min-height:250px}.pentagon-label{min-width:66px;font-size:11px}.pentagon-label.label-1{right:0}.pentagon-label.label-4{left:0}}
 
@@ -10557,3 +10886,55 @@ body[data-route="team"] .team-lane-metric-menu>button em{color:#71828e;font-size
 body[data-route="team"] .team-lane-metric-menu>button.active{border-color:#b5912f;background:#fff6d9;color:#172d3c;box-shadow:inset 0 0 0 1px #dbc36f}
 body[data-route="team"] .team-lane-metric-menu>p{margin:1px 0 0;color:#6a7c89;font-size:7px;line-height:1.35}
 body[data-route="team"] .team-lane-center>small{font-size:7px!important;line-height:14px!important}
+
+/* Draft team: minimal pick identity, clear drag affordance and Fearless handoff. */
+body[data-route="draft"] .draft-team-toolbar{
+  display:flex;
+  min-height:58px;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  border:1px solid rgba(214,182,101,.3);
+  border-radius:12px;
+  background:linear-gradient(90deg,rgba(18,30,43,.96),rgba(9,15,23,.96));
+  padding:8px 10px 8px 14px;
+}
+body[data-route="draft"] .draft-team-toolbar>div{display:grid;grid-template-columns:auto auto;align-items:baseline;gap:2px 10px}
+body[data-route="draft"] .draft-team-toolbar small{color:#d6b665;font-size:9px;font-weight:950;letter-spacing:.15em}
+body[data-route="draft"] .draft-team-toolbar b{color:#fff;font-size:15px}
+body[data-route="draft"] .draft-team-toolbar span{grid-column:1/-1;color:#92a5b6;font-size:10px}
+body[data-route="draft"] .draft-team-toolbar button,
+body[data-route="draft"] .draft-done-button{min-height:44px;border-color:#d6b665!important;background:#d6b665!important;color:#09111a!important;font-weight:950;cursor:pointer}
+body[data-route="draft"] .draft-pick-copy{gap:3px!important}
+body[data-route="draft"] .draft-pick-copy>.draft-lane-name{
+  display:block!important;
+  margin:0!important;
+  color:rgba(255,255,255,.76)!important;
+  font-size:10px!important;
+  font-weight:900!important;
+  line-height:1!important;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+body[data-route="draft"] .draft-pick-copy>b{font-size:15px!important;letter-spacing:.025em}
+body[data-route="draft"] .broadcast-pick[draggable="true"]{cursor:grab}
+body[data-route="draft"] .broadcast-pick.dragging{cursor:grabbing;opacity:.48;transform:scale(.985)}
+body[data-route="draft"] .broadcast-pick.drag-over{
+  border-color:#f4d982!important;
+  outline:3px solid rgba(244,217,130,.72)!important;
+  outline-offset:-5px!important;
+  box-shadow:inset 0 0 32px rgba(244,217,130,.2),0 0 24px rgba(244,217,130,.3)!important;
+}
+body[data-route="draft"] .draft-flow-score .draft-versus-glow{
+  position:relative;
+  border-color:rgba(244,217,130,.9)!important;
+  background:#f4d982!important;
+  color:#071018!important;
+  font-size:12px;
+  letter-spacing:.05em;
+  box-shadow:0 0 10px rgba(244,217,130,.9),0 0 26px rgba(244,217,130,.58),inset 0 0 0 1px rgba(255,255,255,.65);
+  animation:draft-vs-glow 1.8s ease-in-out infinite;
+}
+@keyframes draft-vs-glow{0%,100%{filter:brightness(1);transform:scale(1)}50%{filter:brightness(1.18);transform:scale(1.06)}}
+@media(max-width:720px){body[data-route="draft"] .draft-team-toolbar{align-items:stretch}body[data-route="draft"] .draft-team-toolbar>div{grid-template-columns:1fr}body[data-route="draft"] .draft-team-toolbar span{grid-column:1}body[data-route="draft"] .draft-team-toolbar button{min-width:118px}}
+@media(prefers-reduced-motion:reduce){body[data-route="draft"] .draft-flow-score .draft-versus-glow{animation:none!important}body[data-route="draft"] .broadcast-pick.dragging{transform:none}}
