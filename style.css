@@ -10710,6 +10710,17 @@ body[data-route="team"] .team-matrix-row{
 .map-monster-node:hover{z-index:16;transform:translate(-50%,-50%) scale(1.18)}
 .map-monster-node:hover small{display:block}
 .map-check-clean .map-monster-position-layer{display:none!important}
+.map-gank-target{
+  display:grid;
+  width:20px;
+  height:20px;
+  place-items:center;
+  border:2px solid #facc15;
+  border-radius:50%;
+  background:rgba(250,204,21,.14);
+  box-shadow:0 0 0 3px rgba(15,23,42,.42),0 0 14px rgba(250,204,21,.6);
+}
+.map-gank-target::before{content:"";width:6px;height:6px;border-radius:50%;background:#facc15}
 .map-check-active .check-route-line{opacity:.78}.map-check-active .check-route-line .blue line{stroke:#38bdf8!important}.map-check-active .check-route-line .red line{stroke:#fb7185!important}
 .map-check-node{position:absolute;z-index:9;display:grid;grid-template-columns:20px auto;align-items:center;gap:2px;transform:translate(-50%,-50%);border:1px solid rgba(255,255,255,.78);border-radius:999px;background:rgba(15,23,42,.78);color:#fff;padding:2px 5px 2px 2px;box-shadow:0 8px 18px rgba(0,0,0,.38);pointer-events:auto}
 .map-check-node>b{display:grid;width:20px;height:20px;place-items:center;border-radius:50%;background:#334155;color:#fff;font-size:10px}.map-check-node.blue>b{background:#0284c7}.map-check-node.red>b{background:#dc2626}
