@@ -11239,6 +11239,30 @@ body[data-route="draft"] .draft-flow-score .draft-versus-glow{
 @media(prefers-reduced-motion:reduce){body[data-route="draft"] .draft-flow-score .draft-versus-glow{animation:none!important}body[data-route="draft"] .broadcast-pick.dragging{transform:none}}
 
 /* Map monster layer: only camp icons + numbers, no fake red rings/objective markers. */
+.map-main-canvas .map-lane-state.champion-only{
+  width:78px!important;
+  height:34px!important;
+  transform:translate(-50%,-50%)!important;
+}
+.map-main-canvas .map-lane-state.champion-only>div{
+  position:relative!important;
+  display:block!important;
+  width:78px!important;
+  height:34px!important;
+  padding:0!important;
+}
+.map-main-canvas .map-lane-state.champion-only .map-champion-token{
+  position:absolute!important;
+  top:50%!important;
+  width:32px!important;
+  height:32px!important;
+  transform:translateY(-50%)!important;
+  margin:0!important;
+}
+.map-main-canvas .map-lane-state.champion-only .map-champion-token.blue{left:0!important;z-index:2}
+.map-main-canvas .map-lane-state.champion-only .map-champion-token.red{right:0!important;z-index:2}
+.map-main-canvas .map-lane-state.champion-only.lane-mid{width:88px!important}
+.map-main-canvas .map-lane-state.champion-only.lane-mid>div{width:88px!important}
 .map-main-canvas .map-monster-node{
   width:28px!important;
   height:28px!important;
