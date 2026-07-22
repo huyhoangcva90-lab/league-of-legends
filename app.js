@@ -1769,6 +1769,7 @@ draftTeamToolbar=function(){const picked=state.blue.filter(Boolean).length+state
 
 document.addEventListener('click',event=>{
   if(event.target.closest('select,input,textarea,option'))return;
+  const strategyRole=event.target.closest('[data-strategy-role]');if(strategyRole){event.preventDefault();state.strategyRole=enumValue(strategyRole.dataset.strategyRole,ROLES,state.strategyRole);save();render();return}
   const filterSummary=event.target.closest('.picker-filter>summary');if(filterSummary)document.querySelectorAll('.picker-filter[open]').forEach(details=>{if(details!==filterSummary.parentElement)details.removeAttribute('open')});
   const pick=event.target.closest('[data-pick]');if(pick){applyPick(pick.dataset.pick);return}
   const pickerReset=event.target.closest('[data-picker-reset]');if(pickerReset){state.pickerFilters=structuredClone(DEFAULT_STATE.pickerFilters);renderPickerFilters();renderPicker();return}
@@ -1821,7 +1822,6 @@ document.addEventListener('click',event=>{
   const matchupOpponent=event.target.closest('[data-matchup-opponent]');if(matchupOpponent){state.matchupOpponent=matchupOpponent.dataset.matchupOpponent;save();render();return}
   const buildStyle=event.target.closest('[data-build-style]');if(buildStyle){state.buildStyle=enumValue(buildStyle.dataset.buildStyle,['recommended','damage','survive','utility','snowball'],state.buildStyle);save();render();return}
   const compareLane=event.target.closest('[data-compare-lane]');if(compareLane){state.compareLane=compareLane.dataset.compareLane;normalizeCompareLineup(state.compareLane);save();render();return}
-  const strategyRole=event.target.closest('[data-strategy-role]');if(strategyRole){state.strategyRole=strategyRole.dataset.strategyRole;save();render();return}
   const side=event.target.closest('[data-strategy-side]');if(side){state.strategySide=side.dataset.strategySide;save();render()}
 });
 document.addEventListener('submit',event=>{const form=event.target.closest('[data-riot-sync-form]');if(!form)return;event.preventDefault();void syncRiotProfile(form)});
