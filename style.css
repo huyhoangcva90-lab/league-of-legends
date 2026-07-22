@@ -11238,6 +11238,47 @@ body[data-route="draft"] .draft-flow-score .draft-versus-glow{
 @media(max-width:720px){body[data-route="draft"] .draft-team-toolbar{align-items:stretch}body[data-route="draft"] .draft-team-toolbar>div{grid-template-columns:1fr}body[data-route="draft"] .draft-team-toolbar span{grid-column:1}body[data-route="draft"] .draft-team-toolbar button{min-width:118px}}
 @media(prefers-reduced-motion:reduce){body[data-route="draft"] .draft-flow-score .draft-versus-glow{animation:none!important}body[data-route="draft"] .broadcast-pick.dragging{transform:none}}
 
+/* Map monster layer: only camp icons + numbers, no fake red rings/objective markers. */
+.map-main-canvas .map-monster-node{
+  width:28px!important;
+  height:28px!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.map-main-canvas .map-monster-node>b{
+  width:28px!important;
+  height:28px!important;
+  border-radius:50%!important;
+  background:transparent!important;
+  box-shadow:0 2px 8px rgba(0,0,0,.55)!important;
+}
+.map-main-canvas .map-monster-node .map-monster-icon{
+  width:28px!important;
+  height:28px!important;
+  border-radius:50%!important;
+  object-fit:cover;
+}
+.map-main-canvas .map-monster-node>em{
+  position:absolute;
+  right:-5px;
+  bottom:-5px;
+  display:grid;
+  width:15px;
+  height:15px;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.9);
+  border-radius:50%;
+  background:#0f172a;
+  color:#facc15;
+  font-size:8px;
+  font-style:normal;
+  font-weight:1000;
+  line-height:1;
+  box-shadow:0 2px 6px rgba(0,0,0,.45);
+}
+
 /* Draft Assistant v2: avatar-only 2 × 9 priority rail and advisory pool groups. */
 #champion-picker .picker-list .picker-group-title{
   grid-column:1/-1;
